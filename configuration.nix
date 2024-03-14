@@ -119,6 +119,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   go  
   libgcc
   gcc
+  gdb
   stdenv
 
 	lf  

@@ -28,3 +28,5 @@
 
     };
 }
+
+# sudo nixos-rebuild switch  --flake  /home/aleks/Desktop/nixos#default

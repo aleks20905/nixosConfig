@@ -121,6 +121,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   gcc
   gdb
   stdenv
+  p7zip
 
 	lf  
   #atuin

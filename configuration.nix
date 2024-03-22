@@ -123,7 +123,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   stdenv
   p7zip
 
-  libsForQt5.polonium #might not work properly on plasma 6 tiling wondows manager.
+  #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
 
 	lf  
   #atuin

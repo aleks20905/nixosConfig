@@ -140,7 +140,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.postgresql = {
     enable = true;
     ensureDatabases = [ "gotest" ];
-    enableTCPIP = true;
     port = 5433;
     authentication = pkgs.lib.mkOverride 10 ''
           #type database  DBuser  auth-method

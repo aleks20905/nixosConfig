@@ -137,8 +137,16 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   ];
 
 
-  services.postgresql.enable = true;
-  services.postgresql.package = pkgs.postgresql_16;
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "gotest" ];
+    enableTCPIP = true;
+    port = 5433;
+    authentication = pkgs.lib.mkOverride 10 ''
+          #type database  DBuser  auth-method
+          local all       all     trust
+        '';
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

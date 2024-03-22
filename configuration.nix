@@ -123,6 +123,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   stdenv
   p7zip
 
+  polonium #might not work properly on plasma 6 tiling wondows manager.
+
 	lf  
   #atuin
   btop

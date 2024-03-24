@@ -115,6 +115,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   vscode-fhs
   git
   google-chrome 
+  tor-browser
   python3
   go  
   libgcc

@@ -128,6 +128,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   aircrack-ng # airmon-ng   create new global template network security or smt
   wordlists # rockyou package create new global template network security or smt
+  wireshark # create new global template network security or smt
 
 	lf  
   #atuin

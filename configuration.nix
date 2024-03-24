@@ -126,6 +126,9 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
 
+  aircrack-ng # airmon-ng   create new global template network security or smt
+  wordlists # rockyou package create new global template network security or smt
+
 	lf  
   #atuin
   btop

@@ -142,6 +142,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 #  wget
   ];
 
+  services.power-profiles-daemon.enable = false; 
   services.tlp = {
       enable = true;
       settings = {
@@ -167,7 +168,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.auto-cpufreq.settings = {
     battery = {
       governor = "powersave";
-      turbo = "never";
+      turbo = "auto";
     };
     charger = {
       governor = "performance";

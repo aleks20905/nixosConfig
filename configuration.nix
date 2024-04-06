@@ -147,7 +147,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.power-profiles-daemon.enable = false; 
   services.tlp = {
-      enable = true;
+      enable = false;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -162,9 +162,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
        #Optional helps save long term battery health
        #START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-      START_CHARGE_THRESH_BAT0 = 100; # 40 and bellow it starts to charge
 
-       STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
+      STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
 
       };
   };

@@ -124,12 +124,15 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   stdenv
   p7zip
   pgadmin4
+  arduino-ide
+  arduino
 
   #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
 
   aircrack-ng # airmon-ng   create new global template network security or smt
   wordlists # rockyou package create new global template network security or smt
   wireshark # create new global template network security or smt
+  wifite2
 
 	lf  
   #atuin
@@ -154,15 +157,21 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
         CPU_MIN_PERF_ON_AC = 0;
         CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 20;
+        CPU_MIN_PERF_ON_BAT = 60;
+        CPU_MAX_PERF_ON_BAT = 100;
 
        #Optional helps save long term battery health
-       START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
-       STOP_CHARGE_THRESH_BAT0 = 90; # 80 and above it stops charging
+       #START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      START_CHARGE_THRESH_BAT0 = 100; # 40 and bellow it starts to charge
+
+       STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
 
       };
   };
+
+    services.udev.extraRules = ''
+    KERNEL=="ttyACM0", MODE:="666"
+  '';
 
   services.auto-cpufreq.enable = true;
   services.auto-cpufreq.settings = {

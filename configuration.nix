@@ -1,3 +1,4 @@
+# sudo nixos-rebuild switch  --flake  /home/aleks/Desktop/nixos#default
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -126,6 +127,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   pgadmin4
   arduino-ide
   arduino
+  cura
 
   #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
 
@@ -147,7 +149,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.power-profiles-daemon.enable = false; 
   services.tlp = {
-      enable = false;
+      enable = true;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
@@ -172,17 +174,17 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     KERNEL=="ttyACM0", MODE:="666"
   '';
 
-  services.auto-cpufreq.enable = true;
-  services.auto-cpufreq.settings = {
-    battery = {
-      governor = "powersave";
-      turbo = "auto";
-    };
-    charger = {
-      governor = "performance";
-      turbo = "auto";
-    };
-  };  
+  # services.auto-cpufreq.enable = true;
+  # services.auto-cpufreq.settings = {
+  #   battery = {
+  #     governor = "powersave";
+  #     turbo = "auto";
+  #   };
+  #   charger = {
+  #     governor = "performance";
+  #     turbo = "auto";
+  #   };
+  # };  
 
 
   services.postgresql = {

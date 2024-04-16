@@ -51,7 +51,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable   = true;
   services.desktopManager.plasma6.enable = true;
   
   # Configure keymap in X11
@@ -187,7 +187,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # };  
 
 
-  services.postgresql = {
+      services.postgresql.settings = {
     enable = true;
     ensureDatabases = [ "gotest" ];
     port = 5433;

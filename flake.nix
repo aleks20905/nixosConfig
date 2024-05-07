@@ -21,6 +21,7 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./moduls/penTools.nix
+            ./moduls/db.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
           ];

@@ -2,6 +2,12 @@
 { config, pkgs, ...}:
 
 {
+
+    environment.systemPackages = with pkgs; [
+    
+      pgadmin4
+
+    ];
   
     services.postgresql.settings = {
 

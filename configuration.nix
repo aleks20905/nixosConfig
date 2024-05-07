@@ -124,7 +124,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   gdb
   stdenv
   p7zip
-  pgadmin4
   arduino-ide
   arduino
   cura

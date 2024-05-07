@@ -131,10 +131,10 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
 
-  aircrack-ng # airmon-ng   create new global template network security or smt
-  wordlists # rockyou package create new global template network security or smt
-  wireshark # create new global template network security or smt
-  wifite2
+  # aircrack-ng # airmon-ng   create new global template network security or smt
+  # wordlists # rockyou package create new global template network security or smt
+  # wireshark # create new global template network security or smt
+  # wifite2
 
 	lf  
   #atuin
@@ -163,7 +163,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
         CPU_MAX_PERF_ON_BAT = 100;
 
        #Optional helps save long term battery health
-       #START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
+      START_CHARGE_THRESH_BAT0 = 90; # 40 and bellow it starts to charge
 
       STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
 

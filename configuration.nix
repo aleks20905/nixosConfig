@@ -115,16 +115,21 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 	vscode
   vscode-fhs
   git
+  templ
+  air
+
   google-chrome 
   tor-browser
+
   python3
   go  
   libgcc
   gcc
   gdb
   stdenv
+
   p7zip
-  arduino-ide
+  
   arduino
   cura
 

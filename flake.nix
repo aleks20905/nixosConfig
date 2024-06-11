@@ -16,21 +16,41 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = {
+        default = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./moduls/penTools.nix
-            ./moduls/db.nix
+            # ./modules/penTools.nix
+            ./modules/db.nix
+            ./modules/standart.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
           ];
         };
 
-        
-        
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./modules/laptopConfig.nix
+            ./modules/penTools.nix
+            ./modules/db.nix
+            ./modules/standart.nix
+            ./configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
 
+        pc = nixpkgs.lib.nixosSystem {
+          specialArgs = {inherit inputs;};
+          modules = [ 
+            ./modules/pcConfig.nix
+            # ./modules/penTools.nix
+            ./modules/db.nix
+            ./modules/standart.nix
+            ./configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
+      };
     };
 }
-
-# sudo nixos-rebuild switch  --flake  /home/aleks/Desktop/nixos#default

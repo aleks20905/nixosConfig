@@ -105,76 +105,21 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
   hardware.bluetooth.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
   environment.systemPackages = with pkgs; [
 
-	vscode
-  vscode-fhs
-  git
-  templ
-  air
-
-  google-chrome 
-  tor-browser
-
-  python3
-  go  
-  libgcc
-  gcc
-  gdb
-  stdenv
-
-  p7zip
-  
-  arduino
-  cura
-
-  #libsForQt5.polonium #kinda workd but cant get full crean crashesh and etc kinda poor exepriance
-
-  # aircrack-ng # airmon-ng   create new global template network security or smt
-  # wordlists # rockyou package create new global template network security or smt
-  # wireshark # create new global template network security or smt
-  # wifite2
-
-	lf  
-  #atuin
-  btop
-  neofetch
-  
-  neovim
-  neovim-qt
-  discord
-#  wget
+  # neovim
+  # neovim-qt
+  # wget
   ];
 
-  services.power-profiles-daemon.enable = false; 
-  services.tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-        CPU_MIN_PERF_ON_AC = 100;
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 60;
-        CPU_MAX_PERF_ON_BAT = 100;
-
-       #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 90; # 40 and bellow it starts to charge
-
-      STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
-
-      };
-  };
-
-    services.udev.extraRules = ''
+  
+  # opens the ports so that u can upload sketches using arduino
+  services.udev.extraRules = '' 
     KERNEL=="ttyACM0", MODE:="666"
   '';
 

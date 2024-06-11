@@ -13,6 +13,15 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ae6875aa-55f7-430d-99fd-7cbdf0352fba";
       fsType = "ext4";

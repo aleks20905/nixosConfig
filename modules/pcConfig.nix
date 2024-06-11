@@ -20,19 +20,15 @@
 
 
 
-    boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
-
-    services.xserver.enable =true;
-    services.xserver.videoDrivers = [ "amdgpu" ];
-    services.xserver.deviceSection = ''
-            Option "DRI" "3"
-            Option "VariableRefresh" "true"
-    '';
-    hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    services.xserver = {
+        enable = true;
+        videoDrivers = [ "amdgpu" ];  # Use "amdgpu" for modern AMD GPUs. If you're using an older AMD GPU, you might need "radeon".
     };
-    
+
+    hardware.opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+    };
 
 }

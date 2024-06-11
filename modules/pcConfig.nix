@@ -5,6 +5,8 @@
 
     environment.systemPackages = with pkgs; [
     
+    steam
+    
     # arduino
     # cura
 

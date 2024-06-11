@@ -44,6 +44,7 @@
         pc = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
+            ./hardware-modules/hardware-pc.nix
             ./modules/pcConfig.nix
             # ./modules/penTools.nix
             ./modules/db.nix

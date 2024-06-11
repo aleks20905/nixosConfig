@@ -31,6 +31,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
+            ./hardware-modules/hardware-laptop.nix
             ./modules/laptopConfig.nix
             ./modules/penTools.nix
             ./modules/db.nix

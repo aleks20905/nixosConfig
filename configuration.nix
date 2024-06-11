@@ -44,13 +44,21 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
+  services.autorandr.enable = true;
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+    oxygen
+  ];
   
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
+  # # Configure keymap in X11
+  # services.xserver = {
+  #   xkb.layout = "us";
+  #   xkb.variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

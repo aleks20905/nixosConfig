@@ -46,12 +46,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  }
-
   # services.autorandr.enable = true;
 
   # # Configure keymap in X11
@@ -59,6 +53,10 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #   xkb.layout = "us";
   #   xkb.variant = "";
   # };
+
+  
+
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

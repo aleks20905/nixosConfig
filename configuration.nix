@@ -41,13 +41,31 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # # Enable the X11 windowing system.
   # services.xserver.enable = true;
+  # services.autorandr.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.xserver = {
+  enable = true;
+  layout = "us";
+  xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
 
-  services.autorandr.enable = true;
+  displayManager.sddm.wayland.enable = true;
+  displayManager.sddm.enable = true;
+  desktopManager.plasma6.enable = true;
 
+
+  videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
+
+  config = ''
+    Section "Monitor"
+      Identifier "DVI-D-1"
+      Option "PreferredMode" "1280x1024"
+    EndSection
+    Section "Monitor"
+      Identifier "HDMI-A-2"
+      Option "PreferredMode" "1920x1080_144.00"
+    EndSection
+  '';
+};
   # # Configure keymap in X11
   # services.xserver = {
   #   xkb.layout = "us";
@@ -110,6 +128,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
 
+  xorg.xrandr
   # neovim
   # neovim-qt
   # wget

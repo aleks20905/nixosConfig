@@ -21,12 +21,13 @@
         gdb
         stdenv
 
-        p7zip  
+        p7zip 
+        toybox 
 
         lf  
         btop
         neofetch
-  
+    
 
 
     ];

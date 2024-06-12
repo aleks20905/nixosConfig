@@ -15,7 +15,13 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelParams = [
+    "video=HDMI-A-2:1920x1080@144"
+    "video=DVI-D-1:1280x1024@60"
+  ];
 
+  
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";

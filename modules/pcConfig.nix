@@ -34,19 +34,20 @@
     services.xserver = {
     enable = true;
     xkb.layout = "us";
-    xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
+    # xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
 
-    videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
+    # videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
 
-    config = ''
-        Section "Monitor"
-        Identifier "DVI-D-1"
-        Option "PreferredMode" "1280x1024"
-        EndSection
-        Section "Monitor"
-        Identifier "HDMI-A-2"
-        Option "PreferredMode" "1920x1080_144.00"
-        EndSection
-        '';
+    # config = ''
+    #     Section "Monitor"
+    #     Identifier "DVI-D-1"
+    #     Option "PreferredMode" "1280x1024"
+    #     EndSection
+    #     Section "Monitor"
+    #     Identifier "HDMI-A-2"
+    #     Option "PreferredMode" "1920x1080_144.00"
+    #     EndSection
+    #     '';
     };
+    
 }

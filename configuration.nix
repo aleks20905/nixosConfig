@@ -43,15 +43,15 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # services.xserver.enable = true;
   # services.autorandr.enable = true;
 
+
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
+
   services.xserver = {
   enable = true;
-  layout = "us";
+  xkb.layout = "us";
   xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
-
-  displayManager.sddm.wayland.enable = true;
-  displayManager.sddm.enable = true;
-  desktopManager.plasma6.enable = true;
-
 
   videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
 

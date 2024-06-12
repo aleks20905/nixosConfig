@@ -127,8 +127,6 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
-
-  xorg.xrandr
   # neovim
   # neovim-qt
   # wget

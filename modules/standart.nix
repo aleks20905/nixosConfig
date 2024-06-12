@@ -22,7 +22,9 @@
         stdenv
 
         p7zip 
-        toybox 
+        # toybox 
+        lm_sensors
+        xorg.xrandr
 
         lf  
         btop

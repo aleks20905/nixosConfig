@@ -8,15 +8,17 @@
         vscode-fhs
         git
         gh
-        templ
-        air
         
         discord
         google-chrome 
         tor-browser
 
         python3
+        
         go  
+        templ
+        air
+
         libgcc
         gcc
         gdb

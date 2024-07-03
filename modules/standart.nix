@@ -4,7 +4,7 @@
 
     environment.systemPackages = with pkgs; [
 
-        godot
+        godot_4
         vscode
         vscode-fhs
         git

@@ -30,12 +30,23 @@
     # };
  
     # services.udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
-   
+    # services.xserver.xkbVariant = "bg";
+
+  
     services.xserver = {
     enable = true;
-    xkb.layout = "us";
-    # xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
+    xkb.layout = "us, bg";
+    xkb.variant = ",phonetic";
 
+    # displayManager.sessionCommands = ''
+    #     xrandr --output HDMI-A-2 --set "Broadcast RGB" "Full"
+    # '';
+
+
+    # xkb.options = "grp:win_space_toggle"; #! doest work ???
+
+    # xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
+    
     # videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
 
     # config = ''
@@ -46,6 +57,8 @@
     #     Section "Monitor"
     #     Identifier "HDMI-A-2"
     #     Option "PreferredMode" "1920x1080_144.00"
+    #     Option "TearFree" "true"
+    #     Option "BroadcastRGB" "Full"
     #     EndSection
     #     '';
     };

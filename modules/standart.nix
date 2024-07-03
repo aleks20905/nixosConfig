@@ -7,6 +7,7 @@
         vscode
         vscode-fhs
         git
+        gh
         templ
         air
         

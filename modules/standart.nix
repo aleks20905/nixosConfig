@@ -4,6 +4,7 @@
 
     environment.systemPackages = with pkgs; [
 
+        godot
         vscode
         vscode-fhs
         git
@@ -14,7 +15,7 @@
         tor-browser
 
         python3
-        
+
         go  
         templ
         air

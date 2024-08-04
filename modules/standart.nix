@@ -32,6 +32,8 @@
         gh
         
         discord
+        spotify
+        bambu-studio
         google-chrome 
         tor-browser
 

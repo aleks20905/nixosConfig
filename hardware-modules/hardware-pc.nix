@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  # boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -21,7 +21,26 @@
   #   "video=DVI-D-1:1280x1024@60"
   # ];
 
+  # hardware.gpu.amd.enable = true;
+
+  hardware.graphics.extraPackages = [
+    pkgs.amdvlk
+  ];
+
+  # To enable Vulkan support for 32-bit applications, also add:
+  hardware.graphics.extraPackages32 = [
+    pkgs.driversi686Linux.amdvlk
+  ];
+
+  # Force radv
+  environment.variables.AMD_VULKAN_ICD = "RADV";
+  # Or
+  environment.variables.VK_ICD_FILENAMES =
+    "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
   
+  
+
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";

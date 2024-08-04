@@ -33,12 +33,17 @@
   # ];
 
   # Force radv
-  environment.variables.AMD_VULKAN_ICD = "RADV";
-  # Or
-  environment.variables.VK_ICD_FILENAMES =
-    "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+  # environment.variables.AMD_VULKAN_ICD = "RADV";
+  # # Or
+  # environment.variables.VK_ICD_FILENAMES =
+  #   "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
   
-  
+  # todo move to separeta folder "activationScript.nix"
+  system.activationScripts.report-changes = ''
+    PATH=$PATH:${lib.makeBinPath [ pkgs.nvd pkgs.nix ]}
+    nvd diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
+  '';
+  #  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
   # Bootloader.
@@ -48,6 +53,9 @@
 
   networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+
+  
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/487bcdb3-43a4-4c28-94a2-8594b7617fad";

@@ -43,6 +43,8 @@
         templ
         air
 
+        nodejs_22
+
         libgcc
         gcc
         gdb

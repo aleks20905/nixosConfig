@@ -47,6 +47,7 @@
         gcc
         gdb
         stdenv
+        gnumake
 
         p7zip 
         # toybox 

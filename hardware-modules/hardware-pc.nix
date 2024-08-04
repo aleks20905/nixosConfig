@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  # boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -23,22 +23,28 @@
 
   # hardware.gpu.amd.enable = true;
 
-  hardware.graphics.extraPackages = [
-    pkgs.amdvlk
-  ];
+  # hardware.graphics.extraPackages = [
+  #   pkgs.amdvlk
+  # ];
 
-  # To enable Vulkan support for 32-bit applications, also add:
-  hardware.graphics.extraPackages32 = [
-    pkgs.driversi686Linux.amdvlk
-  ];
+  # # To enable Vulkan support for 32-bit applications, also add:
+  # hardware.graphics.extraPackages32 = [
+  #   pkgs.driversi686Linux.amdvlk
+  # ];
 
-  # Force radv
-  environment.variables.AMD_VULKAN_ICD = "RADV";
-  # Or
-  environment.variables.VK_ICD_FILENAMES =
-    "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+  # # Force radv
+  # environment.variables.AMD_VULKAN_ICD = "RADV";
+  # # Or
+  # environment.variables.VK_ICD_FILENAMES =
+  #   "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
   
-  
+  # todo move to separeta folder "activationScript.nix"
+  system.activationScripts.report-changes = ''
+    PATH=$PATH:${lib.makeBinPath [ pkgs.nvd pkgs.nix ]}
+    nvd diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2)
+  '';
+  #  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
   # Bootloader.

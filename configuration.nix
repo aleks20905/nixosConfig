@@ -39,20 +39,23 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
     LC_TIME = "bg_BG.UTF-8";
   };
 
-  # # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-  # services.autorandr.enable = true;
+  # Disable X11 if not needed
+  # services.xserver.enable = false;
 
-
-  services.displayManager.sddm.wayland.enable = true;
+  # Enable SDDM and Wayland support
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.displayManager.defaultSession = "plasma";
+  services.displayManager.sddm.wayland.enable = true;
 
-  # # Configure keymap in X11
-  # services.xserver = {
-  #   xkb.layout = "us";
-  #   xkb.variant = "";
-  # };
+  # Enable Plasma 6 with Wayland
+  services.desktopManager.plasma6.enable = true;
+  # services.desktopManager.plasma6.displayServer = "wayland"; # Explicitly set Wayland
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+    oxygen
+  ];
+
 
   
 
@@ -161,7 +164,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 
 }

@@ -3,32 +3,34 @@
 {
   
 
-    environment.systemPackages = with pkgs; [
+    # environment.systemPackages = with pkgs; [
     
-        arduino
-        cura
-    ];
+    #     arduino
+    #     cura
+    # ];
 
     services.power-profiles-daemon.enable = false; 
     services.tlp = {
         enable = true;
         settings = {
 
+            # CPU Governor
             CPU_SCALING_GOVERNOR_ON_AC = "performance";
-            CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+            CPU_SCALING_GOVERNOR_ON_BAT = "schedutil";  # Balanced but more responsive
 
-            CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+            # Energy Performance Policy
+            CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_performance";  # Prioritizes performance a bit more
             CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
 
+            # Performance Limits
             CPU_MIN_PERF_ON_AC = 100;
             CPU_MAX_PERF_ON_AC = 100;
-            CPU_MIN_PERF_ON_BAT = 60;
+            CPU_MIN_PERF_ON_BAT = 50;  # Higher minimum performance on battery
             CPU_MAX_PERF_ON_BAT = 100;
 
-        #Optional helps save long term battery health
-        START_CHARGE_THRESH_BAT0 = 90; # 40 and bellow it starts to charge
-
-        STOP_CHARGE_THRESH_BAT0 = 100; # 80 and above it stops charging
+            # Battery Charge Thresholds (Optional)
+            START_CHARGE_THRESH_BAT0 = 80;  # Start charging at 80% and below
+            STOP_CHARGE_THRESH_BAT0 = 90;  # Stop charging at 90% and above
 
         };
     };

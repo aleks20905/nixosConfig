@@ -32,7 +32,7 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hardware-modules/hardware-laptop.nix
-            ./modules/laptopConfig.nix
+            # ./modules/laptopConfig.nix
             ./modules/penTools.nix
             ./modules/db.nix
             ./modules/standart.nix

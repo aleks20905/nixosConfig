@@ -23,6 +23,11 @@
     };
     };
 
+    services.xserver = {
+        enable = true;
+        xkb.layout = "us, bg";
+        xkb.variant = ",phonetic";
+    };
     environment.systemPackages = with pkgs; [
 
         godot_4

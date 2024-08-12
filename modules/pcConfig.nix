@@ -36,9 +36,9 @@
 
   
     services.xserver = {
-    enable = true;
-    xkb.layout = "us, bg";
-    xkb.variant = ",phonetic";
+    # enable = true;
+    # xkb.layout = "us, bg";
+    # xkb.variant = ",phonetic";
 
     # displayManager.sessionCommands = ''
     #     xrandr --output HDMI-A-2 --set "Broadcast RGB" "Full"

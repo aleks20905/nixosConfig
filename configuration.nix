@@ -94,6 +94,8 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
   home-manager = {
+    backupFileExtension = "backup";
+
     extraSpecialArgs = {inherit inputs;};
     users ={
       "aleks"  = import ./home.nix;

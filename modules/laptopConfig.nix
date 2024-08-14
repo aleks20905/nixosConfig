@@ -2,7 +2,9 @@
 
 {
   
-
+    # Enable touchpad support (enabled default in most desktopManager).
+    services.xserver.libinput.enable = true;
+    
     # environment.systemPackages = with pkgs; [
     
     #     arduino
@@ -34,5 +36,17 @@
 
         };
     };
+    # #saves a little more power thatn normaly but makes the sistem just too much unsusable
+    # services.auto-cpufreq.enable = true;
+    # services.auto-cpufreq.settings = {
+    #     battery = {
+    #         governor = "powersave";
+    #         turbo = "auto";
+    #     };
+    #     charger = {
+    #         governor = "performance";
+    #         turbo = "auto";
+    #     };
+    # };  
 
 }

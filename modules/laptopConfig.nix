@@ -28,8 +28,8 @@
             # Performance Limits
             CPU_MIN_PERF_ON_AC = 100;
             CPU_MAX_PERF_ON_AC = 100;
-            CPU_MIN_PERF_ON_BAT = 50;  # Higher minimum performance on battery
-            CPU_MAX_PERF_ON_BAT = 100;
+            CPU_MIN_PERF_ON_BAT = 40;  # Higher minimum performance on battery
+            CPU_MAX_PERF_ON_BAT = 80;
 
             # Battery Charge Thresholds (Optional)
             START_CHARGE_THRESH_BAT0 = 80;  # Start charging at 80% and below

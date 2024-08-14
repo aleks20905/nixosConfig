@@ -3,14 +3,11 @@
 
 {
 
-    environment.systemPackages = with pkgs; [
-    
-      pgadmin4
+  environment.systemPackages = with pkgs; [
+    pgadmin4 # postgreSQL tool konda works
+  ];
 
-    ];
-  
-    services.postgresql.settings = {
-
+  services.postgresql.settings = {
     enable = true;
     ensureDatabases = [ "gotest" ];
     port = 5432;
@@ -23,7 +20,7 @@
       # ipv6
       host all       all     ::1/128        trust
       '';
-    };
+  };
 
 
 }

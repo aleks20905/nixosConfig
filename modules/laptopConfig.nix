@@ -11,6 +11,7 @@
     #     cura
     # ];
 
+    #POWER PROFILE 
     services.power-profiles-daemon.enable = false; 
     services.tlp = {
         enable = true;
@@ -36,7 +37,7 @@
 
         };
     };
-    # #saves a little more power thatn normaly but makes the sistem just too much unsusable
+    # #saves a little more power than normaly but makes the system just too much laggy
     # services.auto-cpufreq.enable = true;
     # services.auto-cpufreq.settings = {
     #     battery = {

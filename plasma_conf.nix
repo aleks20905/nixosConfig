@@ -1,4 +1,8 @@
 { config, pkgs, ... }:
+let
+  wallpaper-main = builtins.path {
+    path = ./background_purple.bmp;
+  };
 {
   programs.plasma = {
     enable = true;
@@ -858,7 +862,7 @@
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
       "plasmanotifyrc"."Applications/discord"."Seen" = true;
       "plasmarc"."Theme"."name" = "Utterly-Round";
-      "plasmarc"."Wallpapers"."usersWallpapers" = "/home/aleks/Desktop/idk/1023283-neon-purple-background asdasdp.bmp";
+      "plasmarc"."Wallpapers"."usersWallpapers" = "${wallpaper-main}";
     };
   };
 }

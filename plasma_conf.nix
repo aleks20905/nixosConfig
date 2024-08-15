@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
-let
-  wallpaper-main = builtins.path {
-    path = ./background_purple.bmp;
-  };
+
 {
   programs.plasma = {
     enable = true;
@@ -862,7 +859,7 @@ let
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
       "plasmanotifyrc"."Applications/discord"."Seen" = true;
       "plasmarc"."Theme"."name" = "Utterly-Round";
-      "plasmarc"."Wallpapers"."usersWallpapers" = "${wallpaper-main}";
+      "plasmarc"."Wallpapers"."usersWallpapers" = "/home/aleks/Desktop/nixosConfig/background_purple.bmp";
     };
   };
 }

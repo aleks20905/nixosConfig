@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  ... }:
 
 {
-  imports = [ ./plasma_orig.nix ];
+  imports = [ ./plasma_conf.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aleks";

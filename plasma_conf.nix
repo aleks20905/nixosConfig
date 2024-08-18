@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  wallpaper_main = builtins.path { path = ./background_purple.bmp; };
+  wallpaper_main = builtins.toPath ./background_purple.bmp;
 in
 {
   programs.plasma = {
@@ -864,4 +864,5 @@ in
       "plasmarc"."Wallpapers"."usersWallpapers" = "${wallpaper_main}";
     };
   };
+  # environment.etc."wallpaper-path".text = builtins.toString wallpaper_main;
 }

@@ -33,8 +33,10 @@
     # Global-PACKAGES
     environment.systemPackages = with pkgs; [
         
+
         #------- Development Environments -------
         godot_4
+        neovim
         vscode
         vscode-fhs
         git
@@ -59,6 +61,7 @@
         air
 
         nodejs_22
+        
         # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
 
         libgcc
@@ -75,6 +78,8 @@
 
         #------- Console Utilities -------
         # toybox # problem bugs and cant use ls and etc 
+        ripgrep
+        kitty
         lf  
         btop
         neofetch

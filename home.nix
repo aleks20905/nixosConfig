@@ -1,7 +1,7 @@
 { config, pkgs,  ... }:
 
 {
-  imports = [ ./plasma_conf.nix ];
+  # imports = [ ./plasma_conf.nix ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aleks";
@@ -29,7 +29,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono"]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

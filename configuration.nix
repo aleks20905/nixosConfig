@@ -43,25 +43,22 @@
   # services.xserver.enable = false;
 
   # Enable SDDM and Wayland support
-  services.displayManager.sddm.enable = true;
-  services.displayManager.defaultSession = "plasma";
-  services.displayManager.sddm.wayland.enable = true;
+  #services.displayManager.sddm.enable = true;
+  #services.displayManager.defaultSession = "plasma";
+  #services.displayManager.sddm.wayland.enable = true;
 
   # Enable Plasma 6 with Wayland
-  services.desktopManager.plasma6.enable = true;
+  #services.desktopManager.plasma6.enable = true;
   # services.desktopManager.plasma6.displayServer = "wayland"; # Explicitly set Wayland
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    konsole
-    oxygen
-  ];
 
+  # Enable the KDE Plasma Desktop Environment.
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -70,7 +67,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+    #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -85,7 +82,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
-      kate
+      kdePackages.kate
     #  thunderbird
     ];
   };

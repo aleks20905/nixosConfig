@@ -51,6 +51,7 @@
         prusa-slicer 
         google-chrome 
         tor-browser
+        qalculate-qt
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------

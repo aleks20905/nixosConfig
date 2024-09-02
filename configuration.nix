@@ -115,8 +115,9 @@
   services.udev.extraRules = '' 
     KERNEL=="ttyACM0", MODE:="666"
   '';
-
-
+  
+  # addes partition manager 
+  # programs.partition-manager.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

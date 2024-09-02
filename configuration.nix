@@ -91,7 +91,7 @@
   };
 
   home-manager = {
-    # backupFileExtension = "backup";
+    # backupFileExtension = "hm-bs-backup";
 
     extraSpecialArgs = {inherit inputs;};
     users ={

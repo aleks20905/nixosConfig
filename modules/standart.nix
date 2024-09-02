@@ -37,6 +37,7 @@
         #------- Development Environments -------
         godot_4
         neovim
+        lazygit
         vscode
         vscode-fhs
         git
@@ -55,6 +56,7 @@
 
         #------- Programming stuff & Tools -------
         python3
+        lua
 
         go  
         templ
@@ -81,6 +83,7 @@
         ripgrep
         kitty
         lf  
+        fd
         btop
         neofetch
         #------- Console Utilities -------

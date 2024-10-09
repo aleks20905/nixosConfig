@@ -42,6 +42,7 @@
         vscode-fhs
         git
         gh 
+        obsidian
         #------- Development Environments -------
         
         #------- MISC Utilities -------

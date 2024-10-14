@@ -3,13 +3,14 @@
 {
   
     # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    services.xserver.libinput.enable = true;
     
-    # environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
     
-    #     arduino
-    #     cura
-    # ];
+        # arduino
+        # cura
+        factorio
+    ];
 
     #POWER PROFILE 
     # services.power-profiles-daemon.enable = false; 

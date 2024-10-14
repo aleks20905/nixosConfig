@@ -53,6 +53,7 @@
         prusa-slicer 
         google-chrome 
         tor-browser
+        qbittorrent
         qalculate-qt
         #------- MISC Utilities -------
 

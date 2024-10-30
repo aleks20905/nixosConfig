@@ -47,6 +47,7 @@
         
         #------- MISC Utilities -------
         p7zip 
+        viber
         discord
         spotify
         bambu-studio 
@@ -91,7 +92,31 @@
         neofetch
         #------- Console Utilities -------
 
+        openvpn
+        openvpn3
+
+
+        wordlists   
+
+        (wordlists.override {
+            lists = [ rockyou dirbuster];
+        })
+      
+        exploitdb
+        nmap
+        gobuster
+        nikto
+        thc-hydra
+        sqlmap
+
+  
+
+
+
+
     ];
+
+
 
 
 }

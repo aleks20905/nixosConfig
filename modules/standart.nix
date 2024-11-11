@@ -47,6 +47,7 @@
         
         #------- MISC Utilities -------
         p7zip 
+        unar
         viber
         discord
         spotify
@@ -59,7 +60,7 @@
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------
-        python3
+        python313
         lua
 
         go  
@@ -96,18 +97,19 @@
         openvpn3
 
 
-        wordlists   
+        # wordlists   
 
-        (wordlists.override {
-            lists = [ rockyou dirbuster];
-        })
+        # (wordlists.override {
+        #     lists = [ rockyou dirbuster];
+        # })
       
-        exploitdb
-        nmap
-        gobuster
-        nikto
-        thc-hydra
-        sqlmap
+        # wireshark
+        # exploitdb
+        # nmap
+        # gobuster
+        # nikto
+        # thc-hydra
+        # sqlmap
 
   
 

@@ -14,10 +14,10 @@
                 enable = true;
                 theme = "agnoster";
                 plugins = [
-                "git"
-                "history"
-                "rust"
-                "deno"
+                # "git"
+                # "history"
+                # "rust"
+                # "deno"
                 ];
             };
         };

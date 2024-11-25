@@ -33,8 +33,8 @@
           modules = [ 
             ./hardware-modules/hardware-laptop.nix
             ./modules/laptopConfig.nix
-            ./modules/penTools.nix
-            ./modules/db.nix
+            # ./modules/penTools.nix
+            # ./modules/db.nix
             ./modules/standart.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
@@ -47,7 +47,7 @@
             ./hardware-modules/hardware-pc.nix
             ./modules/pcConfig.nix
             # ./modules/penTools.nix
-            ./modules/db.nix
+            # ./modules/db.nix
             ./modules/standart.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default

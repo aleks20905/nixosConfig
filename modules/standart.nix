@@ -47,7 +47,7 @@
         
         #------- MISC Utilities -------
         p7zip 
-        unar
+        # unar
         viber
         discord
         spotify
@@ -57,6 +57,8 @@
         tor-browser
         qbittorrent
         qalculate-qt
+        openvpn
+        openvpn3
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------
@@ -81,7 +83,7 @@
         #------- System Utilities -------
         lm_sensors      # Hardware monitoring tool
         xorg.xrandr     # need for thest in for pcConfig [remove]
-        #------- MISC_2 -------
+        #------- System Utilities -------
 
         #------- Console Utilities -------
         # toybox # problem bugs and cant use ls and etc 
@@ -93,26 +95,7 @@
         neofetch
         #------- Console Utilities -------
 
-        openvpn
-        openvpn3
-
-
-        # wordlists   
-
-        # (wordlists.override {
-        #     lists = [ rockyou dirbuster];
-        # })
-      
-        # wireshark
-        # exploitdb
-        # nmap
-        # gobuster
-        # nikto
-        # thc-hydra
-        # sqlmap
-
-  
-
+        
 
 
 

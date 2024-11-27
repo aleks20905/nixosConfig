@@ -12,6 +12,11 @@
     #     factorio
     # ];
 
+    # opens the ports so that u can upload sketches using arduino
+    # services.udev.extraRules = '' 
+    #     KERNEL=="ttyACM0", MODE:="666"
+    # '';
+    
     #POWER PROFILE 
     # services.power-profiles-daemon.enable = false; 
     # services.tlp = {

@@ -100,22 +100,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   hardware.bluetooth.enable = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-
-  environment.systemPackages = with pkgs; [
-  # neovim
-  # neovim-qt
-  # wget
-  ];
-
-  
-  # opens the ports so that u can upload sketches using arduino
-  services.udev.extraRules = '' 
-    KERNEL=="ttyACM0", MODE:="666"
-  '';
-  
+ 
   # addes partition manager 
   # programs.partition-manager.enable = true;
 

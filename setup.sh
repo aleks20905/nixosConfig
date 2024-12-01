@@ -12,6 +12,7 @@ switch_mode() {
 
 # Function to update the flake
 update_nix() {
+    echo "Flake update ..."
     sudo nix flake update 
 }
 
@@ -25,6 +26,11 @@ what_happend_all() {
 
 }
 
+# collect garbage and remove old versions
+cleanup_system() {
+    echo "Collecting garbage and deleting old versions..."
+    sudo nix-collect-garbage -d
+}
 
 # Main function to display menu and handle user input
 main() {
@@ -35,6 +41,7 @@ main() {
     echo "4. flake update"
     echo "5. whats happend "
     echo "6. whats happend - ALL"
+    echo "7. Cleanup System (Garbage Collection)"
     echo "0. Exit"
     read -p "Enter your choice: " choice
 
@@ -45,6 +52,7 @@ main() {
         4) update_nix ;;
         5) what_happend ;;
         5) what_happend_all ;;
+        7) cleanup_system ;;
         0) echo "Exiting..."; exit ;;
         *) echo "Invalid choice. Please choose again." ;;
     esac

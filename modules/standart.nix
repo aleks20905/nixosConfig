@@ -96,7 +96,7 @@
         neofetch
         #------- Console Utilities -------
 
-        
+        nerd-fonts.fantasque-sans-mono 
 
 
 

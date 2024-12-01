@@ -32,7 +32,6 @@
 
     # Global-PACKAGES
    environment.systemPackages = with pkgs; [
-        
 
         #------- Development Environments -------
         godot_4
@@ -50,6 +49,7 @@
         # unar
         viber
         discord
+        vesktop
         spotify
         bambu-studio 
         prusa-slicer 
@@ -62,7 +62,8 @@
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------
-        python313
+        sqlite
+        python312
         lua
 
         go  

@@ -26,10 +26,33 @@ what_happend_all() {
 
 }
 
-# collect garbage and remove old versions
+# Function to collect garbage and remove old versions based on user input
 cleanup_system() {
-    echo "Collecting garbage and deleting old versions..."
-    sudo nix-collect-garbage -d
+    echo "Garbage Collection Options:"
+    echo "1. Delete everything"
+    echo "2. Delete older than 30 days"
+    echo "3. Custom number of days"
+    echo "0. Go back"
+    read -p "Enter your choice: " gc_choice
+
+    case $gc_choice in
+        1)
+            echo "Deleting everything..."
+            sudo nix-collect-garbage -d;;
+        2)
+            echo "Deleting everything older than 30 days..."
+            sudo nix-collect-garbage --delete-older-than 30d;;
+        3)
+            read -p "Enter the number of days: " days
+            echo "Deleting everything older than $days days..."
+            sudo nix-collect-garbage --delete-older-than "${days}d";;
+        0)
+            return ;; # Go back to the main menu
+        *)
+            echo "Invalid choice. Please choose again."
+            cleanup_system ;; # Call again if the choice is invalid
+            
+    esac
 }
 
 # Main function to display menu and handle user input

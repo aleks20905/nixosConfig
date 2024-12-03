@@ -100,7 +100,14 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   hardware.bluetooth.enable = true;
- 
+
+  # nix Garbage colection - atomatily to delete garbage when they are <value> days or etc ...  
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 30d";
+  # };
+  
   # addes partition manager 
   # programs.partition-manager.enable = true;
 

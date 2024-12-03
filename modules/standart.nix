@@ -47,7 +47,7 @@
         #------- MISC Utilities -------
         p7zip 
         # unar
-        viber
+        # viber
         discord
         vesktop
         spotify

@@ -21,8 +21,9 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             # ./modules/penTools.nix
-            ./modules/db.nix
+            # ./modules/db.nix
             ./modules/standart.nix
+            ./modules/networking.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -36,6 +37,7 @@
             # ./modules/penTools.nix
             # ./modules/db.nix
             ./modules/standart.nix
+            ./modules/networking.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -49,6 +51,7 @@
             # ./modules/penTools.nix
             # ./modules/db.nix
             ./modules/standart.nix
+            ./modules/networking.nix
             ./configuration.nix
             inputs.home-manager.nixosModules.default
           ];

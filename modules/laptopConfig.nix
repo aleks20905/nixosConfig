@@ -1,7 +1,7 @@
 { config, pkgs, ...}:
 
 {
-  
+    networking.networkmanager.wifi.powersave = true; 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
     

@@ -1,11 +1,10 @@
 { config, pkgs, ...}:
 
 {
-    users.defaultUserShell=pkgs.zsh; # needed
 
-    # enable zsh and oh my zsh
-    programs = {
-        zsh = {
+    # enable zsh and set config
+    users.defaultUserShell=pkgs.zsh; # needed
+    programs.zsh = {
             enable = true;
             autosuggestions.enable = true;
             zsh-autoenv.enable = true;
@@ -21,7 +20,6 @@
                 ];
             };
         };
-    };
 
     # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
     services.xserver = {
@@ -30,8 +28,14 @@
         xkb.variant = ",phonetic";
     };
 
+    # Docker stuff rootles etc ... 
+    virtualisation.docker.rootless = {
+        enable = true;
+        setSocketVariable = true;
+    };
+    
     # Global-PACKAGES
-   environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
 
         #------- Development Environments -------
         godot_4
@@ -96,7 +100,9 @@
         neofetch
         #------- Console Utilities -------
 
+
         nerd-fonts.fantasque-sans-mono
+        # nixpacks # some type of conteriner shiet idk 'shity version of docker '
 
 
         wineWowPackages.stable

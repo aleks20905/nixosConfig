@@ -55,6 +55,12 @@ cleanup_system() {
     esac
 }
 
+nix_store_optimize() {
+    echo "nix store optimize"
+    nix store optimise
+
+}
+
 # Main function to display menu and handle user input
 main() {
     echo "Choose mode to switch:"
@@ -65,6 +71,7 @@ main() {
     echo "5. whats happend "
     echo "6. whats happend - ALL"
     echo "7. Cleanup System (Garbage Collection)"
+    echo "8. Nix store optimize"
     echo "0. Exit"
     read -p "Enter your choice: " choice
 
@@ -76,6 +83,7 @@ main() {
         5) what_happend ;;
         5) what_happend_all ;;
         7) cleanup_system ;;
+        8) cnix_store_optimize  ;;
         0) echo "Exiting..."; exit ;;
         *) echo "Invalid choice. Please choose again." ;;
     esac

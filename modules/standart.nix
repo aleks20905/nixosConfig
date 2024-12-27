@@ -50,22 +50,22 @@
         vscode
         vscode-fhs
         git
-        gh 
+        # gh 
         obsidian
         #------- Development Environments -------
         
         #------- MISC Utilities -------
-        p7zip 
+        # p7zip 
         # unar
         # viber
 
         steam
 
-        discord
-        vesktop
+        discord 
+        # vesktop # furry discord 
         spotify
-        bambu-studio 
-        prusa-slicer 
+        # bambu-studio # 3d sclicer  
+        # prusa-slicer # 3d sclicer 
         google-chrome 
         tor-browser
         qbittorrent

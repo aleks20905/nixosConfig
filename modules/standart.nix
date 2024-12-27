@@ -28,6 +28,12 @@
         xkb.variant = ",phonetic";
     };
 
+    programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
+
     # Docker stuff rootles etc ... 
     virtualisation.docker.rootless = {
         enable = true;
@@ -52,6 +58,9 @@
         p7zip 
         # unar
         # viber
+
+        steam
+
         discord
         vesktop
         spotify

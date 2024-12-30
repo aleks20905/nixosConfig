@@ -5,21 +5,21 @@
     # enable zsh and set config
     users.defaultUserShell=pkgs.zsh; # needed
     programs.zsh = {
+        enable = true;
+        autosuggestions.enable = true;
+        zsh-autoenv.enable = true;
+        syntaxHighlighting.enable = true;
+        ohMyZsh = {
             enable = true;
-            autosuggestions.enable = true;
-            zsh-autoenv.enable = true;
-            syntaxHighlighting.enable = true;
-            ohMyZsh = {
-                enable = true;
-                theme = "agnoster";
-                plugins = [
-                # "git"
-                # "history"
-                # "rust"
-                # "deno"
-                ];
-            };
+            theme = "agnoster";
+            plugins = [
+            # "git"
+            # "history"
+            # "rust"
+            # "deno"
+            ];
         };
+    };
 
     # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
     services.xserver = {
@@ -70,8 +70,8 @@
         tor-browser
         qbittorrent
         qalculate-qt
-        openvpn
-        openvpn3
+        # openvpn
+        # openvpn3
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------
@@ -95,8 +95,8 @@
         #------- Programming stuff & Tools -------
 
         #------- System Utilities -------
-        lm_sensors      # Hardware monitoring tool
-        xorg.xrandr     # need for thest in for pcConfig [remove]
+        # lm_sensors      # Hardware monitoring tool
+        # xorg.xrandr     # need for thest in for pcConfig [remove]
         #------- System Utilities -------
 
         #------- Console Utilities -------
@@ -106,7 +106,8 @@
         lf  
         fd
         btop
-        neofetch
+        # neofetch
+        fastfetch
         #------- Console Utilities -------
 
 

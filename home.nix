@@ -59,6 +59,11 @@
 
   programs.kitty = {
   	enable = true;
+    font = {
+        name = "FantasqueSansM Nerd Font Mono";
+        size = 12;
+    };
+
   	settings = {
       dynamic_background_opacity = true;
       enable_audio_bell = false;
@@ -69,7 +74,7 @@
   		confirm_os_window_close = -0;
   		copy_on_select = true;
   		clipboard_control = "write-clipboard read-clipboard write-primary read-primary";
-  	  font_family = "FantasqueSansMono Nerd Font";
+  	  # font_family = "FantasqueSansMono Nerd Font";
 
     };
   };

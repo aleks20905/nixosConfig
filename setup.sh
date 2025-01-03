@@ -81,7 +81,7 @@ main() {
         3) switch_mode "$script_dir#pc" ;;
         4) update_nix ;;
         5) what_happend ;;
-        5) what_happend_all ;;
+        6) what_happend_all ;;
         7) cleanup_system ;;
         8) nix_store_optimize  ;;
         0) echo "Exiting..."; exit ;;

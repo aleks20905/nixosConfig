@@ -79,7 +79,8 @@
         python312
         lua
 
-        go  
+        go 
+        # gosec # brutfocess some security problems for golang apps 
         templ
         air
 

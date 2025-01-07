@@ -30,9 +30,11 @@
 
     programs.steam = {
         enable = true;
+        gamescopeSession.enable = true;
         remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
+    programs.gamemode.enable = true;
 
     # Docker stuff rootles etc ... 
     virtualisation.docker.rootless = {
@@ -58,8 +60,6 @@
         # p7zip 
         # unar
         # viber
-
-        steam
 
         discord 
         # vesktop # furry discord 
@@ -115,10 +115,18 @@
         nerd-fonts.fantasque-sans-mono
         # nixpacks # some type of conteriner shiet idk 'shity version of docker '
 
-
         wineWowPackages.stable
 
+        protonup # thing to download porton TODO need to move to diff folder
 
-
+        mangohud # see gpu usage etc frame time top left
     ];
+
+    environment.sessionVariables = {
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+        "\${HOME}/.steam/root/compatibilitytools.d";
+    };
+    # gamemoderun %command%
+    # mangohud %command%
+    # gamescope %command%
 }

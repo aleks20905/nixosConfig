@@ -1,7 +1,6 @@
 { config, pkgs, ...}:
 
 {
-  
 
     environment.systemPackages = with pkgs; [
     
@@ -16,17 +15,19 @@
     #     videoDrivers = [ "amdgpu" ];  # Use "amdgpu" for modern AMD GPUs. If you're using an older AMD GPU, you might need "radeon".
     # };
 
-    # hardware.opengl = {
-    #     enable = true;
-    #     driSupport = true;
-    #     driSupport32Bit = true;
-    # };
+    services.xserver.videoDrivers = ["amdgpu"];
+
+    hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+        # driSupport32Bit = true;
+    };
  
     # services.udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
     # services.xserver.xkbVariant = "bg";
 
   
-    services.xserver = {
+    # services.xserver = {
     # enable = true;
     # xkb.layout = "us, bg";
     # xkb.variant = ",phonetic";
@@ -54,6 +55,6 @@
     #     Option "BroadcastRGB" "Full"
     #     EndSection
     #     '';
-    };
+    # };
     
 }

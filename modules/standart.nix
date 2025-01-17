@@ -46,6 +46,8 @@
     environment.systemPackages = with pkgs; [
 
         #------- Development Environments -------
+
+        kdePackages.kate
         godot_4
         neovim
         lazygit
@@ -67,6 +69,8 @@
         # bambu-studio # 3d sclicer  
         # prusa-slicer # 3d sclicer 
         google-chrome 
+        firefox
+ 
         tor-browser
         qbittorrent
         qalculate-qt

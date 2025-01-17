@@ -34,18 +34,16 @@
   # Disable X11 if not needed
   # services.xserver.enable = false;
 
-  # Enable SDDM and Wayland support
-  #services.displayManager.sddm.enable = true;
-  #services.displayManager.defaultSession = "plasma";
-  #services.displayManager.sddm.wayland.enable = true;
-
-  # Enable Plasma 6 with Wayland
-  #services.desktopManager.plasma6.enable = true;
-  # services.desktopManager.plasma6.displayServer = "wayland"; # Explicitly set Wayland
-
   # Enable the KDE Plasma Desktop Environment.
+  services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    plasma-browser-integration
+    konsole
+    oxygen
+  ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -72,11 +70,11 @@
     isNormalUser = true;
     description = "aleks";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      kdePackages.kate
-    #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   firefox
+    #   kdePackages.kate
+    # #  thunderbird
+    # ];
   };
 
   home-manager = {

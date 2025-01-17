@@ -7,6 +7,8 @@
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   imports =
     [ # Include the results of the hardware scan.

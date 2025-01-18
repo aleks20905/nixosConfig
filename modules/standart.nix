@@ -64,7 +64,6 @@
         lazygit
         vscode
         vscode-fhs
-        git
         # gh 
         obsidian
         #------- Development Environments -------

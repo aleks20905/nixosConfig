@@ -1,6 +1,7 @@
 {inputs, config, pkgs, lib, ...}: {
 
     imports = [
+        ./openshh.nix
         ./users.nix 
         inputs.home-manager.nixosModules.default
     ];

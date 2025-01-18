@@ -31,7 +31,6 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/laptop/hardware-config.nix
-            ./modules/laptopConfig.nix
             # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix

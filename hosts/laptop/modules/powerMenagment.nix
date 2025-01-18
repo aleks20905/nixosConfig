@@ -3,21 +3,9 @@
 {
     networking.networkmanager.wifi.powersave = true; 
     
-
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
     
-    # environment.systemPackages = with pkgs; [
-    
-    #     # arduino
-    #     # cura
-    #     factorio
-    # ];
-
-    # opens the ports so that u can upload sketches using arduino
-    # services.udev.extraRules = '' 
-    #     KERNEL=="ttyACM0", MODE:="666"
-    # '';
     
     #POWER PROFILE 
     # services.power-profiles-daemon.enable = false; 
@@ -45,6 +33,7 @@
 
     #     };
     # };
+
     # #saves a little more power than normaly but makes the system just too much laggy
     # services.auto-cpufreq.enable = true;
     # services.auto-cpufreq.settings = {
@@ -58,8 +47,6 @@
     #     };
     # };  
 
-    # disables network-wait-online so that it boots faster shoud not make any problems !!! but its posible to cause some services to break !!! 
-    systemd.services.NetworkManager-wait-online.enable = false;
 
 
 }

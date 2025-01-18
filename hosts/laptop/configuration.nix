@@ -2,52 +2,18 @@
 { config, pkgs, inputs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-
   imports = [ 
-    inputs.home-manager.nixosModules.default
+    ../common
   ];
-
+  
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users ={
-      "aleks"  = import ./home.nix;
+    "aleks"  = import ./home.nix;
     };
   };
-   
 
-  # Disable X11 if not needed
-  # services.xserver.enable = false;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    oxygen
-  ];
-
-  users.users.aleks = {
-    isNormalUser = true;
-    description = "aleks";
-    extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  hardware.bluetooth.enable = true;
-
-  # nix Garbage colection - atomatily to delete garbage when they are <value> days or etc ...  
-  # nix.gc = {
-  #   automatic = true;
-  #   dates = "weekly";
-  #   options = "--delete-older-than 30d";
-  # };
-  
+ 
   # addes partition manager 
   # programs.partition-manager.enable = true;
 
@@ -61,8 +27,6 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -71,6 +35,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
-
 }
+

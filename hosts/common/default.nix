@@ -1,6 +1,7 @@
 {inputs, config, pkgs, lib, ...}: {
 
     imports = [
+        ./networking.nix
         ./openssh.nix
         ./users.nix 
         inputs.home-manager.nixosModules.default

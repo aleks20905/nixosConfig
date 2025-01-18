@@ -38,8 +38,10 @@
     };
 
     imports = [ 
-       ./virtualisation/default.nix 
+       ./fonts/default.nix 
        ./gaming/default.nix 
+    #    ./penTools/default.nix 
+       ./virtualisation/default.nix 
        ./zsh/default.nix 
     ];
 
@@ -125,9 +127,7 @@
         #------- Console Utilities -------
 
 
-        nerd-fonts.fantasque-sans-mono
 
-        # nixpacks # some type of conteriner shiet idk 'shity version of docker '
 
     ];
 

@@ -18,6 +18,25 @@
         LC_TIME = "bg_BG.UTF-8";
     };
 
+    # Enable CUPS to print documents.
+    services.printing.enable = true;
+
+    # Enable sound with pipewire.
+    services.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        # If you want to use JACK applications, uncomment this
+        #jack.enable = true;
+
+        # use the example session manager (no others are packaged yet so this is enabled by default,
+        # no need to redefine it in your config for now)
+        #media-session.enable = true;
+    };
+
     imports = [ 
        ./virtualisation/default.nix 
        ./gaming/default.nix 
@@ -80,7 +99,7 @@
         templ
         air
 
-        nodejs_22
+        # nodejs_22
         
         # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
 
@@ -103,7 +122,6 @@
         lf  
         fd
         btop
-        # neofetch
         fastfetch
         #------- Console Utilities -------
 
@@ -112,15 +130,6 @@
 
         # nixpacks # some type of conteriner shiet idk 'shity version of docker '
 
-        # factorio-headless
     ];
-
-    # services.factorio = {
-    #     enable = true;
-    #     public = false;
-    #     requireUserVerification = false;
-    #     lan = true;
-    #     openFirewall = true;
-    # };
 
 }

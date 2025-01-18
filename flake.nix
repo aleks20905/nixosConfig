@@ -33,7 +33,7 @@
           modules = [ 
             ./hosts/laptop/hardware-config.nix
             ./modules/laptopConfig.nix
-            # ./modules/penTools.nix
+            # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix
             ./modules/networking.nix
@@ -46,7 +46,7 @@
           modules = [ 
             ./hosts/pc/hardware-config.nix
             ./modules/pcConfig.nix
-            # ./modules/penTools.nix
+            # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix
             ./modules/networking.nix

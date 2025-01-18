@@ -124,7 +124,17 @@
         protonup # thing to download porton TODO need to move to diff folder
 
         mangohud # see gpu usage etc frame time top left
+
+        # factorio-headless
     ];
+
+    # services.factorio = {
+    #     enable = true;
+    #     public = false;
+    #     requireUserVerification = false;
+    #     lan = true;
+    #     openFirewall = true;
+    # };
 
     environment.sessionVariables = {
         STEAM_EXTRA_COMPAT_TOOLS_PATHS =

@@ -7,16 +7,9 @@
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
   imports = [ 
-    inputs.home-manager.nixosModules.default
+    ../common
   ];
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users ={
-      "aleks"  = import ./home.nix;
-    };
-  };
-   
+  
   # Disable X11 if not needed
   # services.xserver.enable = false;
 

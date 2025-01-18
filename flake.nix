@@ -23,7 +23,6 @@
         #     # ./modules/penTools.nix
         #     # ./modules/db.nix
         #     ./modules/standart.nix
-        #     ./modules/networking.nix
         #     ./configuration.nix
         #   ];
         # };
@@ -36,7 +35,6 @@
             # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix
-            ./modules/networking.nix
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -49,7 +47,6 @@
             # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix
-            ./modules/networking.nix
             ./hosts/pc/configuration.nix
           ];
         };

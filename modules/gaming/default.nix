@@ -1,4 +1,4 @@
-{config, lib, ...}:{
+{config, lib, pkgs, ...}:{
 
     programs.steam = {
         enable = true;
@@ -12,6 +12,11 @@
     environment.systemPackages = with pkgs; [
 
         protonup # thing to download porton 
+
+        wineWowPackages.stable # wine translation layer ...
+
+        mangohud # see gpu usage etc frame time top left
+
 
     ];
 

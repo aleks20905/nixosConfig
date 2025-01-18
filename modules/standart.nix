@@ -20,6 +20,7 @@
 
     imports = [ 
        ./virtualisation/default.nix 
+       ./gaming/default.nix 
     ];
 
 
@@ -127,12 +128,8 @@
 
 
         nerd-fonts.fantasque-sans-mono
+
         # nixpacks # some type of conteriner shiet idk 'shity version of docker '
-
-        wineWowPackages.stable
-
-
-        mangohud # see gpu usage etc frame time top left
 
         # factorio-headless
     ];

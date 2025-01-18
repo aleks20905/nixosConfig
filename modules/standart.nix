@@ -119,7 +119,6 @@
         #------- Console Utilities -------
         # toybox # problem bugs and cant use ls and etc 
         ripgrep
-        kitty
         lf  
         fd
         btop

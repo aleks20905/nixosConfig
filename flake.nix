@@ -17,40 +17,40 @@
     in
     {
       nixosConfigurations = {
-        default = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
-            # ./modules/penTools.nix
-            # ./modules/db.nix
-            ./modules/standart.nix
-            ./modules/networking.nix
-            ./configuration.nix
-          ];
-        };
+        # default = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {inherit inputs;};
+        #   modules = [ 
+        #     # ./modules/penTools.nix
+        #     # ./modules/db.nix
+        #     ./modules/standart.nix
+        #     ./modules/networking.nix
+        #     ./configuration.nix
+        #   ];
+        # };
 
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./hardware-modules/hardware-laptop.nix
+            ./hosts/laptop/hardware-laptop.nix
             ./modules/laptopConfig.nix
             # ./modules/penTools.nix
             # ./modules/db.nix
             ./modules/standart.nix
             ./modules/networking.nix
-            ./configuration.nix
+            ./hosts/laptop/configuration.nix
           ];
         };
 
         pc = nixpkgs.lib.nixosSystem {
           specialArgs = {inherit inputs;};
           modules = [ 
-            ./hardware-modules/hardware-pc.nix
+            ./hosts/pc/hardware-pc.nix
             ./modules/pcConfig.nix
             # ./modules/penTools.nix
             # ./modules/db.nix
             ./modules/standart.nix
             ./modules/networking.nix
-            ./configuration.nix
+            ./hosts/pc/configuration.nix
           ];
         };
       };

@@ -25,7 +25,6 @@
             ./modules/standart.nix
             ./modules/networking.nix
             ./configuration.nix
-            inputs.home-manager.nixosModules.default
           ];
         };
 
@@ -39,7 +38,6 @@
             ./modules/standart.nix
             ./modules/networking.nix
             ./configuration.nix
-            inputs.home-manager.nixosModules.default
           ];
         };
 
@@ -53,9 +51,9 @@
             ./modules/standart.nix
             ./modules/networking.nix
             ./configuration.nix
-            inputs.home-manager.nixosModules.default
           ];
         };
       };
+
     };
 }

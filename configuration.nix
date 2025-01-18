@@ -10,11 +10,17 @@
   
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
-  imports =
-    [ # Include the results of the hardware scan.
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [ 
+    inputs.home-manager.nixosModules.default
+  ];
 
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users ={
+      "aleks"  = import ./home.nix;
+    };
+  };
+   
   # Set your time zone.
   time.timeZone = "Europe/Sofia";
 
@@ -79,15 +85,7 @@
     # ];
   };
 
-  home-manager = {
-    # backupFileExtension = "hm-bs-backup";
-
-    extraSpecialArgs = {inherit inputs;};
-    users ={
-      "aleks"  = import ./home.nix;
-    };
-  };
-    
+   
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

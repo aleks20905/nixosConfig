@@ -21,28 +21,9 @@
     imports = [ 
        ./virtualisation/default.nix 
        ./gaming/default.nix 
+       ./zsh/default.nix 
     ];
 
-
-
-    # enable zsh and set config
-    users.defaultUserShell=pkgs.zsh; # needed
-    programs.zsh = {
-        enable = true;
-        autosuggestions.enable = true;
-        zsh-autoenv.enable = true;
-        syntaxHighlighting.enable = true;
-        ohMyZsh = {
-            enable = true;
-            theme = "agnoster";
-            plugins = [
-            # "git"
-            # "history"
-            # "rust"
-            # "deno"
-            ];
-        };
-    };
 
     # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
     services.xserver = {

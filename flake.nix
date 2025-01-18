@@ -42,7 +42,6 @@
           specialArgs = {inherit inputs;};
           modules = [ 
             ./hosts/pc/hardware-config.nix
-            ./modules/pcConfig.nix
             # ./modules/penTools/default.nix
             # ./modules/db.nix
             ./modules/standart.nix

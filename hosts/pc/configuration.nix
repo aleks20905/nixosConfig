@@ -4,6 +4,10 @@
 {
   imports = [ 
     ../common
+    ../common/modules/amd.nix
+
+
+    ./modules/testConfig.nix
   ];
   
   home-manager = {

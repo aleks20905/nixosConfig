@@ -21,24 +21,6 @@
     };
   };
    
-  # Set your time zone.
-  time.timeZone = "Europe/Sofia";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "bg_BG.UTF-8";
-    LC_IDENTIFICATION = "bg_BG.UTF-8";
-    LC_MEASUREMENT = "bg_BG.UTF-8";
-    LC_MONETARY = "bg_BG.UTF-8";
-    LC_NAME = "bg_BG.UTF-8";
-    LC_NUMERIC = "bg_BG.UTF-8";
-    LC_PAPER = "bg_BG.UTF-8";
-    LC_TELEPHONE = "bg_BG.UTF-8";
-    LC_TIME = "bg_BG.UTF-8";
-  };
-
   # Disable X11 if not needed
   # services.xserver.enable = false;
 
@@ -49,7 +31,7 @@
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     plasma-browser-integration
-    konsole
+    # konsole
     oxygen
   ];
 

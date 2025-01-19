@@ -2,7 +2,8 @@
 
     imports = [ 
 
-    #    ./lazygit.nix 
+       ./c-dev.nix 
+       ./go.nix 
     ];
 
     environment.systemPackages = with pkgs; [
@@ -14,11 +15,6 @@
 
         lua
 
-        go 
-        # gosec # brutfocess some security problems for golang apps 
-        templ
-        air
-
         # nodejs_22
         
         # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
@@ -28,6 +24,7 @@
         gdb
         stdenv
         gnumake
+
         #------- Programming stuff & Tools -------
 
 

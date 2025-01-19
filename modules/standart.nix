@@ -8,6 +8,7 @@
        ./fonts/default.nix 
        ./gaming/default.nix 
     #    ./penTools/default.nix 
+       ./programming/default.nix 
        ./virtualisation/default.nix 
        ./zsh/default.nix 
 

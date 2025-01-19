@@ -24,8 +24,7 @@
         #------- Development Environments -------
         
         #------- MISC Utilities -------
-        # p7zip 
-        # unar
+       
 
         # viber
         discord 

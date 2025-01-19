@@ -7,6 +7,8 @@
 
     environment.systemPackages = with pkgs; [
 
+        # p7zip 
+        # unar
 
         # bambu-studio # 3d sclicer  
         # prusa-slicer # 3d sclicer 

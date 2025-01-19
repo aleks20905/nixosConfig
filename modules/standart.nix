@@ -31,7 +31,6 @@
         discord 
         # vesktop # furry discord 
 
-        spotify
 
 
         

@@ -5,7 +5,8 @@
     #    ./browsers/default.nix 
     #    ./editors/default.nix 
     #    ./utils/default.nix 
-       ./media
+    #    ./media/spotify.nix
+
     ];
 
 

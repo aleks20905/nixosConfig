@@ -33,13 +33,6 @@
 
         spotify
 
-        # bambu-studio # 3d sclicer  
-        # prusa-slicer # 3d sclicer 
-
-        google-chrome 
-        firefox
-        tor-browser
-
 
         
         #------- MISC Utilities -------

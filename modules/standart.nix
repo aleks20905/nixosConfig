@@ -21,7 +21,6 @@
         godot_4
 
         # gh 
-        lazygit
         #------- Development Environments -------
         
         #------- MISC Utilities -------
@@ -41,11 +40,8 @@
         firefox
         tor-browser
 
-        qbittorrent
 
-        qalculate-qt
-        # openvpn
-        # openvpn3
+        
         #------- MISC Utilities -------
 
         #------- Programming stuff & Tools -------

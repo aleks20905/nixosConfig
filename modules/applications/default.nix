@@ -5,7 +5,6 @@
        ./browsers/default.nix 
        ./editors/default.nix 
        ./utils/default.nix 
-       ./media/default.nix
     ];
 
 

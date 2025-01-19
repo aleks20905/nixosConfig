@@ -1,5 +1,5 @@
 # sudo nixos-rebuild switch  --flake  /home/aleks/Desktop/nixos#default
-{ config, inputs, outputs, ... }:
+{ config, inputs, ... }:
 
 {
   imports = [ 
@@ -15,7 +15,7 @@
   ];
   
   home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
+    extraSpecialArgs = {inherit inputs;};
     users ={
     "aleks"  = import ./home.nix;
     };

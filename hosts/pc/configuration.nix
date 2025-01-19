@@ -5,6 +5,7 @@
   imports = [ 
     ../common
     ../common/modules/amd.nix
+    ../common/modules/audio.nix
 
 
     ./modules/testConfig.nix

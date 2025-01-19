@@ -4,7 +4,7 @@
  
 
     imports = [ 
-       ./editors/default.nix 
+       ./applications/default.nix 
        ./fonts/default.nix 
        ./gaming/default.nix 
     #    ./penTools/default.nix 

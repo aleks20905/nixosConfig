@@ -7,6 +7,8 @@
     #    ./utils/default.nix 
     #    ./media/spotify.nix
 
+       ./theme.nix
+
     ];
 
 

@@ -5,6 +5,7 @@
 
         vscode
         vscode-fhs
+        vscode-runner
     
     ];
 

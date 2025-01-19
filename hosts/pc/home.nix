@@ -6,23 +6,14 @@
     ../../homes/aleks
     # ../../homeManagerModules/common/audio.nix
     ../../homes/common/applications
-    # ../../homes/common/cli
+    ../../homes/common/cli
     # ../../homes/common/desktop/hyprland
     # ../../homes/common/services/gnome-keyring.nix
   ];
 
 
 
-  programs.git = {
-  	enable = true;
-  	userName = "aleks";
-  	userEmail = "aleks_20905@mail.bg";
-    ignores = [
-      ".env "
-      "*.env"
-      ".vscode"
-    ];
-  };
+
 
   programs.kitty = {
   	enable = true;

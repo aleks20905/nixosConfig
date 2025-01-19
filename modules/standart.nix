@@ -20,11 +20,8 @@
         #------- Development Environments -------
         godot_4
 
-        kdePackages.kate
-        neovim
         # gh 
         lazygit
-        obsidian
         #------- Development Environments -------
         
         #------- MISC Utilities -------

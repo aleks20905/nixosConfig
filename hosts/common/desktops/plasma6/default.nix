@@ -1,4 +1,4 @@
-{
+{pkgs, ...}:{
 
 
     # Disable X11 if not needed

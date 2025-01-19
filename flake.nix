@@ -34,7 +34,7 @@
             ./hosts/laptop/hardware-config.nix
             # ./modules/penTools/default.nix
             # ./modules/db.nix
-            ./nixpks/standart.nix
+            ./nixpkgs/standart.nix
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -45,7 +45,7 @@
             ./hosts/pc/hardware-config.nix
             # ./modules/penTools/default.nix
             # ./modules/db.nix
-            ./nixpks/standart.nix
+            ./nixpkgs/standart.nix
             ./hosts/pc/configuration.nix
           ];
         };

@@ -5,7 +5,7 @@
   imports = [
     ../../homeManagerModules/aleks
     # ../../homeManagerModules/common/audio.nix
-    ../../homes/common/applications
+    ../../homeManagerModules/common/applications
     # ../../homes/common/cli
     # ../../homes/common/desktop/hyprland
     # ../../homes/common/services/gnome-keyring.nix

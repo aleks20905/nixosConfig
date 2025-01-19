@@ -11,15 +11,6 @@
        ./zsh/default.nix 
     ];
 
-
-    # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
-    services.xserver = {
-        enable = true;
-        xkb.layout = "us, bg";
-        xkb.variant = ",phonetic";
-    };
-
-   
    
     # Global-PACKAGES
     environment.systemPackages = with pkgs; [

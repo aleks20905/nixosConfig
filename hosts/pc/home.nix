@@ -3,9 +3,9 @@
 {
 
   imports = [
-    ../../homeManagerModules/aleks
+    ../../homes/aleks
     # ../../homeManagerModules/common/audio.nix
-    ../../homeManagerModules/common/applications
+    ../../homes/common/applications
     # ../../homes/common/cli
     # ../../homes/common/desktop/hyprland
     # ../../homes/common/services/gnome-keyring.nix

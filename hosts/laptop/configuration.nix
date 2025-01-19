@@ -7,7 +7,7 @@
     ../common/modules/audio.nix
 
 
-    ../desktops/plasma6/default.nix
+    ../common/desktops/plasma6/default.nix
 
 
     ./modules/powerManagment.nix

@@ -4,6 +4,9 @@
 {
   imports = [ 
     ../common
+    ../common/modules/audio.nix
+
+
     ./modules/powerManagment.nix
   ];
   

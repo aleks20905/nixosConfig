@@ -1,41 +1,7 @@
 { config, pkgs, ...}:
 
 {
-    # Sets your time zone.
-    time.timeZone = "Europe/Sofia";
-
-    # Selects internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "bg_BG.UTF-8";
-        LC_IDENTIFICATION = "bg_BG.UTF-8";
-        LC_MEASUREMENT = "bg_BG.UTF-8";
-        LC_MONETARY = "bg_BG.UTF-8";
-        LC_NAME = "bg_BG.UTF-8";
-        LC_NUMERIC = "bg_BG.UTF-8";
-        LC_PAPER = "bg_BG.UTF-8";
-        LC_TELEPHONE = "bg_BG.UTF-8";
-        LC_TIME = "bg_BG.UTF-8";
-    };
-
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
-
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
-    };
+ 
 
     imports = [ 
        ./fonts/default.nix 
@@ -59,32 +25,36 @@
     environment.systemPackages = with pkgs; [
 
         #------- Development Environments -------
+        godot_4
 
         kdePackages.kate
-        godot_4
         neovim
-        lazygit
         vscode
         vscode-fhs
         # gh 
+        lazygit
         obsidian
         #------- Development Environments -------
         
         #------- MISC Utilities -------
         # p7zip 
         # unar
-        # viber
 
+        # viber
         discord 
         # vesktop # furry discord 
+
         spotify
+
         # bambu-studio # 3d sclicer  
         # prusa-slicer # 3d sclicer 
+
         google-chrome 
         firefox
- 
         tor-browser
+
         qbittorrent
+
         qalculate-qt
         # openvpn
         # openvpn3
@@ -92,7 +62,9 @@
 
         #------- Programming stuff & Tools -------
         sqlite
+
         python312
+
         lua
 
         go 
@@ -130,4 +102,23 @@
 
     ];
 
+    # Sets your time zone.
+    time.timeZone = "Europe/Sofia";
+
+    # Selects internationalisation properties.
+    i18n.defaultLocale = "en_US.UTF-8";
+    i18n.extraLocaleSettings = {
+        LC_ADDRESS = "bg_BG.UTF-8";
+        LC_IDENTIFICATION = "bg_BG.UTF-8";
+        LC_MEASUREMENT = "bg_BG.UTF-8";
+        LC_MONETARY = "bg_BG.UTF-8";
+        LC_NAME = "bg_BG.UTF-8";
+        LC_NUMERIC = "bg_BG.UTF-8";
+        LC_PAPER = "bg_BG.UTF-8";
+        LC_TELEPHONE = "bg_BG.UTF-8";
+        LC_TIME = "bg_BG.UTF-8";
+    };
+
+    # Enable CUPS to print documents.
+    services.printing.enable = true;
 }

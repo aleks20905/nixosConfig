@@ -4,11 +4,13 @@
  
 
     imports = [ 
+       ./editors/default.nix 
        ./fonts/default.nix 
        ./gaming/default.nix 
     #    ./penTools/default.nix 
        ./virtualisation/default.nix 
        ./zsh/default.nix 
+
     ];
 
    
@@ -20,8 +22,6 @@
 
         kdePackages.kate
         neovim
-        vscode
-        vscode-fhs
         # gh 
         lazygit
         obsidian

@@ -9,6 +9,8 @@
     environment.systemPackages = with pkgs; [
 
         #------- Programming stuff & Tools -------
+        godot_4
+
         sqlite
 
         python312
@@ -19,16 +21,7 @@
         
         # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
 
-        libgcc
-        gcc
-        gdb
-        stdenv
-        gnumake
-
         #------- Programming stuff & Tools -------
-
-
-
 
     ];
 

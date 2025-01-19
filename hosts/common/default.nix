@@ -21,8 +21,6 @@
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-    hardware.bluetooth.enable = true;
-
 
     # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
     services.xserver = {
@@ -31,7 +29,22 @@
         xkb.variant = ",phonetic";
     };
 
+    # Sets your time zone.
+    time.timeZone = "Europe/Sofia";
 
+    # Selects internationalisation properties.
+    i18n.defaultLocale = "en_US.UTF-8";
+    i18n.extraLocaleSettings = {
+        LC_ADDRESS = "bg_BG.UTF-8";
+        LC_IDENTIFICATION = "bg_BG.UTF-8";
+        LC_MEASUREMENT = "bg_BG.UTF-8";
+        LC_MONETARY = "bg_BG.UTF-8";
+        LC_NAME = "bg_BG.UTF-8";
+        LC_NUMERIC = "bg_BG.UTF-8";
+        LC_PAPER = "bg_BG.UTF-8";
+        LC_TELEPHONE = "bg_BG.UTF-8";
+        LC_TIME = "bg_BG.UTF-8";
+    };
             
 
 }

@@ -7,6 +7,9 @@
 
     environment.systemPackages = with pkgs; [
 
+        # lm_sensors      # Hardware monitoring tool
+        # xorg.xrandr     # need for thest in for pcConfig [remove]
+
         # p7zip 
         # unar
 

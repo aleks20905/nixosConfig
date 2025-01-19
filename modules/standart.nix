@@ -23,45 +23,6 @@
         # gh 
         #------- Development Environments -------
         
-        #------- MISC Utilities -------
-       
-
-        # viber
-        discord 
-        # vesktop # furry discord 
-
-
-
-        
-        #------- MISC Utilities -------
-
-        #------- Programming stuff & Tools -------
-        sqlite
-
-        python312
-
-        lua
-
-        go 
-        # gosec # brutfocess some security problems for golang apps 
-        templ
-        air
-
-        # nodejs_22
-        
-        # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
-
-        libgcc
-        gcc
-        gdb
-        stdenv
-        gnumake
-        #------- Programming stuff & Tools -------
-
-        #------- System Utilities -------
-        # lm_sensors      # Hardware monitoring tool
-        # xorg.xrandr     # need for thest in for pcConfig [remove]
-        #------- System Utilities -------
 
         #------- Console Utilities -------
         # toybox # problem bugs and cant use ls and etc 
@@ -93,5 +54,5 @@
     };
 
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    # services.printing.enable = true;
 }

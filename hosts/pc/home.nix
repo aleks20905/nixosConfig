@@ -7,7 +7,7 @@
     # ../../homeManagerModules/common/audio.nix
     ../../homes/common/applications
     ../../homes/common/cli
-    ../../homes/terminals/kitty.nix
+    ../../homes/common/terminals/kitty.nix
   ];
 
 

@@ -68,8 +68,6 @@
         ripgrep
         lf  
         fd
-        btop
-        fastfetch
         #------- Console Utilities -------
 
 

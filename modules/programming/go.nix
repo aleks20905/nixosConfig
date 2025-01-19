@@ -10,7 +10,8 @@
 
         air
 
-
+        # golangci-lint
+        # delve
     ];
 
 }

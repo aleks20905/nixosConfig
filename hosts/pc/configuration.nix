@@ -6,6 +6,7 @@
     ../common
     ../common/modules/amd.nix
     ../common/modules/audio.nix
+    ../common/modules/bluetooth.nix
 
 
     ../common/desktops/plasma6/default.nix

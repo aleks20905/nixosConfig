@@ -1,7 +1,7 @@
 {
     imports = [ 
 
-       ./spotify.nix 
+    #    ./spotify.nix # TODO doesnt work RN needs FIX  
     ];
 
 

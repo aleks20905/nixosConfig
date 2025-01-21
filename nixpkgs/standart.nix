@@ -9,7 +9,7 @@
     #    ./penTools
        ./programming
        ./virtualisation
-       ./zsh
+       ./shells
     ];
 
    

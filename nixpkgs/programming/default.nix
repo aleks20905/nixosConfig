@@ -3,7 +3,7 @@
     imports = [ 
 
        ./c-dev.nix 
-       ./go.nix 
+       ./go-dev.nix 
     ];
 
     environment.systemPackages = with pkgs; [

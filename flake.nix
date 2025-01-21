@@ -1,55 +1,57 @@
 {
-  description = "Nixos config flake";
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+	description = "Nixos config flake";
 
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+	inputs = {
 
-    # nix-spicetify.url = "github:the-argus/spicetify-nix";
-    # nix-spicetify.inputs.nixpkgs.follows = "nixpkgs";
-  };
+		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-  outputs = { self, nixpkgs, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      nixosConfigurations = {
-        # default = nixpkgs.lib.nixosSystem {
-        #   specialArgs = {inherit inputs;};
-        #   modules = [ 
-        #     # ./modules/penTools.nix
-        #     # ./modules/db.nix
-        #     ./modules/standart.nix
-        #     ./configuration.nix
-        #   ];
-        # };
+		home-manager.url = "github:nix-community/home-manager";
+		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
-            ./hosts/laptop/hardware-config.nix
-            # ./modules/penTools/default.nix
-            # ./modules/db.nix
-            ./nixpkgs/standart.nix
-            ./hosts/laptop/configuration.nix
-          ];
-        };
+		# nix-spicetify.url = "github:the-argus/spicetify-nix";
+		# nix-spicetify.inputs.nixpkgs.follows = "nixpkgs";
 
-        pc = nixpkgs.lib.nixosSystem {
-          specialArgs = {inherit inputs;};
-          modules = [ 
-            ./hosts/pc/hardware-config.nix
-            # ./modules/penTools/default.nix
-            # ./modules/db.nix
-            ./nixpkgs/standart.nix
-            ./hosts/pc/configuration.nix
-          ];
-        };
-      };
+	};
 
-    };
+	outputs = { self, nixpkgs, ... }@inputs:
+	let
+
+		system = "x86_64-linux";
+		pkgs = nixpkgs.legacyPackages.${system};
+	in {
+
+		nixosConfigurations = {
+
+			# default = nixpkgs.lib.nixosSystem {
+			#   specialArgs = {inherit inputs;};
+			#   modules = [ 
+			#     ./modules/standart.nix
+			#     ./configuration.nix
+			#   ];
+			# };
+
+
+			laptop = nixpkgs.lib.nixosSystem {
+				specialArgs = {inherit inputs;};
+				modules = [ 
+					./hosts/laptop/hardware-config.nix
+					./nixpkgs/standart.nix
+					./hosts/laptop/configuration.nix
+				];
+			};
+
+
+			pc = nixpkgs.lib.nixosSystem {
+				specialArgs = {inherit inputs;};
+				modules = [ 
+					./hosts/pc/hardware-config.nix
+					./nixpkgs/standart.nix
+					./hosts/pc/configuration.nix
+				];
+			};
+
+
+		};
+	};
 }

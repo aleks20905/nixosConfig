@@ -12,6 +12,14 @@
     ../common/desktops/plasma6/default.nix
 
 
+
+
+
+    # ../../services/via
+
+
+
+
     ./modules/testConfig.nix
   ];
   

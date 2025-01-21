@@ -42,7 +42,5 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
 
-  system.stateVersion = "24.11"; # Did you read the comment?
 }

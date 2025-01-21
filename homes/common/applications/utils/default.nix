@@ -5,7 +5,7 @@
     #    ./lazygit.nix 
     ];
 
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
 
         # lm_sensors      # Hardware monitoring tool
         # xorg.xrandr     # need for thest in for pcConfig [remove]

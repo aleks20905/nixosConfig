@@ -1,4 +1,8 @@
 {
-  imports = [
-  ];
+  
+	imports = [
+
+		./browsers
+	];
+
 }

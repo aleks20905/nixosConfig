@@ -2,7 +2,10 @@
   
 	imports = [
 
-		./browsers
+       ./browsers
+       ./communications
+       ./editors
+       ./utils
 	];
 
 }

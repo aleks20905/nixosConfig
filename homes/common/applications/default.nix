@@ -5,6 +5,7 @@
        ./browsers
        ./communications
        ./editors
+       ./media
        ./utils
 	];
 

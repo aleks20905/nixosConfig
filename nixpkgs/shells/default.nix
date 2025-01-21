@@ -1,5 +1,7 @@
 {pkgs, ...}:{
 
+
+    # zsh can be added by home-manager but its harder so no point 
     # enable zsh and set config
     users.defaultUserShell=pkgs.zsh; # needed
     programs.zsh = {

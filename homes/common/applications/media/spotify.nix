@@ -1,5 +1,12 @@
 {inputs, pkgs, ... }:{
 
+    imports = [
+        # For NixOS
+        # inputs.spicetify-nix.nixosModules.default
+        # For home-manager
+        inputs.spicetify-nix.homeManagerModules.default
+    ];
+
     programs.spicetify =
     let
         spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
@@ -13,20 +20,7 @@
         shuffle # shuffle+ (special characters are sanitized out of extension names)
     ];
 
-    enabledCustomApps = with spicePkgs.apps; [
-        newReleases
-        ncsVisualizer
-    ];
-
-    enabledSnippets = with spicePkgs.snippets; [
-        rotatingCoverart
-        pointer
-    ];
-
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
-
-    }
+    };
 
 }
 

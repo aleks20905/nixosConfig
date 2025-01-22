@@ -13,13 +13,15 @@
 
 
 
+
+
+
+
+
+
     ./hardware-config.nix
     ./nixpkgs.nix
-
     ./services.nix
-
-
-
 
     ./modules/testConfig.nix # when testing stuff can be put in side 
   ];

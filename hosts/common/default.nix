@@ -5,6 +5,7 @@
         ./openssh.nix
         ./users.nix 
         inputs.home-manager.nixosModules.default
+        inputs.spicetify-nix.nixosModules.default
     ];
 
     nix = {

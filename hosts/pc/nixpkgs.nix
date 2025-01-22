@@ -1,0 +1,13 @@
+{
+   imports = [ 
+
+
+
+    ../../nixpkgs/standart.nix
+
+
+
+  ];
+   
+} 
+ 

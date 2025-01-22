@@ -45,8 +45,8 @@
 			pc = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs;};
 				modules = [ 
-					./hosts/pc/hardware-config.nix
-					./nixpkgs/standart.nix
+					# ./hosts/pc/hardware-config.nix
+					# ./nixpkgs/standart.nix
 					./hosts/pc/configuration.nix
 				];
 			};

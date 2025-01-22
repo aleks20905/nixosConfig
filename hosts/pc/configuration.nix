@@ -3,16 +3,18 @@
 
 {
   imports = [ 
-    ../common
+    ../common # loads all .nix files in the directory, doesnt add any other folders etc  
+    
+    ../common/desktops/plasma6/default.nix
+
     ../common/modules/amd.nix
     ../common/modules/audio.nix
     ../common/modules/bluetooth.nix
 
 
-    ../common/desktops/plasma6/default.nix
 
-
-
+    ./hardware-config.nix
+    ../../nixpkgs/standart.nix
 
 
     # ../../services/via
@@ -20,7 +22,7 @@
 
 
 
-    ./modules/testConfig.nix
+    ./modules/testConfig.nix # when testing stuff can be put in side 
   ];
   
   home-manager = {

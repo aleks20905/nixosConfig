@@ -4,6 +4,7 @@
         ./networking.nix
         ./openssh.nix
         ./users.nix 
+
         inputs.home-manager.nixosModules.default
     ];
 
@@ -19,8 +20,10 @@
         };
     };
 
+
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
+
 
     # ADDS THE KEYBOARD LAYOUTs #todo doest have binde for chaneing betwen the layouts
     services.xserver = {
@@ -28,6 +31,7 @@
         xkb.layout = "us, bg";
         xkb.variant = ",phonetic";
     };
+
 
     # Sets your time zone.
     time.timeZone = "Europe/Sofia";

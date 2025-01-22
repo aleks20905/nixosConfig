@@ -16,7 +16,7 @@
     ./hardware-config.nix
     ./nixpkgs.nix
 
-    # ../../services/via
+    ./services.nix
 
 
 

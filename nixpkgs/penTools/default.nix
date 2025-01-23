@@ -7,7 +7,7 @@
 
     };
 
-    config = {
+    config = lib.mkIf config.pentools.enable {
     environment.systemPackages = with pkgs; [
     
         aircrack-ng # airmon-ng   create new global template network security or smt

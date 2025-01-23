@@ -1,19 +1,19 @@
 { config, lib, pkgs, ...}:
 
 {
-
+    # standart.nix shoud not be used in the future ... 
     imports = [ 
 
         ./fonts
-       ./gaming
-       ./penTools
-       ./programming
+        ./gaming
+        # ./penTools
+        ./programming
         ./shells
-       ./virtualisation
+        ./virtualisation
 
     ];
 
-    pentools.enable = false;
+    # pentools.enable = lib.mkDefault false; # testing  
    
     
 

@@ -1,13 +1,12 @@
 { config, lib, pkgs, ...}:
 
 {
-    options = {
+    # options = {
+    #     pentools.enable = lib.mkEnableOption "enables pentools";
+    # };
 
-        pentools.enable = lib.mkEnableOption "enables pentools";
+    # config = lib.mkIf config.pentools.enable {
 
-    };
-
-    config = lib.mkIf config.pentools.enable {
     environment.systemPackages = with pkgs; [
     
         aircrack-ng # airmon-ng   create new global template network security or smt
@@ -29,7 +28,8 @@
         sqlmap
 
     ];
-    };
+
+    # }; # part of the config = lib.$$$$ ... S 
 
 
 }

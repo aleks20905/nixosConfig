@@ -5,6 +5,7 @@
 
         neovim
    
+        ripgrep # needed 
     ];
 
 

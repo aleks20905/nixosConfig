@@ -25,6 +25,14 @@
         qbittorrent
 
         lazygit
+
+
+        #------- Console Utilities ------- #TODO may need to move to CLI 
+        # toybox # problem bugs and cant use ls and etc | https://search.nixos.org/packages?channel=unstable&show=toybox 
+        lf  
+        fd
+        #------- Console Utilities -------
+
     ];
 
 }

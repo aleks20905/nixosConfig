@@ -111,7 +111,7 @@ main() {
     echo "1. Default Mode (Removed)"
     echo "2. Laptop Mode"
     echo "3. PC Mode"
-    echo "4. Update"
+    echo "4. Update Flake(s)"
     echo "5. What's Happened"
     echo "6. What's Happened - ALL"
     echo "7. Cleanup System (Garbage Collection)"

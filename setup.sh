@@ -27,15 +27,10 @@ update_specific_flake() {
     read -p "Enter the number of the flake to update: " flake_choice
 
     case $flake_choice in
-        1)
-            flake_name="nixpkgs" ;;
-        2)
-            flake_name="home-manager" ;;
-        3)
-            flake_name="spicetify-nix" ;;
-        4)
-            echo "Update canceled."
-            return ;;
+        1) flake_name="nixpkgs" ;;
+        2) flake_name="home-manager" ;;
+        3) flake_name="spicetify-nix" ;;
+        4) return ;;
         *)
             echo "Invalid choice. Please try again."
             update_specific_flake
@@ -49,27 +44,21 @@ update_specific_flake() {
 
 # Function to display the Update submenu
 update_flakes() {
-    while true; do
-        echo ""
-        echo "=== Update Menu ==="
-        echo "1. Update All Flakes"
-        echo "2. Update Specific Flake"
-        echo "0. Return to Main Menu"
-        read -p "Enter your choice: " update_choice
+    echo ""
+    echo "1. Update All Flakes"
+    echo "2. Update Specific Flake"
+    echo "0. Return to Main Menu"
+    read -p "Enter your choice: " update_choice
 
-        case $update_choice in
-            1)
-                update_all_flakes
-                break ;;
-            2)
-                update_specific_flake
-                break ;;
-            0)
-                return ;;
-            *)
-                echo "Invalid choice. Please select a valid option." ;;
-        esac
-    done
+    case $update_choice in
+        1) update_all_flakes ;;
+        2) update_specific_flake ;;
+        0)
+            return ;;
+        *)
+            echo "Invalid choice. Please select a valid option." 
+            update_flakes;;
+    esac
 }
 
 # Function to view differences in system closures

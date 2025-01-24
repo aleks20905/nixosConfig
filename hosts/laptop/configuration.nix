@@ -2,17 +2,27 @@
 { config, pkgs, inputs, ... }:
 
 {
+
   imports = [ 
-    ../common
-    ../common/modules/audio.nix
-
-
+    ../common # loads all .nix files in the directory, doesnt add any other folders etc  
+    
     ../common/desktops/plasma6/default.nix
 
+    ../common/modules/audio.nix
+    ../common/modules/bluetooth.nix
+
+
+
+
+
+    ./hardware-config.nix # import hardware config from hardware-config.nix
+    ./nixpkg.nix # import nixpkgs from nixpkgs.nix 
+    ./service.nix # import services from service.nix
 
     ./modules/powerManagment.nix
   ];
   
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users ={
@@ -21,10 +31,10 @@
   };
 
 
+ 
+  # for faster boot times 
   # disables network-wait-online so that it boots faster shoud not make any problems !!! but its posible to cause some services to break !!! 
   systemd.services.NetworkManager-wait-online.enable = false;
  
-
-  system.stateVersion = "24.11"; # Did you read the comment?
 }
 

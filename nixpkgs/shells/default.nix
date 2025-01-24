@@ -7,18 +7,15 @@
     programs.zsh = {
         enable = true;
         autosuggestions.enable = true;      #it doest have the same name from home-manager or doest work at all idk 
-        zsh-autoenv.enable = true;
+        # zsh-autoenv.enable = true;
         syntaxHighlighting.enable = true;
-        ohMyZsh = {
-            enable = true;
-            theme = "agnoster";
-            plugins = [
-            # "git"
-            # "history"
-            # "rust"
-            # "deno"
-            ];
-        };
+        promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
     };
+
+    environment.systemPackages = with pkgs;[
+
+        zsh-powerlevel10k
+    ];
+    
 
 }

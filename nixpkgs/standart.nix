@@ -1,7 +1,8 @@
 { config, lib, pkgs, ...}:
 
 {
-    # standart.nix shoud not be used in the future ... 
+    #! standart.nix shoud not be used in the future ... 
+
     imports = [ 
 
         ./fonts

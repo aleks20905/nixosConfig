@@ -21,7 +21,7 @@ Run the setup.sh script to manage your NixOS configuration:
 
 - ***The Default Mode (Option 1)***  has been removed and does nothing RN. 
 
-- ***Flake Update (Option 4):*** Update all flake inputs to their latest versions.
+- ***Flake Update (Option 4):*** Update all flake inputs or specific flake.
 - ***What's Happened (Options 5 & 6):*** View differences in system, track changes between generations.
 
 - ***Cleanup System (Option 7):*** Perform garbage collection to remove unused packages and free up disk space.

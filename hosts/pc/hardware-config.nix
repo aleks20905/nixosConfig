@@ -50,9 +50,7 @@
 	networking.hostName = "pc"; # Define your hostname.
 	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-
 	
-
 	fileSystems."/" = {
 
 		device = "/dev/disk/by-uuid/487bcdb3-43a4-4c28-94a2-8594b7617fad";

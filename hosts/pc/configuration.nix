@@ -19,9 +19,9 @@
 
 
 
-    ./hardware-config.nix
-    ./nixpkg.nix
-    ./service.nix
+    ./hardware-config.nix # import hardware config from hardware-config.nix
+    ./nixpkg.nix # import nixpkgs from nixpkgs.nix 
+    ./service.nix # import services from service.nix
 
     ./modules/testConfig.nix # when testing stuff can be put in side 
   ];

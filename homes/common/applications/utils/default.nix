@@ -1,5 +1,7 @@
 {pkgs, ...}:{
 
+    #? everything that doest have a folder for it or is kinda unknow what it is will go to utils 
+
     imports = [ 
 
     #    ./lazygit.nix 
@@ -20,6 +22,9 @@
         qalculate-qt
 
         qbittorrent
+
+
+        krita # drawing software 
 
     ];
 

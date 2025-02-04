@@ -118,7 +118,7 @@ nix_store_optimize() {
 # Main function to display menu and handle user input
 main() {
     echo -e "${CYAN}Choose an option:${NC}"
-    echo -e "${YELLOW}1.${NC} ${RED}Default Mode (Removed)${NC}"
+    echo -e "${YELLOW}1.${NC} Obezglaven Mode"
     echo -e "${YELLOW}2.${NC} Laptop Mode"
     echo -e "${YELLOW}3.${NC} PC Mode"
     echo -e "${YELLOW}4.${NC} Update Flake(s)"
@@ -130,7 +130,7 @@ main() {
 
     read -p "Enter your choice: " choice
     case $choice in
-        1) echo -e "${RED}Default mode has been removed and is no longer available.${NC}" ;;
+        1) switch_mode "$script_dir#obezglaven" ;;
         2) switch_mode "$script_dir#laptop" ;;
         3) switch_mode "$script_dir#pc" ;;
         4) update_flakes ;; 

@@ -23,6 +23,9 @@
         lf  
         fd
 
+
+        nvd
+
         #------- Console Utilities -------
 
     ];

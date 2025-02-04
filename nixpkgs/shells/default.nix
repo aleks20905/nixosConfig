@@ -10,6 +10,17 @@
         # zsh-autoenv.enable = true;
         syntaxHighlighting.enable = true;
         promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+
+        ohMyZsh = {
+            enable = true;
+            plugins = [
+            # "git"
+            # "history"
+            # "rust"
+            # "deno"
+            ];
+        };
+
     };
 
     environment.systemPackages = with pkgs;[

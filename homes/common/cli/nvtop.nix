@@ -2,6 +2,7 @@
 
     home.packages = with pkgs;[
 
-        nvtop
+        # nvtop
+        nvtopPackages.amd
     ];
 }

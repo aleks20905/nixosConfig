@@ -31,6 +31,13 @@
 			#   ];
 			# };
 
+			obezglaven = nixpkgs.lib.nixosSystem {
+				specialArgs = {inherit inputs;};
+				modules = [ 
+					./hosts/obezglaven/configuration.nix
+				];
+			};
+
 
 			laptop = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs;};

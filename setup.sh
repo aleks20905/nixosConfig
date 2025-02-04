@@ -1,29 +1,37 @@
 #!/bin/bash
 
+# Define color variables
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+CYAN='\033[0;36m'
+NC='\033[0m'  # No Color (reset)
+
 # Get the directory where the script is located
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 # Function to switch to a specific mode
 switch_mode() {
     local package_path="$1"
-    echo "Switching to mode at: $package_path"
+    echo -e "${CYAN}Switching to mode at: $package_path${NC}"
     sudo nixos-rebuild switch --flake "$package_path"
 }
 
 # Function to update all flakes
 update_all_flakes() {
-    echo "Updating all flake inputs..."
+    echo -e "${CYAN}Updating all flake inputs...${NC}"
     sudo nix flake update
-    echo "All flakes have been updated."
+    echo -e "${GREEN}All flakes have been updated.${NC}"
 }
 
 # Function to update a specific flake
 update_specific_flake() {
-    echo "Available flake inputs:"
-    echo "1. nixpkgs"
-    echo "2. home-manager"
-    echo "3. spicetify-nix"
-    echo "4. Cancel"
+    echo -e "${CYAN}Available flake inputs:${NC}"
+    echo -e "${YELLOW}1.${NC} nixpkgs"
+    echo -e "${YELLOW}2.${NC} home-manager"
+    echo -e "${YELLOW}3.${NC} spicetify-nix"
+    echo -e "${YELLOW}4.${NC} Cancel"
     read -p "Enter the number of the flake to update: " flake_choice
 
     case $flake_choice in
@@ -32,112 +40,114 @@ update_specific_flake() {
         3) flake_name="spicetify-nix" ;;
         4) return ;;
         *)
-            echo "Invalid choice. Please try again."
+            echo -e "${RED}Invalid choice. Please try again.${NC}"
             update_specific_flake
             return ;;
     esac
 
-    echo "Updating flake: $flake_name ..."
+    echo -e "${CYAN}Updating flake: $flake_name ...${NC}"
     sudo nix flake lock --update-input "$flake_name"
-    echo "Flake '$flake_name' has been updated."
+    echo -e "${GREEN}Flake '$flake_name' has been updated.${NC}"
 }
 
 # Function to display the Update submenu
 update_flakes() {
     echo ""
-    echo "1. Update All Flakes"
-    echo "2. Update Specific Flake"
-    echo "0. Return to Main Menu"
+    echo -e "${CYAN}Update Flakes:${NC}"
+    echo -e "${YELLOW}1.${NC} Update All Flakes"
+    echo -e "${YELLOW}2.${NC} Update Specific Flake"
+    echo -e "${YELLOW}0.${NC} Return to Main Menu"
     read -p "Enter your choice: " update_choice
 
     case $update_choice in
         1) update_all_flakes ;;
         2) update_specific_flake ;;
-        0)
-            return ;;
-        *)
-            echo "Invalid choice. Please select a valid option." 
-            update_flakes;;
+        0) return ;;
+        *) 
+            echo -e "${RED}Invalid choice. Please select a valid option.${NC}" 
+            update_flakes ;;
     esac
 }
 
 # Function to view differences in system closures
 what_happened() {
+    echo -e "${CYAN}Showing system closure differences...${NC}"
     nix store diff-closures /run/*-system
 }
 
 what_happened_all() {
+    echo -e "${CYAN}Showing all profile closure differences...${NC}"
     nix profile diff-closures --profile /nix/var/nix/profiles/system
 }
 
 # Function to collect garbage and remove old versions based on user input
 cleanup_system() {
-    echo "Garbage Collection Options:"
-    echo "1. Delete everything"
-    echo "2. Delete older than 30 days"
-    echo "3. Custom number of days"
-    echo "0. Go back"
+    echo -e "${CYAN}Garbage Collection Options:${NC}"
+    echo -e "${YELLOW}1.${NC} Delete everything"
+    echo -e "${YELLOW}2.${NC} Delete older than 30 days"
+    echo -e "${YELLOW}3.${NC} Custom number of days"
+    echo -e "${YELLOW}0.${NC} Go back"
     read -p "Enter your choice: " gc_choice
 
     case $gc_choice in
         1)
-            echo "Deleting everything..."
+            echo -e "${CYAN}Deleting everything...${NC}"
             sudo nix-collect-garbage -d ;;
         2)
-            echo "Deleting everything older than 30 days..."
+            echo -e "${CYAN}Deleting everything older than 30 days...${NC}"
             sudo nix-collect-garbage --delete-older-than 30d ;;
         3)
             read -p "Enter the number of days: " days
-            echo "Deleting everything older than $days days..."
+            echo -e "${CYAN}Deleting everything older than $days days...${NC}"
             sudo nix-collect-garbage --delete-older-than "${days}d" ;;
         0)
             return ;; # Go back to the main menu
         *)
-            echo "Invalid choice. Please choose again."
+            echo -e "${RED}Invalid choice. Please choose again.${NC}"
             cleanup_system ;; # Call again if the choice is invalid
     esac
 }
 
 # Function to optimize the Nix store
 nix_store_optimize() {
-    echo "Optimizing Nix store..."
+    echo -e "${CYAN}Optimizing Nix store...${NC}"
     sudo nix store optimize
-    echo "Nix store optimized."
+    echo -e "${GREEN}Nix store optimized.${NC}"
 }
 
 # Main function to display menu and handle user input
 main() {
-    echo "Choose an option:"
-    echo "1. Default Mode (Removed)"
-    echo "2. Laptop Mode"
-    echo "3. PC Mode"
-    echo "4. Update Flake(s)"
-    echo "5. What's Happened"
-    echo "6. What's Happened - ALL"
-    echo "7. Cleanup System (Garbage Collection)"
-    echo "8. Nix Store Optimize"
-    echo "0. Exit"
-    read -p "Enter your choice: " choice
+    echo -e "${CYAN}Choose an option:${NC}"
+    echo -e "${YELLOW}1.${NC} ${RED}Default Mode (Removed)${NC}"
+    echo -e "${YELLOW}2.${NC} Laptop Mode"
+    echo -e "${YELLOW}3.${NC} PC Mode"
+    echo -e "${YELLOW}4.${NC} Update Flake(s)"
+    echo -e "${YELLOW}5.${NC} What's Happened"
+    echo -e "${YELLOW}6.${NC} What's Happened - ALL"
+    echo -e "${YELLOW}7.${NC} Cleanup System (Garbage Collection)"
+    echo -e "${YELLOW}8.${NC} Nix Store Optimize"
+    echo -e "${YELLOW}0.${NC} Exit"
 
+    read -p "Enter your choice: " choice
     case $choice in
-        1) echo "Default mode has been removed and is no longer available." ;;
+        1) echo -e "${RED}Default mode has been removed and is no longer available.${NC}" ;;
         2) switch_mode "$script_dir#laptop" ;;
         3) switch_mode "$script_dir#pc" ;;
-        4) update_flakes;; 
+        4) update_flakes ;; 
         5) what_happened ;;
         6) what_happened_all ;;
         7) cleanup_system ;;
         8) nix_store_optimize ;;
-        0) echo "Exiting..."; exit ;;
-        *) echo "Invalid choice. Please choose again." ;;
+        0) echo -e "${GREEN}Exiting...${NC}"; exit ;;
+        *) echo -e "${RED}Invalid choice. Please choose again.${NC}" ;;
     esac
 }
 
-# Call the main function
-# clear # its cool when u clean the screen but sometimes u wanna see the things from early
-echo ""
-echo "=============================="
-echo "      NixOS Configuration      "
-echo "=============================="
+# clear
+echo -e "${BLUE}"
+echo -e "=============================="
+echo -e "      ${CYAN}NixOS Configuration${NC}     "
+echo -e "=============================="
+echo -e "${NC}"
 main
 echo ""

@@ -72,7 +72,19 @@ update_flakes() {
 # Function to view differences in system closures
 what_happened() {
     echo -e "${CYAN}Showing system closure differences...${NC}"
-    nix store diff-closures /run/*-system
+
+    nvd diff $(ls -dv /nix/var/nix/profiles/system-*-link | tail -2) # print only from this to the last rebild
+
+    # nix store diff-closures /run/*-system
+}
+
+what_happened_between_boot() {
+    echo -e "${CYAN}Showing system closure differences...${NC}"
+    # all options does the prety much the same 
+
+    nvd diff /run/booted-system /run/current-system
+    # nvd diff /run/*-system # from boot to now  
+    # nix store diff-closures /run/*-system
 }
 
 what_happened_all() {

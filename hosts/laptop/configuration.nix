@@ -19,7 +19,7 @@
     ./nixpkg.nix # import nixpkgs from nixpkgs.nix 
     ./service.nix # import services from service.nix
 
-    ./modules/powerManagment.nix
+    ./modules/powerMenagment.nix
   ];
   
 

@@ -4,7 +4,7 @@
 
     environment.systemPackages = with pkgs; [
 
-    # ghidra 
+    cloudflared    # ghidra 
     # ventoy-full-qt
     ntfs3g 
     # cura

@@ -1,5 +1,3 @@
 # Cloudflared token
-token.txt
-token-config.nix
-**/token.txt
-**/token-config.nix
+*.env
+tunnel-token.env

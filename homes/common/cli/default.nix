@@ -6,6 +6,7 @@
 		./nvtop.nix
 		./fastfetch.nix
 		./git.nix
+		./ssh.nix
 
     ];
 

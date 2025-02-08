@@ -1,9 +1,14 @@
 {pkgs, config, ...}:{
 
+<<<<<<< HEAD
     home.packages = with pkgs;[
         cloudflared 
 
     ];
+=======
+
+    environment.systemPackages = with pkgs; [ cloudflared ];
+>>>>>>> 4c98d7a (testing ssh config)
 
     programs.ssh = {
         enable = true;

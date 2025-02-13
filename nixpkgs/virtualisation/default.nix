@@ -1,9 +1,15 @@
 {config, pkgs, lib, ...}: {
 
     # Docker stuff rootles etc ... 
-    virtualisation.docker.rootless = {
+    #virtualisation.docker.rootless = {
+    #    enable = true;
+    #    setSocketVariable = true;
+    #};
+
+    # Docker stuff rootles etc ... 
+    virtualisation.docker = {
         enable = true;
-        setSocketVariable = true;
+        #setSocketVariable = true;
     };
 
     environment.systemPackages = with pkgs;[

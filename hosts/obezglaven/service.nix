@@ -10,6 +10,8 @@
 
 		../../services/cloudeflared
 
+		../../services/playit-agent
+
 	];
 
 }

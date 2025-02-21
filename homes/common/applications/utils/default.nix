@@ -19,6 +19,8 @@
         # openvpn
         # openvpn3
 
+        # localsend
+
         qalculate-qt
 
         qbittorrent

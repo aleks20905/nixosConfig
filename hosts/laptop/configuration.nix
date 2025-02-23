@@ -24,6 +24,7 @@
   
 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
     users ={
     "aleks"  = import ./home.nix;

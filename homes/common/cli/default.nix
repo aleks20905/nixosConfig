@@ -24,6 +24,7 @@
         lf  
         fd
 
+        nixpkgs-fmt
 
         nvd
 

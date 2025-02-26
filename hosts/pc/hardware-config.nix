@@ -13,8 +13,9 @@
 	boot.kernelModules = [ "amdgpu" ]; # might need to change idk # TODO 
 	boot.extraModulePackages = [ ];
 
-	boot.kernelPackages = pkgs.linuxPackages_latest;
-	
+	# boot.kernelPackages = pkgs.linuxPackages_latest;
+	boot.kernelPackages = pkgs.linuxPackages_zen;
+	# boot.kernelPackages = pkgs.linuxKernel.kernels.linux_zen;
 
 	# boot.kernelParams = [
 	#   "video=HDMI-A-2:1920x1080@144"

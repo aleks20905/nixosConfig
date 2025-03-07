@@ -29,5 +29,13 @@
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
+    networking.firewall = {
+        enable = true;
+
+        allowedUDPPortRanges = [
+            { from = 49152; to = 65535; }
+        ];
+    };
+
 
 }

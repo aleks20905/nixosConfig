@@ -3,8 +3,10 @@
 {
 
     environment.systemPackages = with pkgs; [
+
+    ghidra 
+
     
-    # arduino
     # cura
 
     ];

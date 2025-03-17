@@ -29,13 +29,17 @@
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
-    networking.firewall = {
-        enable = true;
+    # networking.firewall = {
+    #     enable = true;
 
-        allowedUDPPortRanges = [
-            { from = 49152; to = 65535; }
-        ];
-    };
+    #     allowedTCPPortRanges = [
+    #         { from = 49152; to = 65535; }
+    #     ];
+
+    #     allowedUDPPortRanges = [
+    #         { from = 49152; to = 65535; }
+    #     ];
+    # };
 
 
 }

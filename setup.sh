@@ -158,7 +158,7 @@ main() {
 # clear
 echo -e "${BLUE}"
 echo -e "=============================="
-echo -e "      ${CYAN}NixOS Configuration${NC}     "
+echo -e "      ${CYAN}NixOS Configuration ${BLUE}"
 echo -e "=============================="
 echo -e "${NC}"
 main

@@ -5,6 +5,7 @@
     # enable zsh and set config
     users.defaultUserShell=pkgs.zsh; # needed
     programs.zsh = {
+
         enable = true;
         autosuggestions.enable = true;      #it doest have the same name from home-manager or doest work at all idk 
         # zsh-autoenv.enable = true;

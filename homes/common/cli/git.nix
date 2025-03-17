@@ -1,5 +1,10 @@
 { pkgs, config, ... }: {
 
+    home.packages = with pkgs; [
+
+        lazygit
+    ];
+
     programs.git = {
         enable = true;
 
@@ -12,5 +17,6 @@
         ".vscode"
         ];
     };
+
 }
 

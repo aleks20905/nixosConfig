@@ -12,7 +12,6 @@
 
 
 
-		# ../../nixpkgs/standart.nix # shoud not be used [shoud be removed]
 
 
 	];

@@ -10,7 +10,6 @@
         ../../nixpkgs/virtualisation
 
 
-		# ../../nixpkgs/standart.nix
 
 
 	];

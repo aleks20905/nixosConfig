@@ -4,7 +4,7 @@
 {
 
   imports = [ 
-    ../common # loads all .nix files in the directory, doesnt add any other folders etc  
+    ../common # loads all .nix files from hosts/common in the directory, doesnt add any other folders etc  
     
     ../common/desktops/plasma6/default.nix
 

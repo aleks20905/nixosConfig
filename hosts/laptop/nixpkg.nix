@@ -13,6 +13,8 @@
 
 	];
 
+    # TODO needs to be moved to nixpkg/virtualization 
+
     programs.virt-manager.enable = true;
 
     users.groups.libvirtd.members = ["aleks"];

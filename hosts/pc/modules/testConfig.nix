@@ -5,8 +5,8 @@
     environment.systemPackages = with pkgs; [
 
     ghidra 
-
     
+    ntfs3g 
     # cura
 
     ];

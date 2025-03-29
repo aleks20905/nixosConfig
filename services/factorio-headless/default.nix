@@ -1,6 +1,14 @@
-{config, pkgs, ...}:{
+{config, pkgs, inputs, lib, ...}:
+let
 
-    environment.systemPackages = with pkgs; [
+    oldPkgs = import inputs.oldNixpkgs {
+        system = pkgs.system;
+        config = { allowUnfree = true; };
+    };
+in 
+{
+
+    environment.systemPackages = with oldPkgs; [
 
         factorio-headless
     ];

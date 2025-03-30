@@ -4,8 +4,8 @@
 
     environment.systemPackages = with pkgs; [
 
-    ghidra 
-    
+    # ghidra 
+    # ventoy-full-qt
     ntfs3g 
     # cura
 

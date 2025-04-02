@@ -19,6 +19,8 @@
 
         mangohud # see gpu usage etc frame time top left
 
+        # lutris # lutris game launcher 
+        heroic
     ];
 
     # sets where to download the "proton " layer 

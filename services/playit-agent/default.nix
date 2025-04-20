@@ -2,20 +2,24 @@
 
 {
 
-  systemd.services.playit-agent = {
-    description = "Playit Tunnel Service for Factorio";
-    after = [ "network.target" "docker.service" ];
-    wants = [ "docker.service" ];
-    wantedBy = [ "multi-user.target" ];
+  # Enable OCI containers
+  virtualisation.oci-containers = {
+    backend = "docker";
 
-    serviceConfig = {
-      ExecStart = "/bin/sh -c 'docker run --rm --net=host -e SECRET_KEY=$PLAYIT_SECRET ghcr.io/playit-cloud/playit-agent:latest'";
-      Restart   = "always";
+    containers = {
+      playit-tunnel = {
+        autoStart = true;  # Starts automatically on boot
+
+        image = "ghcr.io/playit-cloud/playit-agent:latest";  # Use the Playit image
+
+        environment = {
+          SECRET_KEY = "${builtins.getEnv "PLAYIT_SECRET"}";  # Fetch the secret from environment
+        };
+
+        extraArgs = [ "--net=host" ];
+
+      };
     };
-
-    # explicitly set the environment variable 
-    # environment = {
-    #   PLAYIT_SECRET = "your_actual_secret_key_here";
-    # };
   };
+
 }

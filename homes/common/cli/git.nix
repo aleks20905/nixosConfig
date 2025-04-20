@@ -21,5 +21,8 @@
 }
 
 # ssh-keygen -t ed25519 -C "aleks_20905@mail.bg" 
+# -->>
 # eval "$(ssh-agent -s)"                                                                                                                                                       INT ✘ 
 # ssh-add ~/.ssh/id_ed25519
+# -->>
+# cat ~/.ssh/id_ed25519.pub 

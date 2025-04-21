@@ -3,8 +3,8 @@
 {
 
   imports = [
-    # ../../homes/qubits
-     ../../homes/aleks
+    ../../homes/qubits
+     # ../../homes/aleks
     # ../../homeManagerModules/common/audio.nix
     ../../homes/common/applications
     ../../homes/common/cli

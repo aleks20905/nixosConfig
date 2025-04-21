@@ -1,7 +1,7 @@
 {pkgs, config, ...}:{
 
 
-    environment.systemPackages = with pkgs; [ cloudflared ];
+    home.packages = with pkgs; [ cloudflared ];
 
     programs.ssh = {
         enable = true;

@@ -7,7 +7,7 @@
 	imports = [
 		(modulesPath + "/installer/scan/not-detected.nix")
 	];
-	  
+
 	boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
 	boot.initrd.kernelModules = [ ];
 	boot.kernelModules = [ ];
@@ -26,15 +26,16 @@
 
 	swapDevices = [ ];
 
-	boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
 
-	# Bootloader.
-#	boot.loader.grub.enable = true;
-#	boot.loader.grub.device = "/dev/sda";
-#	boot.loader.grub.useOSProber = true;
- 	boot.loader.systemd-boot.enable = true;
- 	boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
+  # boot.loader.grub.useOSProber = true;
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
 
 	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

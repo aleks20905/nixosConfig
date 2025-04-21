@@ -1,9 +1,7 @@
 {pkgs, config, ...}:{
 
-	imports = [ 
+	imports = [
 
-
-        # ../../services/via
 		../../services/ssh
 
 		../../services/factorio-headless

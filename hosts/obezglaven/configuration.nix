@@ -2,9 +2,9 @@
 { config, inputs, ... }:
 
 {
-  imports = [ 
+  imports = [
     ../common # loads all .nix files in the directory, doesnt add any other folders etc  
-    
+
     ../common/desktops/plasma6/default.nix
 
     # ../common/modules/amd.nix
@@ -25,7 +25,7 @@
 
     ./modules/testConfig.nix  # [testing file] when testing someting  
   ];
-  
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users ={

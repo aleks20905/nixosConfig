@@ -3,7 +3,6 @@
 {
 
     environment.systemPackages = with pkgs; [
-    
 
     # arduino
     # cura
@@ -19,7 +18,6 @@
     # services.udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
     # services.xserver.xkbVariant = "bg";
 
-  
     # services.xserver = {
     # enable = true;
     # xkb.layout = "us, bg";
@@ -33,7 +31,7 @@
     # xkb.options = "grp:win_space_toggle"; #! doest work ???
 
     # xrandrHeads = [ "DVI-D-1" "HDMI-A-2" ]; # Add both monitor identifiers
-    
+
     # videoDrivers = [ "amdgpu" ]; # or "intel", "amdgpu", etc., depending on your hardware
 
     # config = ''
@@ -49,5 +47,5 @@
     #     EndSection
     #     '';
     # };
-    
+
 }

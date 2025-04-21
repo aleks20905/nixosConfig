@@ -15,10 +15,15 @@
 
         protonup # thing to download/update porton 
 
-        wineWowPackages.stable # wine translation layer ...
+        wineWowPackages.stableFull # wine translation layer ...
+        winetricks
+
+        protontricks
 
         mangohud # see gpu usage etc frame time top left
 
+        # lutris # lutris game launcher 
+        heroic
     ];
 
     # sets where to download the "proton " layer 

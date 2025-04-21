@@ -1,4 +1,4 @@
-{
+{config, pkgs, lib, ...}: {
 	imports = [ 
 
 
@@ -10,10 +10,9 @@
         # ../../nixpkgs/virtualisation
 
 
-		# ../../nixpkgs/standart.nix
-
 
 	];
-   
+
+
 } 
  

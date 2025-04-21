@@ -4,7 +4,7 @@
     users.users.aleks = {
         isNormalUser = true;
         description = "aleks";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel"  "docker" ];
     };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.

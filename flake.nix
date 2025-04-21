@@ -12,6 +12,8 @@
 		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 		spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+		oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs:
@@ -23,13 +25,6 @@
 
 		nixosConfigurations = {
 
-			# default = nixpkgs.lib.nixosSystem {
-			#   specialArgs = {inherit inputs;};
-			#   modules = [ 
-			#     ./modules/standart.nix
-			#     ./configuration.nix
-			#   ];
-			# };
 
 			obezglaven = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs;};

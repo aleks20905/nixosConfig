@@ -3,9 +3,10 @@
 {
 
     environment.systemPackages = with pkgs; [
-    
 
-    # arduino
+    cloudflared    # ghidra 
+    # ventoy-full-qt
+    ntfs3g 
     # cura
 
     ];

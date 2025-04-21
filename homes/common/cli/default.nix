@@ -6,6 +6,7 @@
 		./nvtop.nix
 		./fastfetch.nix
 		./git.nix
+		./ssh.nix
 
     ];
 
@@ -18,13 +19,12 @@
         # lm_sensors      # Hardware monitoring tool
         # xorg.xrandr     # need for thest in for pcConfig [remove]
 
-        lazygit
-        
         lf  
         fd
 
+        nixpkgs-fmt
 
-        nvd
+        nvd           # Nix/NixOS package version diff tool
 
         #------- Console Utilities -------
 

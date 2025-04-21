@@ -1,13 +1,8 @@
 {config, pkgs, lib, ...}: {
 
     # Docker stuff rootles etc ... 
-    #virtualisation.docker.rootless = {
-    #    enable = true;
-    #    setSocketVariable = true;
-    #};
+    virtualisation.docker.rootless = {
 
-    # Docker stuff rootles etc ... 
-    virtualisation.docker = {
         enable = true;
         #setSocketVariable = true;
     };
@@ -16,5 +11,13 @@
 
         # nixpacks # some type of conteriner shiet idk 'shity version of docker '
     ]; 
+
+    programs.virt-manager.enable = true;
+
+    users.groups.libvirtd.members = ["aleks"];
+
+    virtualisation.libvirtd.enable = true;
+
+    virtualisation.spiceUSBRedirection.enable = true;
 
 }

@@ -8,7 +8,7 @@
     # ventoy-full-qt
     ntfs3g 
     # cura
-
+    atlauncher
     ];
 
     # services.xserver = {

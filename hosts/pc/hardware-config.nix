@@ -63,6 +63,11 @@
 		size = 16 * 1024; # 16GB
 	}];
 
+	fileSystems."/mnt/hdd1" = {
+		device = "/dev/disk/by-uuid/2CAAD7C4AAD788AA ";
+		fsType = "ntfs-3g";
+		options = [ "uid=1000" "gid=100" "umask=0022" "windows_names" "big_writes" ];
+	};
 
 	# Enables DHCP on each ethernet and wireless interface. In case of scripted networking
 	# (the default) this is the recommended approach. When using systemd-networkd it's

@@ -123,7 +123,7 @@ cleanup_system() {
 # Function to optimize the Nix store
 nix_store_optimize() {
     echo -e "${CYAN}Optimizing Nix store...${NC}"
-    sudo nix store optimize
+    sudo nix store optimise
     echo -e "${GREEN}Nix store optimized.${NC}"
 }
 

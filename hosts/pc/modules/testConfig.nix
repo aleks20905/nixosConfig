@@ -8,7 +8,8 @@
     # ventoy-full-qt
     ntfs3g 
     # cura
-    atlauncher
+    # atlauncher
+    prismlauncher
     # mcrcon
     ];
 

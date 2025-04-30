@@ -3,8 +3,9 @@
 	imports = [ 
 
 
-        # ../../services/factorio-headless
-
+		# ../../services/factorio-headless
+		# ../../services/minecraft
+		
 	];
 
 }

@@ -9,6 +9,7 @@
     ntfs3g 
     # cura
     atlauncher
+    # mcrcon
     ];
 
     # services.xserver = {

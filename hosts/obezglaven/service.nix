@@ -10,6 +10,7 @@
 
 		# ../../services/playit-agent
 
+		# ../../services/minecraft
 	];
 
 }

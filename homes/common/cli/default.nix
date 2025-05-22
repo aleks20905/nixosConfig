@@ -22,7 +22,7 @@
         lf  
         fd
 
-        nixpkgs-fmt
+        # nixpkgs-fmt 
 
         nvd           # Nix/NixOS package version diff tool
 

@@ -24,6 +24,8 @@
         ripgrep # needed 
         fzf
 
+        # nixfmt-rfc-style
+        nixfmt-classic
     ];
 
     # each rebuild checks in the home folder for "./config/nvim" if it doest exist, it will pull it from github

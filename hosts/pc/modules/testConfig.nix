@@ -13,6 +13,7 @@
     # mcrcon
     ];
 
+
     # services.xserver = {
     #     enable = true;
     #     videoDrivers = [ "amdgpu" ];  # Use "amdgpu" for modern AMD GPUs. If you're using an older AMD GPU, you might need "radeon".

@@ -13,6 +13,10 @@
     # mcrcon
     ];
 
+    zramSwap = {
+        enable = true;
+        memoryPercent = 50; # Use up to 50% of RAM for compressed swap
+    };
 
     # services.xserver = {
     #     enable = true;

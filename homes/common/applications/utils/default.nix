@@ -10,7 +10,7 @@
     home.packages = with pkgs; [
 
         # p7zip 
-        # unar
+        unar
 
         # bambu-studio # 3d sclicer  
         # prusa-slicer # 3d sclicer 

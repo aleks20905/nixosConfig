@@ -5,7 +5,7 @@
   imports = [
     ../common # loads all .nix files in the directory, doesnt add any other folders etc  
 
-    ../common/desktops/plasma6/default.nix
+    # ../common/desktops/plasma6/default.nix
 
     # ../common/modules/amd.nix
     # ../common/modules/audio.nix
@@ -34,7 +34,8 @@
     };
   };
 
- 
+
+
   # addes partition manager 
   # programs.partition-manager.enable = true;
 

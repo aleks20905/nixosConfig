@@ -6,6 +6,8 @@
 
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    sops-nix.url = "github:Mic92/sops-nix";
+
 		home-manager.url = "github:nix-community/home-manager";
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -19,7 +21,7 @@
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
 	};
 
-	outputs = { self, nixpkgs, ... }@inputs:
+	outputs = { self, nixpkgs, sops-nix, ... }@inputs:
 	let
 
 		system = "x86_64-linux";
@@ -32,6 +34,7 @@
 			obezglaven = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs;};
 				modules = [ 
+          sops-nix.nixosModules.sops
 					./hosts/obezglaven/configuration.nix
 				];
 			};

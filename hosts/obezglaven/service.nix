@@ -8,9 +8,9 @@
 
 		../../services/cloudeflared
 
-		# ../../services/playit-agent
+		../../services/playit-agent
 
-		# ../../services/minecraft
+		../../services/minecraft
 	];
 
 }

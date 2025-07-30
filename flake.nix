@@ -15,6 +15,8 @@
 		oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
 		nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
 	};
 
 	outputs = { self, nixpkgs, ... }@inputs:

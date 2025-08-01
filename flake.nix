@@ -1,61 +1,53 @@
 {
+  description = "Nixos config flake";
 
-	description = "Nixos config flake";
+  inputs = {
 
-	inputs = {
-
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-		home-manager.url = "github:nix-community/home-manager";
-		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-		spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-		spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-		oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Input unmerged PR from priegger's factorio headless update ASAP when 2.0.60 up
+    factorio-updateNixpkgs.url = "github:priegger/nixpkgs/update-factorio";
+    # Input for the older version of factorio-headles not in use
+    oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-		nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
-	};
+  };
 
-	outputs = { self, nixpkgs, sops-nix, ... }@inputs:
-	let
+  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
+    let
 
-		system = "x86_64-linux";
-		pkgs = nixpkgs.legacyPackages.${system};
-	in {
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
 
-		nixosConfigurations = {
+      nixosConfigurations = {
 
+        obezglaven = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules =
+            [ sops-nix.nixosModules.sops ./hosts/obezglaven/configuration.nix ];
+        };
 
-			obezglaven = nixpkgs.lib.nixosSystem {
-				specialArgs = {inherit inputs;};
-				modules = [ 
-          sops-nix.nixosModules.sops
-					./hosts/obezglaven/configuration.nix
-				];
-			};
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/laptop/configuration.nix ];
+        };
 
+        pc = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [ ./hosts/pc/configuration.nix ];
+        };
 
-			laptop = nixpkgs.lib.nixosSystem {
-				specialArgs = {inherit inputs;};
-				modules = [ 
-					./hosts/laptop/configuration.nix
-				];
-			};
-
-
-			pc = nixpkgs.lib.nixosSystem {
-				specialArgs = {inherit inputs;};
-				modules = [ 
-					./hosts/pc/configuration.nix
-				];
-			};
-
-
-		};
-	};
+      };
+    };
 }

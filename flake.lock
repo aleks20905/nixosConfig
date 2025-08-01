@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "factorio-updateNixpkgs": {
+      "locked": {
+        "lastModified": 1752756941,
+        "narHash": "sha256-lFE3jlIK+57Y5UHrIAOtNwnjJQwRvMEudYLtybmPiRg=",
+        "owner": "priegger",
+        "repo": "nixpkgs",
+        "rev": "df7b71810f398785fcf753f638cd6c6cbc5366ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "priegger",
+        "ref": "update-factorio",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -226,6 +242,7 @@
     },
     "root": {
       "inputs": {
+        "factorio-updateNixpkgs": "factorio-updateNixpkgs",
         "home-manager": "home-manager",
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_2",

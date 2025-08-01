@@ -1,9 +1,6 @@
-{ inputs, config, pkgs, ... }:
-{
+{ inputs, config, pkgs, ... }: {
 
-
-
-  imports = [ inputs.playit-nixos-module.nixosModules.default];
+  imports = [ inputs.playit-nixos-module.nixosModules.default ];
 
   sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
@@ -20,14 +17,8 @@
     user = "playit";
     group = "playit";
     secretPath = config.sops.secrets.secret_key.path;
+
     # secretPath = ./playit.toml ;
   };
-
-
-
-
-
-
-
 
 }

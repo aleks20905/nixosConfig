@@ -13,8 +13,6 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Input unmerged PR from priegger's factorio headless update ASAP when 2.0.60 up
-    factorio-updateNixpkgs.url = "github:priegger/nixpkgs/update-factorio";
     # Input for the older version of factorio-headles not in use
     oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 

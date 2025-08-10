@@ -1,7 +1,7 @@
 { config, pkgs, inputs, lib, ... }:
 let
 
-  oldPkgs = import inputs.factorio-updateNixpkgs {
+  oldPkgs = import inputs.oldNixpkgs {
     system = pkgs.system;
     config = { allowUnfree = true; };
   };

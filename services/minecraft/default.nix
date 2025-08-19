@@ -5,13 +5,12 @@
 
   # https://github.com/vimjoyer/nixos-minecraft-server-video
   services.minecraft-servers = {
+
     enable = true;
     eula = true;
     openFirewall = true;
     # declarative = true;
     dataDir = "/var/lib/minecraftMine";
-
-    # package = pkgs.papermcServers.papermc-1_21_5;
 
     servers = {
       cool-server1 = {
@@ -25,6 +24,7 @@
             bypassesPlayerLimit = true;
           };
         };
+
         serverProperties = {
 
           motd = "Obezglaven-nixos-mc";
@@ -46,22 +46,23 @@
 
         symlinks = {
           "plugins/tabtps-spigot-1.3.27.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
-             sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
+            url =
+              "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
+            sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
           };
           # "plugins/PlayerDoll-Main-2.3.jar" = pkgs.fetchurl {
           #    url = "https://cdn.modrinth.com/data/n3s2JUTc/versions/2N70Odp2/PlayerDoll-Main-2.3.jar";
           #    sha256 = "03m30w2sw1z1183xbvkvc5s7w1mk5dlqkc24yn5vnjvsbvg7q965";
           # };
           "plugins/SkinsRestorer.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
-             sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
+            url =
+              "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
+            sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
           };
 
         };
 
         # whitelist = {/* */};
-
         # jvmOpts = "-Xms4092M -Xmx4092M -XX:+UseG1GC";
         jvmOpts = lib.concatStringsSep " " [
           "-Xms1G"
@@ -87,7 +88,7 @@
       };
 
       cool-servert-test1 = {
-        enable = true;
+        # enable = true;
         package = pkgs.papermcServers.papermc-1_21_5;
 
         operators = {
@@ -97,44 +98,32 @@
             bypassesPlayerLimit = true;
           };
         };
-        serverProperties = {
 
+        serverProperties = {
           server-port = 20905;
           motd = "Obezglaven-nixos-mc";
-          # gamemode = "creative";
           gamemode = 0;
-          # force-gamemode=true;
           difficulty = "normal";
 
           simulation-distance = 10;
-          # level-seed = "4";
-
-          # enable-rcon = true;
-          # need to use mcrcon for remote console
-          # "rcon.password" = "hunter2";         
           online-mode = false; # aaaa tf acc not working HELO...
           allow-cheats = true;
         };
 
         symlinks = {
           "plugins/tabtps-spigot-1.3.27.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
-             sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
+            url =
+              "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
+            sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
           };
-          # "plugins/PlayerDoll-Main-2.3.jar" = pkgs.fetchurl {
-          #    url = "https://cdn.modrinth.com/data/n3s2JUTc/versions/2N70Odp2/PlayerDoll-Main-2.3.jar";
-          #    sha256 = "03m30w2sw1z1183xbvkvc5s7w1mk5dlqkc24yn5vnjvsbvg7q965";
-          # };
           "plugins/SkinsRestorer.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
-             sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
+            url =
+              "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
+            sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
           };
 
         };
 
-        # whitelist = {/* */};
-
-        # jvmOpts = "-Xms4092M -Xmx4092M -XX:+UseG1GC";
         jvmOpts = lib.concatStringsSep " " [
           "-Xms1G"
           "-Xmx2G"
@@ -158,10 +147,9 @@
         ];
       };
 
-
       cool-server2 = {
-        openFirewall = true;
         # enable = true;
+        openFirewall = true;
         package = pkgs.fabricServers.fabric-1_21_5;
 
         operators = {
@@ -183,12 +171,14 @@
 
         symlinks = {
           "plugins/tabtps-spigot-1.3.27.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
-             sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
+            url =
+              "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
+            sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
           };
           "plugins/SkinsRestorer.jar" = pkgs.fetchurl {
-             url = "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
-             sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
+            url =
+              "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
+            sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
           };
 
         };
@@ -218,6 +208,15 @@
       };
     };
 
+    # server-example = {
+    #   # enable = true;
+    #   openFirewall = true;
+    #   package = pkgs.fabricServers.fabric-1_21_5;
+    #
+    #   operators = { };
+    #   serverProperties = { };
+    #   symlinks = { };
+    # };
   };
 
 }

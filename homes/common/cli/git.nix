@@ -2,7 +2,8 @@
 
     home.packages = with pkgs; [
 
-        lazygit
+        gitui
+        # lazygit
     ];
 
     programs.git = {

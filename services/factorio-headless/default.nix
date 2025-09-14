@@ -13,7 +13,7 @@ in {
 
     package = oldPkgs.factorio-headless;
 
-    enable = true;
+    # enable = true;
     public = false;
     requireUserVerification = false;
     lan = true;

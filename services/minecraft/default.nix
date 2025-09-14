@@ -210,7 +210,7 @@
       allthemods-server1 = {
         enable = true;
         openFirewall = true;
-        package = pkgs.fabricServers.fabric-1_21_5;
+        package = pkgs.vanillaServers.vanilla-1_21_1;
 
         operators = {
           "aleks20905" = {
@@ -229,53 +229,18 @@
           allow-cheats = true;
         };
 
-        symlinks =
-          
-        let
+        symlinks = let
           modpack = (pkgs.fetchPackwizModpack {
-            url = "https://github.com/aleks20905/atm10-test/blob/master/pack.toml";
-            packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
-          })
-        in 
-        {
-          "mods" = "${modpack}/mods";
-         
-        };
+            url =
+              "https://raw.githubusercontent.com/aleks20905/atm10-test/master/pack.toml";
+            packHash = "sha256-UttzTg78XmCrhu68d23u4sVFwIOTR6GSYXXjZkAieH0=";
+          });
+        in { "mods" = "${modpack}/mods"; };
 
-        jvmOpts = lib.concatStringsSep " " [
-          "-Xms1G"
-          "-Xmx4G"
-          "-XX:+UseG1GC"
-          "-XX:+ParallelRefProcEnabled"
-          "-XX:MaxGCPauseMillis=200"
-          "-XX:+UnlockExperimentalVMOptions"
-          "-XX:+DisableExplicitGC"
-          "-XX:G1NewSizePercent=20"
-          "-XX:G1MaxNewSizePercent=30"
-          "-XX:G1HeapRegionSize=4M"
-          "-XX:G1ReservePercent=15"
-          "-XX:G1HeapWastePercent=10"
-          "-XX:G1MixedGCCountTarget=2"
-          "-XX:InitiatingHeapOccupancyPercent=20"
-          "-XX:SurvivorRatio=32"
-          "-XX:+PerfDisableSharedMem"
-          "-XX:MaxTenuringThreshold=1"
-          "-Dusing.aikars.flags=https://mcflags.emc.gs"
-          "-Daikars.new.flags=true"
-          "-XX:+UseTransparentHugePages"
-        ];
+        jvmOpts = lib.concatStringsSep " " [ "-Xms4G" "-Xmx6G" ];
       };
     };
 
-    # server-example = {
-    #   # enable = true;
-    #   openFirewall = true;
-    #   package = pkgs.fabricServers.fabric-1_21_5;
-    #
-    #   operators = { };
-    #   serverProperties = { };
-    #   symlinks = { };
-    # };
   };
 
 }

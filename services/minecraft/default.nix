@@ -14,7 +14,7 @@
 
     servers = {
       cool-server1 = {
-        enable = true;
+        # enable = true;
         package = pkgs.papermcServers.papermc-1_21_5;
 
         operators = {
@@ -181,6 +181,65 @@
             sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
           };
 
+        };
+
+        jvmOpts = lib.concatStringsSep " " [
+          "-Xms1G"
+          "-Xmx4G"
+          "-XX:+UseG1GC"
+          "-XX:+ParallelRefProcEnabled"
+          "-XX:MaxGCPauseMillis=200"
+          "-XX:+UnlockExperimentalVMOptions"
+          "-XX:+DisableExplicitGC"
+          "-XX:G1NewSizePercent=20"
+          "-XX:G1MaxNewSizePercent=30"
+          "-XX:G1HeapRegionSize=4M"
+          "-XX:G1ReservePercent=15"
+          "-XX:G1HeapWastePercent=10"
+          "-XX:G1MixedGCCountTarget=2"
+          "-XX:InitiatingHeapOccupancyPercent=20"
+          "-XX:SurvivorRatio=32"
+          "-XX:+PerfDisableSharedMem"
+          "-XX:MaxTenuringThreshold=1"
+          "-Dusing.aikars.flags=https://mcflags.emc.gs"
+          "-Daikars.new.flags=true"
+          "-XX:+UseTransparentHugePages"
+        ];
+      };
+
+      allthemods-server1 = {
+        enable = true;
+        openFirewall = true;
+        package = pkgs.fabricServers.fabric-1_21_5;
+
+        operators = {
+          "aleks20905" = {
+            uuid = "d021cdf9-249a-35a7-a7f2-4cd167be32c9";
+            level = 4;
+            bypassesPlayerLimit = true;
+          };
+        };
+        serverProperties = {
+          server-port = 20905;
+          motd = "Obezglaven-nixos-mc";
+          gamemode = 0;
+          difficulty = "normal";
+          simulation-distance = 10;
+          online-mode = false; # aaaa tf acc not working HELO...
+          allow-cheats = true;
+        };
+
+        symlinks =
+          
+        let
+          modpack = (pkgs.fetchPackwizModpack {
+            url = "https://github.com/aleks20905/atm10-test/blob/master/pack.toml";
+            packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
+          })
+        in 
+        {
+          "mods" = "${modpack}/mods";
+         
         };
 
         jvmOpts = lib.concatStringsSep " " [

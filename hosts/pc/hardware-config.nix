@@ -58,10 +58,10 @@
 		fsType = "ext4";
 	};
 
-	swapDevices = [{
-		device = "/swapfile";
-		size = 16 * 1024; # 16GB
-	}];
+	# swapDevices = [{
+	# 	device = "/swapfile";
+	# 	size = 16 * 1024; # 16GB
+	# }];
 
 	fileSystems."/mnt/hdd1" = {
 		device = "/dev/disk/by-uuid/2CAAD7C4AAD788AA ";

@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }: {
+{ pkgs, lib, inputs, toyvoPkgs, ... }: {
 
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
@@ -210,7 +210,7 @@
       allthemods-server1 = {
         enable = true;
         openFirewall = true;
-        package = pkgs.vanillaServers.vanilla-1_21_1;
+        package = toyvoPkgs."neoforgeServers.neoforge-1_21_1";
 
         operators = {
           "aleks20905" = {

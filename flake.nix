@@ -1,6 +1,5 @@
 {
   description = "Nixos config flake";
-
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -19,21 +18,31 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
+
+    toyvo.url = "github:ToyVo/nur-packages";
   };
 
-  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, sops-nix, toyvo, ... }@inputs:
     let
 
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ inputs.nix-minecraft.overlay ];
+      };
+      toyvoPkgs = inputs.toyvo.packages.${system};
     in {
 
       nixosConfigurations = {
 
         obezglaven = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules =
-            [ sops-nix.nixosModules.sops ./hosts/obezglaven/configuration.nix ];
+          modules = [
+            sops-nix.nixosModules.sops
+            ./hosts/obezglaven/configuration.nix
+
+          ];
+          specialArgs = { inherit inputs toyvoPkgs; };
+
         };
 
         laptop = nixpkgs.lib.nixosSystem {

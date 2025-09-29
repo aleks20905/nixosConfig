@@ -22,15 +22,11 @@
     toyvo.url = "github:ToyVo/nur-packages";
   };
 
-  outputs = { self, nixpkgs, sops-nix, toyvo, ... }@inputs:
+  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
     let
 
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ inputs.nix-minecraft.overlay ];
-      };
-      toyvoPkgs = inputs.toyvo.packages.${system};
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
 
       nixosConfigurations = {
@@ -41,7 +37,7 @@
             ./hosts/obezglaven/configuration.nix
 
           ];
-          specialArgs = { inherit inputs toyvoPkgs; };
+          specialArgs = { inherit inputs; };
 
         };
 

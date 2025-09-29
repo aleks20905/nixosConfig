@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, toyvoPkgs, ... }: {
+{ pkgs, lib, inputs, ... }: {
 
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
@@ -208,9 +208,10 @@
       };
 
       allthemods-server1 = {
-        enable = true;
+        # enable = true;
         openFirewall = true;
-        package = toyvoPkgs."neoforgeServers.neoforge-1_21_1";
+        package =
+          inputs.toyvo.packages.${pkgs.system}."neoforgeServers.neoforge-1_21_1";
 
         operators = {
           "aleks20905" = {
@@ -232,12 +233,18 @@
         symlinks = let
           modpack = (pkgs.fetchPackwizModpack {
             url =
-              "https://raw.githubusercontent.com/aleks20905/atm10-test/master/pack.toml";
-            packHash = "sha256-UttzTg78XmCrhu68d23u4sVFwIOTR6GSYXXjZkAieH0=";
+              "https://raw.githubusercontent.com/aleks20905/atm10-test2/master/pack.toml";
+            packHash = lib.fakeSha256;
           });
-        in { "mods" = "${modpack}/mods"; };
+        in {
+          "mods" = "${modpack}/mods";
+          "config" = "${modpack}/config";
+          "defaultconfigs" = "${modpack}/defaultconfigs";
+          "kubejs" = "${modpack}/kubejs";
+          "resourcepacks" = "${modpack}/resourcepacks";
+        };
 
-        jvmOpts = lib.concatStringsSep " " [ "-Xms4G" "-Xmx6G" ];
+        jvmOpts = lib.concatStringsSep " " [ "-Xms4G" "-Xmx7G" ];
       };
     };
 

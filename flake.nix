@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -16,8 +17,10 @@
     oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
+    playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs"; 
 
     toyvo.url = "github:ToyVo/nur-packages";
   };

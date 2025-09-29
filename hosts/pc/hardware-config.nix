@@ -69,6 +69,12 @@
 		options = [ "uid=1000" "gid=100" "umask=0022" "windows_names" "big_writes" ];
 	};
 
+	fileSystems."/mnt/nvme0" = {
+		device = "/dev/disk/by-uuid/1d5ace25-3c86-495b-acb5-26b1601a17c4 ";
+		fsType = "ext4";
+		options = [ "defaults" "nofail" ];	
+	};
+
 	# Enables DHCP on each ethernet and wireless interface. In case of scripted networking
 	# (the default) this is the recommended approach. When using systemd-networkd it's
 	# still possible to use this option, but it's recommended to use it in conjunction

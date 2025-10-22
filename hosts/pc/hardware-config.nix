@@ -70,7 +70,7 @@
 	};
 
 	fileSystems."/mnt/nvme0" = {
-		device = "/dev/disk/by-uuid/1d5ace25-3c86-495b-acb5-26b1601a17c4 ";
+		device = "/dev/disk/by-uuid/1d5ace25-3c86-495b-acb5-26b1601a17c4";
 		fsType = "ext4";
 		options = [ "defaults" "nofail" ];	
 	};

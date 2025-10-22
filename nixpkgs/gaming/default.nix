@@ -15,8 +15,8 @@
 
         protonup # thing to download/update porton 
 
-        wineWowPackages.full # wine translation layer ...
-        winetricks
+        # wineWowPackages.full # wine translation layer ...
+        # winetricks
 
         protontricks
 

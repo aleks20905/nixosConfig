@@ -3,7 +3,7 @@
 {
 
     environment.systemPackages = with pkgs; [
-
+    # lact
     cloudflared    # ghidra 
     # ventoy-full-qt
     ntfs3g 
@@ -13,6 +13,15 @@
     # mcrcon
     ];
 
+    # systemd.services.lact = {
+    #     description = "AMDGPU Control Daemon";
+    #     after = ["multi-user.target"];
+    #     wantedBy = ["multi-user.target"];
+    #     serviceConfig = {
+    #     ExecStart = "${pkgs.lact}/bin/lact daemon";
+    #     };
+    #     enable = true;
+    # };
     # zramSwap = {
     #     enable = true;
     #     memoryPercent = 50; # Use up to 50% of RAM for compressed swap

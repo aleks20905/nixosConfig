@@ -3,6 +3,7 @@
     # installs steam 
     programs.steam = {
         enable = true;
+        protontricks.enable = true;
         gamescopeSession.enable = true; # enables gamescope for smoother experience
         remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
         dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
@@ -15,10 +16,10 @@
 
         protonup # thing to download/update porton 
 
-        # wineWowPackages.full # wine translation layer ...
-        # winetricks
+        wineWowPackages.full # wine translation layer ...
+        winetricks
 
-        protontricks
+        # protontricks
 
         mangohud # see gpu usage etc frame time top left
 

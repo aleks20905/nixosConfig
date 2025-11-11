@@ -9,8 +9,11 @@
     programs.git = {
         enable = true;
 
-        userName = "aleks";
-        userEmail = "aleks_20905@mail.bg";
+        settings = {
+            user.name = "aleks";
+            user.email = "aleks_20905@mail.bg";
+        };
+
 
         ignores = [
             ".env "

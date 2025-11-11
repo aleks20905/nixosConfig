@@ -2,27 +2,27 @@
   description = "Nixos config flake";
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --auto;
 
-    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.url = "github:Mic92/sops-nix"; # --auto;
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager"; # --auto;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix"; # --auto;
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # Input for the older version of factorio-headles not in use
-    oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --lock;
 
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft"; # --auto;
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
-    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
+    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module"; # --auto;
     playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs"; 
 
-    toyvo.url = "github:ToyVo/nur-packages";
+    toyvo.url = "github:ToyVo/nur-packages"; # --auto;
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }@inputs:

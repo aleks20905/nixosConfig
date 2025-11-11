@@ -4,7 +4,7 @@
     home.packages = with pkgs; [ cloudflared ];
 
     programs.ssh = {
-        enable = true;
+        # enable = true; # removed cuz eval warning idk mate like ff off i dont giva fuck u just want this shit to work and not scream at me for no reason stupit BS 
 
         extraConfig = ''
          Host aleks-ssh-quantized

@@ -19,7 +19,8 @@ in {
     lan = true;
     openFirewall = true;
     stateDirName = "factorio-conf";
-    saveName = "test_saves";
+    # saveName = "test_saves";
+    saveName = "minesave";
     admins = [ "aleks" ];
     nonBlockingSaving = true;
 

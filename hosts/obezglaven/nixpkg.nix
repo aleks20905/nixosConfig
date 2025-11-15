@@ -6,8 +6,8 @@
     # ../../nixpkgs/penTools
       ../../nixpkgs/programming
     ../../nixpkgs/shells
-    ../../nixpkgs/virtualisation # for new not needed 
-
+    # ../../nixpkgs/virtualisation/virt-manager
+    ../../nixpkgs/virtualisation/docker # for new not needed 
 
 
 

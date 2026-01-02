@@ -1,11 +1,11 @@
-{config, pkgs, lib, ...}: {
+{ config, pkgs, lib, ... }: {
 
-    programs.virt-manager.enable = true;
+  programs.virt-manager.enable = true;
 
-    users.groups.libvirtd.members = ["aleks"];
+  users.groups.libvirtd.members = [ "aleks" ];
 
-    virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.enable = true;
 
-    virtualisation.spiceUSBRedirection.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
 }

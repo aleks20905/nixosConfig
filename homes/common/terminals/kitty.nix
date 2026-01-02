@@ -22,6 +22,7 @@
       clipboard_control =
         "write-clipboard read-clipboard write-primary read-primary";
       # font_family = "FantasqueSansMono Nerd Font";
+      #
     };
 
   };

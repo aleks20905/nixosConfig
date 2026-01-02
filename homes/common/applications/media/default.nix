@@ -1,9 +1,9 @@
 {
-    imports = [ 
+  imports = [
 
-       ./spotify.nix 
-        # it kinda work need extencive testing 
-    ];
-
+    ./spotify.nix
+    # it kinda work need extencive testing 
+  ];
 
 }
+

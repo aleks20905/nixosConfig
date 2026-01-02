@@ -1,14 +1,14 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
+  home.packages = with pkgs; [
 
-    home.packages = with pkgs; [
+    google-chrome
 
-        google-chrome 
+    firefox
 
-        firefox
+    tor-browser
 
-        tor-browser
-
-    ];
+  ];
 
 }
+

@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 
-    home.packages = with pkgs;[
+  home.packages = with pkgs;
+    [
 
-        fastfetch
+      fastfetch
     ];
 }

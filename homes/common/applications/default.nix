@@ -1,12 +1,12 @@
 {
-  
-	imports = [
 
-       ./browsers
-       ./communications
-       ./editors
-       ./media
-       ./utils
-	];
+  imports = [
+
+    ./browsers
+    ./communications
+    ./editors
+    ./media
+    ./utils
+  ];
 
 }

@@ -1,14 +1,12 @@
 {
 
+  imports = [
 
-    imports = [ 
-
-       ./kate.nix
-       ./nvim.nix
-       ./obsidian.nix
-       ./vscode.nix
-    ];
-
-
+    ./kate.nix
+    ./nvim.nix
+    ./obsidian.nix
+    ./vscode.nix
+  ];
 
 }
+

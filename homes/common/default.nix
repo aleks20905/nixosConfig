@@ -1,6 +1,6 @@
 {
 
-    imports = [ 
+  imports = [
 
     # it will be better if not used from hire
 
@@ -9,9 +9,9 @@
     #    ./utils/default.nix 
     #    ./media/spotify.nix
 
-       ./theme.nix
+    ./theme.nix # redundant future proff kinda idk ???
 
-    ];
-
+  ];
 
 }
+

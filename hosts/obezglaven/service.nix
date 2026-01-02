@@ -1,16 +1,16 @@
-{pkgs, config, ...}:{
+{ pkgs, config, ... }: {
 
-	imports = [
+  imports = [
 
-		../../services/ssh
+    ../../services/ssh
 
-		../../services/factorio-headless
+    ../../services/factorio-headless
 
-		../../services/cloudeflared
+    ../../services/cloudeflared
 
-		../../services/playit-agent
+    ../../services/playit-agent
 
-		../../services/minecraft
-	];
+    ../../services/minecraft
+  ];
 
 }

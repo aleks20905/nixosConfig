@@ -1,12 +1,14 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
-    home.packages = with pkgs;[
+  home.packages = with pkgs;
+    [
 
-        # anydesk
-        discord
-        # vesktop
-        # viber
+      # anydesk
+      discord
+      # vesktop
+      # viber
 
     ];
 
 }
+

@@ -1,10 +1,11 @@
-{inputs, pkgs, ...}:{
+{ inputs, pkgs, ... }:
+{
 
-    # inputs = [inputs.stylix.homeManagerModules.stylix];
+  # inputs = [inputs.stylix.homeManagerModules.stylix];
 
-    # stylix = {
-    #     image = ./wallpaper.bmp;
-    # };
-
+  # stylix = {
+  #     image = ./wallpaper.bmp;
+  # };
 
 }
+

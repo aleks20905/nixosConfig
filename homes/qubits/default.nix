@@ -1,10 +1,7 @@
-{...}: {
-  imports = [
-    ../common
-  ];
+{ ... }: {
+  imports = [ ];
 
   nixpkgs = {
-    
 
     config = {
       allowUnfree = true;
@@ -14,7 +11,6 @@
 
   home.username = "qubits";
   home.homeDirectory = "/home/qubits";
-
 
   systemd.user.startServices = "sd-switch";
 

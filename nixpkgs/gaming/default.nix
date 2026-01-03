@@ -1,41 +1,43 @@
-{config, lib, pkgs, ...}:{
+{ config, lib, pkgs, ... }: {
 
-    # installs steam 
-    programs.steam = {
-        enable = true;
-        protontricks.enable = true;
-        gamescopeSession.enable = true; # enables gamescope for smoother experience
-        remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    };
+  # installs steam 
+  programs.steam = {
+    enable = true;
+    protontricks.enable = true;
+    gamescopeSession.enable = true; # enables gamescope for smoother experience
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+  };
 
-    # enables gameMode for smoother experience
-    programs.gamemode.enable = true;
+  # enables gameMode for smoother experience
+  programs.gamemode.enable = true;
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
         protonup-ng # thing to download/update porton 
 
-        wineWowPackages.full # wine translation layer ...
-        winetricks
+    wineWowPackages.full # wine translation layer ...
+    winetricks
 
-        # protontricks
+    # protontricks
 
-        mangohud # see gpu usage etc frame time top left
+    mangohud # see gpu usage etc frame time top left
 
-        # lutris # lutris game launcher 
-        heroic
-    ];
+    # lutris # lutris game launcher 
+    heroic
+  ];
 
-    # sets where to download the "proton " layer 
-    environment.sessionVariables = {
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-        "\${HOME}/.steam/root/compatibilitytools.d";
-    };
+  # sets where to download the "proton " layer 
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 
-    # options that u can run with steam
-    # gamemoderun %command%
-    # mangohud %command%
-    # gamescope %command%
+  # options that u can run with steam
+  # gamemoderun %command%
+  # mangohud %command%
+  # gamescope %command%
 }
 

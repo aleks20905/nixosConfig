@@ -1,18 +1,19 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
-        libgcc
-        gcc
-        gdb
-        stdenv
-        gnumake
+    libgcc
+    gcc
+    gdb
+    stdenv
+    gnumake
 
-        # clang
-        # valgrind
-        # cmake
-        # cppcheck
+    # clang
+    # valgrind
+    # cmake
+    # cppcheck
 
-    ];
+  ];
 
 }
+

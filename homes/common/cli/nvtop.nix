@@ -1,8 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
 
-    home.packages = with pkgs;[
+  home.packages = with pkgs;
+    [
 
-        # nvtop
-        nvtopPackages.amd
+      # nvtop
+      nvtopPackages.amd
     ];
 }

@@ -11,6 +11,10 @@
     # atlauncher
     prismlauncher
     # mcrcon
+    # path-of-building 
+    rusty-path-of-building
+
+
     ];
 
     # systemd.services.lact = {

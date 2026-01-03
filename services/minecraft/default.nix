@@ -207,45 +207,7 @@
         ];
       };
 
-      allthemods-server1 = {
-        # enable = true;
-        openFirewall = true;
-        package =
-          inputs.toyvo.packages.${pkgs.system}."neoforgeServers.neoforge-1_21_1";
-
-        operators = {
-          "aleks20905" = {
-            uuid = "d021cdf9-249a-35a7-a7f2-4cd167be32c9";
-            level = 4;
-            bypassesPlayerLimit = true;
-          };
-        };
-        serverProperties = {
-          server-port = 20905;
-          motd = "Obezglaven-nixos-mc";
-          gamemode = 0;
-          difficulty = "normal";
-          simulation-distance = 10;
-          online-mode = false; # aaaa tf acc not working HELO...
-          allow-cheats = true;
-        };
-
-        symlinks = let
-          modpack = (pkgs.fetchPackwizModpack {
-            url =
-              "https://raw.githubusercontent.com/aleks20905/atm10-test2/master/pack.toml";
-            packHash = lib.fakeSha256;
-          });
-        in {
-          "mods" = "${modpack}/mods";
-          "config" = "${modpack}/config";
-          "defaultconfigs" = "${modpack}/defaultconfigs";
-          "kubejs" = "${modpack}/kubejs";
-          "resourcepacks" = "${modpack}/resourcepacks";
-        };
-
-        jvmOpts = lib.concatStringsSep " " [ "-Xms4G" "-Xmx7G" ];
-      };
+     
     };
 
   };

@@ -16,7 +16,7 @@
 
   environment.systemPackages = with pkgs; [
 
-        protonup-ng # thing to download/update porton 
+    protonup-ng # thing to download/update porton 
 
     wineWowPackages.full # wine translation layer ...
     winetricks

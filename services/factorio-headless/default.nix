@@ -2,7 +2,7 @@
 let
 
   oldPkgs = import inputs.oldNixpkgs {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     config = { allowUnfree = true; };
   };
 in {

@@ -13,8 +13,8 @@
     # mcrcon
     # path-of-building 
     rusty-path-of-building
-
-
+    ollama-rocm
+    obs-studio
     ];
 
   # systemd.services.lact = {

@@ -12,7 +12,7 @@
 
   environment.systemPackages = with pkgs;
     [
-
+    docker-compose
       # nixpacks # some type of conteriner shiet idk 'shity version of docker '
     ];
 

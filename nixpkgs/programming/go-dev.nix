@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
 
     go
+    gopls
 
     # gosec # brutfocess some security problems for golang apps 
 

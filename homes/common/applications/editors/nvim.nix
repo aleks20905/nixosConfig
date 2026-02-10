@@ -19,7 +19,16 @@
 
     # neovim
 
+    nodejs
+    cargo
+    unzip
+    nil
+    pyright
+    ruff
+    stylua
     wl-clipboard
+
+    # stderr
 
     ripgrep # needed
     fzf

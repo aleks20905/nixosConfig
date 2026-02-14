@@ -20,11 +20,13 @@
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module"; # --auto;
-    playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs"; 
+    playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs";
 
+    gotth.url = "github:aleks20905/GOTTH/shopi1";
+    # gotth.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, sops-nix, gotth, ... }@inputs:
     let
 
       system = "x86_64-linux";
@@ -38,6 +40,15 @@
             sops-nix.nixosModules.sops
             ./hosts/obezglaven/configuration.nix
 
+            gotth.nixosModules.default
+            {
+              services.goth = {
+                enable = true;
+                port = 4000;
+                openFirewall = true; # Opens port 4000
+              };
+            }
+
           ];
           specialArgs = { inherit inputs; };
 
@@ -46,6 +57,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/laptop/configuration.nix ];
+
         };
 
         pc = nixpkgs.lib.nixosSystem {

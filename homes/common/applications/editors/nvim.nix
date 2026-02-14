@@ -17,17 +17,17 @@
 
   home.packages = with pkgs; [
 
-    # neovim
-
     nodejs
     cargo
     unzip
     nil
     pyright
     ruff
-    stylua
     wl-clipboard
 
+
+    stylua
+    lua-language-server
     # stderr
 
     ripgrep # needed

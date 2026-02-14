@@ -44,3 +44,4 @@ It's a simple shell script to help with flake updates, rebuilds, and system clea
 - ***Nix Store Optimize (Option 8):*** Optimize the Nix store.
 
 Feel free to explore, fork or use parts of this config as a base for your own setup!
+db auto depley *** /var/lib/goth/goth.db ***

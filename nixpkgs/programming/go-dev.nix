@@ -1,17 +1,19 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
-        go 
+    go
+    gopls
 
-        # gosec # brutfocess some security problems for golang apps 
+    # gosec # brutfocess some security problems for golang apps 
 
-        templ
+    templ
 
-        air
+    air
 
-        # golangci-lint
-        # delve
-    ];
+    # golangci-lint
+    # delve
+  ];
 
 }
+

@@ -1,28 +1,29 @@
-{pkgs, ...}:{
+{ pkgs, ... }: {
 
-    imports = [ 
+  imports = [
 
-       ./c-dev.nix 
-       ./go-dev.nix 
-    ];
+    ./c-dev.nix
+    ./go-dev.nix
+  ];
 
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
 
-        #------- Programming stuff & Tools -------
-        godot_4
+    #------- Programming stuff & Tools -------
+    godot_4
 
-        sqlite
+    sqlite
 
-        python312
+    python312
 
-        lua
+    lua
 
-        # nodejs_22
-        
-        # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
+    # nodejs_22
 
-        #------- Programming stuff & Tools -------
+    # tailwindcss # binery - https://github.com/tailwindlabs/tailwindcss/releases
 
-    ];
+    #------- Programming stuff & Tools -------
+
+  ];
 
 }
+

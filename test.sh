@@ -3,7 +3,7 @@
 
 ###
 DEBUG=false  # show full debug info
-APPLY=false # actually update inputs (true = run nix flake lock)
+APPLY=true # actually update inputs (true = run nix flake lock)
 ###
 
 set -e
@@ -41,7 +41,7 @@ for name in $inputs; do
 
     if [ "$APPLY" = true ]; then
         echo "🔄 Updating: $name"
-        nix flake lock --update-input "$name"
+        nix flake update "$name"
     else
         echo "✅ Would update: $name"
     fi

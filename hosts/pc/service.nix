@@ -1,11 +1,11 @@
 {
 
-	imports = [ 
+  imports = [
 
+    # ../../services/factorio-headless
+    # ../../services/minecraft
 
-		# ../../services/factorio-headless
-		# ../../services/minecraft
-		
-	];
+  ];
 
 }
+

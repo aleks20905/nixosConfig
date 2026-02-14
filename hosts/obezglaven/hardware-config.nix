@@ -4,30 +4,28 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-	imports = [
-		(modulesPath + "/installer/scan/not-detected.nix")
-	];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-	boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-	boot.initrd.kernelModules = [ ];
-	boot.kernelModules = [ ];
-	boot.extraModulePackages = [ ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ ];
+  boot.extraModulePackages = [ ];
 
-	fileSystems."/" =
-	  { device = "/dev/disk/by-uuid/a904c108-3165-4500-972b-7a69bbbbd1cb";
-	    fsType = "ext4";
-	  };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/a904c108-3165-4500-972b-7a69bbbbd1cb";
+    fsType = "ext4";
+  };
 
-	fileSystems."/boot" =
-	  { device = "/dev/disk/by-uuid/73DF-10FE";
-	    fsType = "vfat";
-	    options = [ "fmask=0022" "dmask=0022" ];
-	  };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/73DF-10FE";
+    fsType = "vfat";
+    options = [ "fmask=0022" "dmask=0022" ];
+  };
 
-	swapDevices = [ ];
+  swapDevices = [ ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
 
   # Bootloader
   # boot.loader.grub.enable = true;
@@ -37,13 +35,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "obezglaven";
 
-	# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-	networking.hostName = "obezglaven";
+  networking.useDHCP = lib.mkDefault true;
 
-	networking.useDHCP = lib.mkDefault true;
-
-	nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-	hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
 

@@ -1,8 +1,9 @@
 {
 
-	imports = [ 
+  imports = [
 
     # ../../services/factorio-headless
-	];
+  ];
 
 }
+

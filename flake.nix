@@ -22,7 +22,6 @@
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module"; # --auto;
     playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs"; 
 
-    toyvo.url = "github:ToyVo/nur-packages"; # --auto;
   };
 
   outputs = { self, nixpkgs, sops-nix, ... }@inputs:

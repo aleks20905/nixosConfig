@@ -246,6 +246,67 @@
 
         jvmOpts = lib.concatStringsSep " " [ "-Xms4G" "-Xmx7G" ];
       };
+
+      cool-server3 = {
+        enable = true;
+        openFirewall = true;
+        package = pkgs.fabricServers.fabric-1_21_10;
+
+        operators = {
+          "aleks20905" = {
+            uuid = "d021cdf9-249a-35a7-a7f2-4cd167be32c9";
+            level = 4;
+            bypassesPlayerLimit = true;
+          };
+        };
+        serverProperties = {
+          server-port = 33003;
+          motd = "Obezglaven-nixos-mc";
+          gamemode = 0;
+          difficulty = "normal";
+          simulation-distance = 10;
+          online-mode = false; # aaaa tf acc not working HELO...
+          allow-cheats = true;
+        };
+
+        # symlinks = {
+        #   "plugins/tabtps-spigot-1.3.27.jar" = pkgs.fetchurl {
+        #     url =
+        #       "https://cdn.modrinth.com/data/cUhi3iB2/versions/DlhrDe98/tabtps-spigot-1.3.27.jar";
+        #     sha256 = "1hm5wpsnrlzy4xqlgb9jwfj2gzrsq7xyg8l25dahk23ll0s9qsd5";
+        #   };
+        #   "plugins/SkinsRestorer.jar" = pkgs.fetchurl {
+        #     url =
+        #       "https://cdn.modrinth.com/data/TsLS8Py5/versions/A177WPDH/SkinsRestorer.jar";
+        #     sha256 = "1i5yx3wznzy69f9kc73vh71qdsw242w7r35bfxybx7ljbd0hsiwn";
+        #   };
+        #
+        # };
+
+        jvmOpts = lib.concatStringsSep " " [
+          "-Xms1G"
+          "-Xmx3G"
+          "-XX:+UseG1GC"
+          "-XX:+ParallelRefProcEnabled"
+          "-XX:MaxGCPauseMillis=200"
+          "-XX:+UnlockExperimentalVMOptions"
+          "-XX:+DisableExplicitGC"
+          "-XX:G1NewSizePercent=20"
+          "-XX:G1MaxNewSizePercent=30"
+          "-XX:G1HeapRegionSize=4M"
+          "-XX:G1ReservePercent=15"
+          "-XX:G1HeapWastePercent=10"
+          "-XX:G1MixedGCCountTarget=2"
+          "-XX:InitiatingHeapOccupancyPercent=20"
+          "-XX:SurvivorRatio=32"
+          "-XX:+PerfDisableSharedMem"
+          "-XX:MaxTenuringThreshold=1"
+          "-Dusing.aikars.flags=https://mcflags.emc.gs"
+          "-Daikars.new.flags=true"
+          "-XX:+UseTransparentHugePages"
+        ];
+      };
+
     };
 
   };

@@ -10,13 +10,13 @@
       "*" = { };
 
       aleks-ssh-quantized = {
-        hostname = "ssh.quantized.space";
+        hostname = "ssh_obezglaven.quantized.space";
         user = "aleks";
         proxyCommand = "cloudflared access ssh --hostname %h";
       };
 
       qubits-ssh-quantized = {
-        hostname = "ssh.quantized.space";
+        hostname = "ssh_obezglaven.quantized.space";
         user = "qubits";
         proxyCommand = "cloudflared access ssh --hostname %h";
       };

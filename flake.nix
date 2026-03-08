@@ -2,6 +2,7 @@
   description = "Nixos config flake";
   inputs = {
 
+    # " --lock " pins a specifig commit and will not be changed my the flake update script
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --auto;
 
     sops-nix.url = "github:Mic92/sops-nix"; # --auto;
@@ -23,15 +24,18 @@
     playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs";
 
     gotth.url = "github:aleks20905/GOTTH/shopi1";
-    # gotth.inputs.nixpkgs.follows = "nixpkgs";
+    gotth.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, sops-nix, gotth, ... }@inputs:
-    let
-
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+  outputs =
+    {
+      self,
+      nixpkgs,
+      sops-nix,
+      gotth,
+      ...
+    }@inputs:
+    {
 
       nixosConfigurations = {
 

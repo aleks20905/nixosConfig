@@ -9,7 +9,7 @@
   boot.initrd.availableKernelModules =
     [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "amdgpu" ]; # might need to change idk # TODO
+  boot.kernelModules = [ "ntsync" "amdgpu" ];
   boot.extraModulePackages = [ ];
 
   # boot.kernelPackages = pkgs.linuxPackages_latest;

@@ -1,5 +1,5 @@
 # sudo nixos-rebuild switch  --flake  /home/aleks/Desktop/nixos#default
-{ config, inputs, ... }:
+{ inputs, ... }:
 
 {
   imports = [
@@ -21,10 +21,12 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "aleks" = import ./home.nix; };
+    users = {
+      "aleks" = import ./home.nix;
+    };
   };
 
-  # addes partition manager 
+  # addes partition manager
   # programs.partition-manager.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

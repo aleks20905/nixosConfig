@@ -13,7 +13,7 @@
 
     sqlite
 
-    python312
+    python314
 
     lua
 

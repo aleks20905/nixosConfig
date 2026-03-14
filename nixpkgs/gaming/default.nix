@@ -1,24 +1,22 @@
-{ config, lib, pkgs, ... }: {
+{ pkgs, ... }: {
 
   # installs steam 
   programs.steam = {
     enable = true;
     protontricks.enable = true;
     gamescopeSession.enable = true; # enables gamescope for smoother experience
-    remotePlay.openFirewall =
-      true; # Open ports in the firewall for Steam Remote Play
+    remotePlay.openFirewall = true; # Open ports for Steam Remote Play
     dedicatedServer.openFirewall =
-      true; # Open ports in the firewall for Source Dedicated Server
+      true; # Open ports for Source Dedicated Server
   };
 
-  # enables gameMode for smoother experience
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
 
-    protonup-ng # thing to download/update porton 
+    protonup-ng # thing to download/update porton
 
-    wineWowPackages.full # wine translation layer ...
+    wineWow64Packages.full # wine translation layer ...
     winetricks
 
     # protontricks
@@ -39,5 +37,7 @@
   # gamemoderun %command%
   # mangohud %command%
   # gamescope %command%
+  # PROTON_ENABLE_WAYLAND=1 WINEDEBUG=-all DXVK_ASYNC=1 STAGING_SHARED_MEMORY=1 gamemoderun %command%
+  # PROTON_ENABLE_WAYLAND=1 gamemoderun %command%
 }
 

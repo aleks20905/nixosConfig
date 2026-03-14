@@ -4,7 +4,7 @@
 
   # https://github.com/vimjoyer/nixos-minecraft-server-video
   services.minecraft-servers = {
-    enable = true;
+    # enable = true;
     eula = true;
     openFirewall = true;
     # declarative = true;

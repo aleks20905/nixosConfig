@@ -32,7 +32,6 @@
       self,
       nixpkgs,
       sops-nix,
-      gotth,
       ...
     }@inputs:
     {
@@ -44,15 +43,6 @@
             sops-nix.nixosModules.sops
             ./hosts/obezglaven/configuration.nix
 
-            gotth.nixosModules.default
-            {
-              services.goth = {
-                enable = true;
-                port = 4000;
-                openFirewall = true; # Opens port 4000
-              };
-            }
-
           ];
           specialArgs = { inherit inputs; };
 
@@ -61,7 +51,6 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ ./hosts/laptop/configuration.nix ];
-
         };
 
         pc = nixpkgs.lib.nixosSystem {
@@ -70,5 +59,6 @@
         };
 
       };
+
     };
 }

@@ -45,3 +45,6 @@ It's a simple shell script to help with flake updates, rebuilds, and system clea
 
 Feel free to explore, fork or use parts of this config as a base for your own setup!
 db auto depley *** /var/lib/goth/goth.db ***
+
+***error: insufficient permission for adding an object to repository database .git/objects***
+`sudo chmod -R ugo+rwX . `

@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
 
   imports = [
 
@@ -7,6 +8,8 @@
     ../../services/factorio-headless
 
     ../../services/cloudeflared
+
+    ../../services/gotth
 
     ../../services/playit-agent
 

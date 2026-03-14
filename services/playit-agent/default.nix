@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  # pkgs,
+  ...
+}:
+{
 
   imports = [ inputs.playit-nixos-module.nixosModules.default ];
 

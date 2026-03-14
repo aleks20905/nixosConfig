@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
 
   imports = [
     # inputs.spicetify-nix.nixosModules.default # For NixOS
@@ -6,8 +7,10 @@
   ];
 
   programs.spicetify =
-    let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-    in {
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+    in
+    {
 
       enable = true;
 
@@ -20,4 +23,3 @@
     };
 
 }
-

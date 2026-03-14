@@ -1,6 +1,12 @@
-{ config, pkgs, lib, ... }: {
+{
+  # config,
+  pkgs,
+  # lib,
+  ...
+}:
+{
 
-  # Docker stuff rootles etc ... 
+  # Docker stuff rootles etc ...
   virtualisation.docker = {
     enable = false;
 
@@ -10,10 +16,9 @@
     };
   };
 
-  environment.systemPackages = with pkgs;
-    [
+  environment.systemPackages = with pkgs; [
     docker-compose
-      # nixpacks # some type of conteriner shiet idk 'shity version of docker '
-    ];
+    # nixpacks # some type of conteriner shiet idk 'shity version of docker '
+  ];
 
 }

@@ -24,7 +24,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "qubits" = import ./home.nix;
+      # "qubits" = import ./home.nix;
       "aleks" = import ./home_aleks.nix;
     };
   };

@@ -1,35 +1,43 @@
-{ config, lib, pkgs, ...}:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-    # options = {
-    #     pentools.enable = lib.mkEnableOption "enables pentools";
-    # };
+  # options = {
+  #     pentools.enable = lib.mkEnableOption "enables pentools";
+  # };
 
-    # config = lib.mkIf config.pentools.enable {
+  # config = lib.mkIf config.pentools.enable {
 
-    environment.systemPackages = with pkgs; [
-    
-        aircrack-ng # airmon-ng   create new global template network security or smt
-        wireshark # create new global template network security or smt
-        wifite2
+  environment.systemPackages = with pkgs; [
 
-        # wordlists   
+    aircrack-ng # airmon-ng   create new global template network security or smt
+    wireshark # create new global template network security or smt
+    wifite2
 
-        wordlists # rockyou package create new global template network security or smt
-        (wordlists.override {
-            lists = [ rockyou dirbuster];
-        })
-        
-        exploitdb
-        nmap
-        gobuster
-        nikto
-        thc-hydra
-        sqlmap
+    # wordlists
 
-    ];
+    wordlists # rockyou package create new global template network security or smt
+    (wordlists.override {
+      lists = [
+        rockyou
+        dirbuster
+      ];
+    })
 
-    # }; # part of the config = lib.$$$$ ... S 
+    exploitdb
+    nmap
+    gobuster
+    nikto
+    thc-hydra
+    sqlmap
 
+  ];
+
+  # }; # part of the config = lib.$$$$ ... S
 
 }
+

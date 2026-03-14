@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-
+{
+  # config,
+  pkgs,
+  ...
+}:
 {
 
   environment.systemPackages = with pkgs; [
@@ -11,11 +14,11 @@
     # atlauncher
     prismlauncher
     # mcrcon
-    # path-of-building 
+    # path-of-building
     rusty-path-of-building
     ollama-rocm
     obs-studio
-    ];
+  ];
 
   # systemd.services.lact = {
   #     description = "AMDGPU Control Daemon";
@@ -69,4 +72,3 @@
   # };
 
 }
-

@@ -1,11 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   environment.systemPackages = with pkgs; [
 
     go
     gopls
 
-    # gosec # brutfocess some security problems for golang apps 
+    # gosec # brutfocess some security problems for golang apps
 
     templ
 
@@ -16,4 +17,3 @@
   ];
 
 }
-

@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  # config,
+  # pkgs,
+  # lib,
+  ...
+}:
+{
   imports = [
 
     ../../nixpkgs/fonts
@@ -7,9 +13,8 @@
     ../../nixpkgs/programming
     ../../nixpkgs/shells
     # ../../nixpkgs/virtualisation/virt-manager.nix
-    # ../../nixpkgs/virtualisation/docker.nix # for new not needed 
+    # ../../nixpkgs/virtualisation/docker.nix # for new not needed
 
   ];
 
 }
-

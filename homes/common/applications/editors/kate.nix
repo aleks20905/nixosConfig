@@ -1,11 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
-  home.packages = with pkgs;
-    [
+  home.packages = with pkgs; [
 
-      kdePackages.kate
+    kdePackages.kate
 
-    ];
+  ];
 
 }
-

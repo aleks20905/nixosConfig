@@ -1,11 +1,20 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  # config,
+  pkgs,
+  inputs,
+  # lib,
+  ...
+}:
 let
 
   oldPkgs = import inputs.oldNixpkgs {
     system = pkgs.stdenv.hostPlatform.system;
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
   };
-in {
+in
+{
 
   environment.systemPackages = with oldPkgs; [ factorio-headless ];
 
@@ -25,7 +34,8 @@ in {
     nonBlockingSaving = true;
 
   };
-  # sudo ls /var/lib/private/factorio/saves 
-  # sudo cp /home/aleks/long\ time\ not\ see\ this\ world.zip /var/lib/private/factorio/saves  
+
+  # sudo ls /var/lib/private/factorio/saves
+  # sudo cp /home/aleks/long\ time\ not\ see\ this\ world.zip /var/lib/private/factorio/saves
   #  scp long\ time\ not\ see\ this\ world.zip aleks@aleks-ssh-quantized:/home/aleks с
 }

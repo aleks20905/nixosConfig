@@ -1,4 +1,9 @@
-{ pkgs, config, ... }: {
+{
+  # pkgs,
+  # config,
+  ...
+}:
+{
 
   programs.kitty = {
 
@@ -19,8 +24,7 @@
       background_blur = 5;
       confirm_os_window_close = -0;
       copy_on_select = true;
-      clipboard_control =
-        "write-clipboard read-clipboard write-primary read-primary";
+      clipboard_control = "write-clipboard read-clipboard write-primary read-primary";
       # font_family = "FantasqueSansMono Nerd Font";
       #
     };
@@ -28,4 +32,3 @@
   };
 
 }
-

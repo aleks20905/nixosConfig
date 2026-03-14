@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
-  environment.systemPackages = with pkgs;
-    [
+  environment.systemPackages = with pkgs; [
 
-      nerd-fonts.fantasque-sans-mono
-    ];
+    nerd-fonts.fantasque-sans-mono
+  ];
 }
-

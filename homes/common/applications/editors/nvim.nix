@@ -1,6 +1,11 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}:
+{
 
-  # nvim configuration 
+  # nvim configuration
 
   programs.neovim = {
 
@@ -24,7 +29,6 @@
     pyright
     ruff
     wl-clipboard
-
 
     stylua
     lua-language-server
@@ -51,4 +55,3 @@
   };
 
 }
-

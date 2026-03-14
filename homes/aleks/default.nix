@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [ ];
 
   nixpkgs = {
@@ -17,4 +18,3 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11"; # Please read the comment before changing.
 }
-

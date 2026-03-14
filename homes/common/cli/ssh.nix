@@ -1,4 +1,9 @@
-{ pkgs, config, ... }: {
+{
+  pkgs,
+  # config,
+  ...
+}:
+{
 
   home.packages = with pkgs; [ cloudflared ];
 
@@ -27,11 +32,11 @@
 
 }
 
-# just why is this shiet beein changed like helo its a normal thing can u can reuse F this 
+# just why is this shiet beein changed like helo its a normal thing can u can reuse F this
 # extraConfig = ''
 #   Host aleks-ssh-quantized
 #     HostName ssh.quantized.space
-#     User aleks 
+#     User aleks
 #     ProxyCommand cloudflared access ssh --hostname %h
 
 #   Host qubits-ssh-quantized
@@ -39,4 +44,3 @@
 #     User qubits
 #     ProxyCommand cloudflared access ssh --hostname %h
 # '';
-

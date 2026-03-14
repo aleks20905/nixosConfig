@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{
+  pkgs,
+  ...
+}:
+{
 
   # Disable X11 if not needed
   # services.xserver.enable = false;
@@ -14,4 +18,3 @@
   ];
 
 }
-

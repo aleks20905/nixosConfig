@@ -1,13 +1,13 @@
-{config, pkgs, ...}:{
+{ config, pkgs, ... }:
+{
 
-    environment.systemPackages = with pkgs; [
-        arduino
-    ];
+  environment.systemPackages = with pkgs; [
+    arduino
+  ];
 
-    # opens the ports so that u can upload sketches using arduino
-    services.udev.extraRules = '' 
-        KERNEL=="ttyACM0", MODE:="666"
-    '';
-
+  # opens the ports so that u can upload sketches using arduino
+  services.udev.extraRules = ''
+    KERNEL=="ttyACM0", MODE:="666"
+  '';
 
 }

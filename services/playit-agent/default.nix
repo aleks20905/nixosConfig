@@ -14,8 +14,8 @@
 
   services.playit = {
     enable = true;
-    user = "playit";
-    group = "playit";
+    # user = "playit";
+    # group = "playit";
     secretPath = config.sops.secrets.secret_key.path;
 
     # secretPath = ./playit.toml ;

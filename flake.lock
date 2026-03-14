@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771095212,
-        "narHash": "sha256-eTc7DHjKL6BQu+ofr8hFPbPu7tqChcSyeJ47xDV2vBk=",
+        "lastModified": 1773503055,
+        "narHash": "sha256-zDgAobbLC75uH764AQdiU9EUW+T5/94lDOfqFkYmwd8=",
         "owner": "aleks20905",
         "repo": "GOTTH",
-        "rev": "7fd38eaaa8c23ff6d05889204f1f5f38c9c0b42e",
+        "rev": "48f9be719cd461b755e18a6be4dec2a15bc4fdec",
         "type": "github"
       },
       "original": {

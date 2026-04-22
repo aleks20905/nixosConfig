@@ -1,5 +1,26 @@
 {
   "nodes": {
+    "curtisDashboard": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776876036,
+        "narHash": "sha256-PQHVcl8ghZvGECnIP9KCsVxN0o35FGvk38oIxXY6OMU=",
+        "owner": "aleks20905",
+        "repo": "hakaton30",
+        "rev": "1a0e977075a3142287b66d1e454c4eb3ebb42649",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aleks20905",
+        "ref": "main",
+        "repo": "hakaton30",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -204,6 +225,7 @@
     },
     "root": {
       "inputs": {
+        "curtisDashboard": "curtisDashboard",
         "gotth": "gotth",
         "home-manager": "home-manager",
         "nix-minecraft": "nix-minecraft",

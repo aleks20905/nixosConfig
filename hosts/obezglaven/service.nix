@@ -11,6 +11,8 @@
 
     ../../services/gotth
 
+    ../../services/curtisDashboard
+
     ../../services/playit-agent
 
     ../../services/minecraft

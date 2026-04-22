@@ -25,6 +25,9 @@
 
     gotth.url = "github:aleks20905/GOTTH/shopi1";
     gotth.inputs.nixpkgs.follows = "nixpkgs";
+
+    curtisDashboard.url = "github:aleks20905/hakaton30/main";
+    curtisDashboard.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

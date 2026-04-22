@@ -14,6 +14,9 @@
     #     set number relativenumber
     # '';
 
+    withRuby = false;
+    withPython3 = true;
+
     defaultEditor = true;
 
     viAlias = true;

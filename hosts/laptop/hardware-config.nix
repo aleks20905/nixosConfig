@@ -25,6 +25,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  services.fstrim.enable = true; # Enable periodic TRIM for SSDs defalt = "weekly".
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Bootloader.

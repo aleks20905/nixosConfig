@@ -13,9 +13,9 @@
 
     ../../services/curtisDashboard
 
-    ../../services/playit-agent
+    # ../../services/playit-agent
 
-    ../../services/minecraft
+    # ../../services/minecraft
   ];
 
 }

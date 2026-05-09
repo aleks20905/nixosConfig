@@ -28,6 +28,8 @@
 
     nvd # Nix/NixOS package version diff tool
 
+    zellij
+
     #------- Console Utilities -------
 
   ];

@@ -8,7 +8,13 @@
     gamescopeSession.enable = true; # enables gamescope for smoother experience
     remotePlay.openFirewall = true; # Open ports for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server
-
+    package = pkgs.steam.override {
+      extraPkgs = (pkgs: with pkgs; [
+        gamemode
+        # additional packages...
+        # e.g. some games require python3
+      ]);
+    };
   };
 
   programs.gamemode.enable = true;
@@ -39,4 +45,6 @@
   # gamescope %command%
   # PROTON_ENABLE_WAYLAND=1 WINEDEBUG=-all DXVK_ASYNC=1 STAGING_SHARED_MEMORY=1 gamemoderun %command%
   # PROTON_ENABLE_WAYLAND=1 gamemoderun %command%
+
+
 }

@@ -7,18 +7,31 @@
 
   environment.systemPackages = with pkgs; [
     # lact
-    cloudflared # ghidra
+    cloudflared 
+    # ghidra
     # ventoy-full-qt
     ntfs3g
     # cura
     # atlauncher
-    prismlauncher
+    # prismlauncher
     # mcrcon
     # path-of-building
-    rusty-path-of-building
+    # rusty-path-of-building
+    opencode
     ollama-rocm
     obs-studio
   ];
+
+  # services.sunshine = {
+  #   enable = true;
+  #   autoStart = true;  # optional: starts Sunshine automatically on login
+  #   capSysAdmin = true;
+  #   openFirewall = true;
+
+  #   settings = {
+  #     output_name = "1";
+  #   };
+  # };
 
   # systemd.services.lact = {
   #     description = "AMDGPU Control Daemon";

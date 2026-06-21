@@ -6,24 +6,28 @@
 {
 
   # nvim configuration
+  # xdg.configFile."nvim".enable = false;
+  # programs.neovim = {
 
-  programs.neovim = {
+  #   enable = true;
+  #   # extraConfig = ''
+  #   #     set number relativenumber
+  #   # '';
 
-    enable = true;
-    # extraConfig = ''
-    #     set number relativenumber
-    # '';
+  #   extraConfig = "";
+  
+  #   withRuby = false;
+  #   withPython3 = true;
 
-    withRuby = false;
-    withPython3 = true;
+  #   defaultEditor = true;
 
-    defaultEditor = true;
-
-    viAlias = true;
-    vimAlias = true;
-  };
+  #   viAlias = true;
+  #   vimAlias = true;
+  # };
 
   home.packages = with pkgs; [
+    neovim
+    tree-sitter
 
     nodejs
     cargo

@@ -6,5 +6,5 @@
     # ../../services/minecraft
 
   ];
-
+  # services.tailscale.enable = true;
 }

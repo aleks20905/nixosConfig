@@ -1,3 +1,0 @@
-# Cloudflared token
-*.env
-tunnel-token.env

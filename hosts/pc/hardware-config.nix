@@ -28,6 +28,7 @@
 
   boot.kernelParams = [
     "mitigations=off"
+    "nr_hugepages=1024" 
     #   "video=HDMI-A-2:1920x1080@144"
     #   "video=DVI-D-1:1280x1024@60"
   ];

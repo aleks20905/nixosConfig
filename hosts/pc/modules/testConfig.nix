@@ -18,10 +18,15 @@
     # path-of-building
     # rusty-path-of-building
     opencode
-    ollama-rocm
+    # ollama-rocms
     obs-studio
   ];
-
+  services.scx = {
+    enable = true;
+    scheduler = "scx_lavd";
+    extraArgs = [ "--performance" ];
+    #extraArgs = [ "--autopower" ];
+  };
   # services.sunshine = {
   #   enable = true;
   #   autoStart = true;  # optional: starts Sunshine automatically on login

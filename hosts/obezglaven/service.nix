@@ -11,6 +11,8 @@
 
     ../../services/gotth
 
+    ../../services/homepage
+
     # ../../services/curtisDashboard
 
     # ../../services/playit-agent

@@ -10,7 +10,7 @@
   environment.systemPackages = with pkgs; [
 
     #------- Programming stuff & Tools -------
-    godot_4
+    # godot_4
 
     sqlite
 

@@ -11,11 +11,11 @@
 
     ../../services/gotth
 
-    ../../services/curtisDashboard
+    # ../../services/curtisDashboard
 
     # ../../services/playit-agent
 
-    # ../../services/minecraft
+    ../../services/minecraft
   ];
 
 }

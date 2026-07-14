@@ -1,10 +1,16 @@
-{ pkgs, lib, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
   nixpkgs.overlays = [ inputs.nix-minecraft.overlay ];
 
   # https://github.com/vimjoyer/nixos-minecraft-server-video
   services.minecraft-servers = {
-    # enable = true;
+    enable = true;
     eula = true;
     openFirewall = true;
     # declarative = true;
@@ -35,7 +41,7 @@
 
           # enable-rcon = true;
           # need to use mcrcon for remote console
-          # "rcon.password" = "hunter2";         
+          # "rcon.password" = "hunter2";
 
           online-mode = false; # aaaa tf acc not working HELO...
           allow-cheats = true;
@@ -50,4 +56,3 @@
   };
 
 }
-

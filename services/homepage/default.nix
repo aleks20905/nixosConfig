@@ -46,24 +46,22 @@
         Infrastructure = [
           {
             SSH = {
-              icon = "ssh";
-              href = "ssh://aleks@localhost";
+              icon = "mdi-console";
               description = "OpenSSH on port 22";
+              url = "tcp://localhost:22";
             };
           }
           {
             "Cloudflare Tunnel" = {
-              icon = "cloudflare";
+              icon = "mdi-cloud";
               description = "Cloudflare tunnel service";
-              statusStyle = "dot";
-              url = "http://localhost:8082";
             };
           }
           {
             Minecraft = {
-              icon = "minecraft";
-              href = "minecraft://localhost";
+              icon = "mdi-minecraft";
               description = "PaperMC server on port 25565";
+              url = "tcp://localhost:25565";
             };
           }
         ];
@@ -72,8 +70,7 @@
         Gaming = [
           {
             Factorio = {
-              icon = "factorio";
-              href = "factorio://localhost";
+              icon = "mdi-gamepad-variant";
               description = "Headless server on port 34197";
             };
           }
@@ -83,28 +80,28 @@
         Apps = [
           {
             GOTTH = {
-              icon = "gotth";
-              href = "http://localhost:4000";
-              description = "Reverse proxy on port 4000";
+              icon = "mdi-web";
+              description = "Lightweight web app on port 4000";
+              url = "http://localhost:4000";
             };
           }
           {
             "Curtis Dashboard" = {
-              icon = "dashboard";
-              href = "http://localhost:8080";
+              icon = "mdi-view-dashboard";
               description = "Curtis Dashboard on port 8080";
+              url = "http://localhost:8080";
             };
           }
           {
             "Playit Agent" = {
-              icon = "playit";
-              description = "Play.it tunnel agent (currently disabled)";
+              icon = "mdi-tunnel";
+              description = "Play.it tunnel agent";
             };
           }
           {
             Arduino = {
-              icon = "arduino";
-              description = "Arduino development (currently disabled)";
+              icon = "mdi-chip";
+              description = "Arduino development";
             };
           }
         ];

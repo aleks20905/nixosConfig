@@ -6,6 +6,10 @@
 
 {
 
+  imports = [
+    ./minecraft-status
+  ];
+
   services.homepage-dashboard = {
     enable = true;
     openFirewall = true;
@@ -62,8 +66,18 @@
           {
             Minecraft = {
               icon = "mdi-minecraft";
-              description = "PaperMC server on port 25565";
-              url = "tcp://localhost:25565";
+              description = "PaperMC server";
+              url = "http://localhost:9090/status";
+              widget = {
+                type = "customapi";
+                url = "http://localhost:9090/status";
+                refreshInterval = 10000;
+                mappings = [
+                  { field = "0.players.online"; label = "Players"; format = "text"; }
+                  { field = "0.players.max"; label = "Max"; format = "text"; }
+                  { field = "0.version"; label = "Version"; format = "text"; }
+                ];
+              };
             };
           }
         ];

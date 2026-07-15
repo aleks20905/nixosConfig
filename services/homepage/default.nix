@@ -8,6 +8,8 @@
 
   services.homepage-dashboard = {
     enable = true;
+    openFirewall = true;
+    allowedHosts = "localhost:8082,127.0.0.1:8082,192.168.100.13:8082";
 
     settings = {
       title = "obezglaven";
@@ -82,6 +84,7 @@
             GOTTH = {
               icon = "mdi-web";
               description = "Lightweight web app on port 4000";
+              href = "http://192.168.100.13:4000";
               url = "http://localhost:4000";
             };
           }
@@ -96,6 +99,7 @@
             "Playit Agent" = {
               icon = "mdi-tunnel";
               description = "Play.it tunnel agent";
+              href = "https://playit.gg";
             };
           }
           {

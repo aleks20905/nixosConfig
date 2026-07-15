@@ -25,6 +25,10 @@
         user = "qubits";
         proxyCommand = "cloudflared access ssh --hostname %h";
       };
+      obezglaven = {
+        hostname = "192.168.100.13";
+        user = "aleks";
+      };
 
     };
 

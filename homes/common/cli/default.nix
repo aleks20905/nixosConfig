@@ -8,6 +8,7 @@
     ./fastfetch.nix
     ./git.nix
     ./ssh.nix
+    ./nsremote.nix
 
   ];
 

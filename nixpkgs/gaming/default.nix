@@ -30,6 +30,8 @@
 
     mangohud # see gpu usage etc frame time top left
 
+    espeak-ng # tts for world of warcraft
+
     # lutris # lutris game launcher
     heroic
   ];

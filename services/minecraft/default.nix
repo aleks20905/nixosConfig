@@ -47,7 +47,12 @@
           allow-cheats = true;
         };
 
-        jvmOpts = "-Xms4092M -Xmx4092M -XX:+UseG1GC";
+        jvmOpts = "-Xms1G -Xmx4G -XX:+UseG1GC " +
+        "-XX:MaxGCPauseMillis=200 " +
+        "-XX:G1PeriodicGCInterval=300000 " +
+        "-XX:+G1PeriodicGCInvokesConcurrent " +
+        "-XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 " +
+        "-XX:GCTimeRatio=4";
         # whitelist = {/* */};
       };
 

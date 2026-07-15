@@ -1,9 +1,31 @@
 { config, lib, pkgs, ... }:
 
 let
+  # ============================================================
+  # nsremote — Remote NixOS rebuild wrapper
+  # ============================================================
+  #
+  # HOW TO ADD A NEW HOST:
+  #   Add a line below: <shortname> = "<ssh-target>";
+  #
+  #   <shortname>  = whatever you want to type at the CLI
+  #                  (this is what tab-completion offers)
+  #
+  #   <ssh-target> = anything ssh/nixos-rebuild can connect with:
+  #                    - "obezglaven"              (SSH config alias, preferred)
+  #                    - "aleks@192.168.1.111"     (user@ip, works fine)
+  #                    - "aleks@nas.local"          (user@hostname)
+  #
+  #   Example ~/.ssh/config entry:
+  #     Host nas
+  #       HostName 192.168.1.111
+  #       User aleks
+
   remotes = {
     obezglaven = "obezglaven";
-    # nas = "nas-alias";
+    # nas = "user@nas";
+    # nas = "user1@192.168.1.111";
+    # ↑ uncomment / add more hosts here, one per line
   };
 
   remotesBash = lib.concatStringsSep "\n"
@@ -11,6 +33,7 @@ let
 
   hostNames = lib.concatStringsSep " " (lib.attrNames remotes);
 
+  # Path to your flake — update if you move the repo
   flakePath = "$HOME/Desktop/nixosConfig";
 
   nsremoteScript = pkgs.writeShellApplication {
@@ -18,6 +41,7 @@ let
     runtimeInputs = [ pkgs.nixos-rebuild pkgs.openssh ];
     text = ''
       RED='\033[0;31m'
+      GREEN='\033[0;32m'
       YELLOW='\033[0;33m'
       CYAN='\033[0;36m'
       NC='\033[0m'

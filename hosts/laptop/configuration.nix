@@ -21,6 +21,7 @@
     ./service.nix # import services from service.nix
 
     ./modules/powerMenagment.nix
+    ./modules/testing.nix
   ];
 
   home-manager = {

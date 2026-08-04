@@ -7,7 +7,7 @@
 
   environment.systemPackages = with pkgs; [
     # lact
-    cloudflared 
+    cloudflared
     # ghidra
     # ventoy-full-qt
     ntfs3g

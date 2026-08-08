@@ -9,6 +9,7 @@
     ./git.nix
     ./ssh.nix
     ./nsremote.nix
+    ./nstemplate.nix
 
   ];
 

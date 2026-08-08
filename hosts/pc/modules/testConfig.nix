@@ -27,6 +27,7 @@
     extraArgs = [ "--performance" ];
     #extraArgs = [ "--autopower" ];
   };
+
   # services.sunshine = {
   #   enable = true;
   #   autoStart = true;  # optional: starts Sunshine automatically on login

@@ -8,13 +8,6 @@
     gamescopeSession.enable = true; # enables gamescope for smoother experience
     remotePlay.openFirewall = true; # Open ports for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server
-    package = pkgs.steam.override {
-      extraPkgs = (pkgs: with pkgs; [
-        gamemode
-        # additional packages...
-        # e.g. some games require python3
-      ]);
-    };
   };
 
   programs.gamemode.enable = true;
@@ -23,14 +16,22 @@
 
     protonup-ng # thing to download/update porton
 
-    wineWow64Packages.full # wine translation layer ...
+    # wineWow64Packages.full # wine translation layer ...
+    wineWow64Packages.unstable # wine translation layer ...
+    # wine64Packages.full
+    # wineWowPackages.stable   # 32 + 64 bit combined, correct arch
+
     winetricks
+
+
 
     # protontricks
 
     mangohud # see gpu usage etc frame time top left
 
-    espeak-ng # tts for world of warcraft
+    # espeak-ng
+
+    # speechd
 
     # lutris # lutris game launcher
     heroic

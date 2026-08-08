@@ -22,13 +22,16 @@
     "amdgpu"
   ];
   boot.extraModulePackages = [ ];
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.kernelPackages = pkgs.linuxKernel.kernels.linux_zen;
 
+  # powerManagement.cpuFreqGovernor = "performance";
+
   boot.kernelParams = [
-    "mitigations=off"
-    "nr_hugepages=1024" 
+    "processor.max_cstate=5"
+    # "mitigations=off"
+    # "nr_hugepages=1024" 
     #   "video=HDMI-A-2:1920x1080@144"
     #   "video=DVI-D-1:1280x1024@60"
   ];
@@ -79,6 +82,11 @@
     ];
   };
 
+  fileSystems."/mnt/ssd1ext4" = {
+    device = "/dev/disk/by-uuid/0d796c11-9c1f-492f-b09f-ba2026efaf10";
+    fsType = "ext4";
+  };
+
   # fileSystems."/mnt/nvme0" = {
   # 	device = "/dev/disk/by-uuid/1d5ace25-3c86-495b-acb5-26b1601a17c4";
   # 	fsType = "ext4";
@@ -90,5 +98,7 @@
   # networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  # hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault false; 
+  # hardware.cpu.amd.updateMicrocode = true; 
 }

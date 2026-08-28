@@ -2,7 +2,8 @@
   description = "Nixos config flake";
   inputs = {
 
-    # " --lock " pins a specifig commit and will not be changed my the flake update script
+    # Tag each input. "# --lock;" pins it, updateflake.sh skips it.
+    # "# --auto;" means updateflake.sh updates it on every run.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --auto;
 
     sops-nix.url = "github:Mic92/sops-nix"; # --auto;
@@ -14,7 +15,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; # --auto;
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Input for the older version of factorio-headles not in use
+    # Pinned for the older factorio-headless; not currently used.
     oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --lock;
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft"; # --auto;
@@ -23,10 +24,10 @@
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module"; # --auto;
     playit-nixos-module.inputs.nixpkgs.follows = "nixpkgs";
 
-    gotth.url = "github:aleks20905/GOTTH/shopi1";
+    gotth.url = "github:aleks20905/GOTTH/shopi1"; # --auto;
     gotth.inputs.nixpkgs.follows = "nixpkgs";
 
-    curtisDashboard.url = "github:aleks20905/hakaton30/main";
+    curtisDashboard.url = "github:aleks20905/hakaton30/main"; # --auto;
     curtisDashboard.inputs.nixpkgs.follows = "nixpkgs";
   };
 

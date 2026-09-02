@@ -28,8 +28,8 @@ update_flakes() {
   read -p "Enter your choice: " update_choice
 
   case $update_choice in
-  1) (cd "$script_dir" && ./updateflake.sh --check) ;;
-  2) (cd "$script_dir" && ./updateflake.sh) ;;
+  1) (cd "$script_dir" && sh updateflake.sh --check) ;;
+  2) (cd "$script_dir" && sh updateflake.sh) ;;
   0) return ;;
   *)
     echo -e "${RED}Invalid choice. Please select a valid option.${NC}"

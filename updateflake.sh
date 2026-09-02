@@ -9,10 +9,10 @@ help() {
 updateflake - flake update with before/after diff
 
 Usage:
-  ./updateflake.sh              preview + apply (with confirmation)
-  ./updateflake.sh --check      show current state only, no changes
-  ./updateflake.sh --apply      skip preview, apply directly
-  ./updateflake.sh --help       show this help
+  sh updateflake.sh              preview + apply (with confirmation)
+  sh updateflake.sh --check      show current state only, no changes
+  sh updateflake.sh --apply      skip preview, apply directly
+  sh updateflake.sh --help       show this help
 EOF
 }
 

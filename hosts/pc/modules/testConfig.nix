@@ -13,7 +13,7 @@
     ntfs3g
     # cura
     # atlauncher
-    # prismlauncher
+    prismlauncher
     # mcrcon
     # path-of-building
     # rusty-path-of-building

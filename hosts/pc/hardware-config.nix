@@ -29,7 +29,7 @@
   # powerManagement.cpuFreqGovernor = "performance";
 
   boot.kernelParams = [
-    "processor.max_cstate=5"
+    # "processor.max_cstate=5"
     # "mitigations=off"
     # "nr_hugepages=1024" 
     #   "video=HDMI-A-2:1920x1080@144"

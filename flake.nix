@@ -17,7 +17,8 @@
     # Input for the older version of factorio-headles not in use
     oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --lock;
 
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft"; # --auto;
+    # nix-minecraft.url = "github:Infinidoge/nix-minecraft"; # --auto;
+    nix-minecraft.url = "github:aleks20905/nix-minecraft/add-fetchFTBModpack";
     nix-minecraft.inputs.nixpkgs.follows = "nixpkgs";
 
     playit-nixos-module.url = "github:pedorich-n/playit-nixos-module"; # --auto;

@@ -17,6 +17,8 @@
     # ../../services/playit-agent
 
     ../../services/minecraft
+    # ../../services/minecraft/testsb4.nix
+
   ];
 
 }

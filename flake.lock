@@ -124,15 +124,16 @@
         "systems": "systems_2"
       },
       "locked": {
-        "lastModified": 1784085260,
-        "narHash": "sha256-mjbmVWnAQ9tplJp48amDOT9lABRYb0HsOF12QfOevlA=",
-        "owner": "Infinidoge",
+        "lastModified": 1789592156,
+        "narHash": "sha256-uLdFqtdb1XW4ms4XYK7ROkDJ9PhuZjvbWtY38jV1seU=",
+        "owner": "aleks20905",
         "repo": "nix-minecraft",
-        "rev": "24aad4148c0caa90f9a7b364a71f3c8403347b3c",
+        "rev": "6f5a3db9fd83892ee305cf5ee35135d6e55c295e",
         "type": "github"
       },
       "original": {
-        "owner": "Infinidoge",
+        "owner": "aleks20905",
+        "ref": "add-fetchFTBModpack",
         "repo": "nix-minecraft",
         "type": "github"
       }

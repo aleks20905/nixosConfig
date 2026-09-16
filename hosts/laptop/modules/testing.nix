@@ -15,6 +15,7 @@
     # path-of-building
     libreoffice-qt
     moonlight-qt
+    opencode
   ];
 
   # zramSwap = {

@@ -18,51 +18,18 @@ switch_mode() {
   sudo nixos-rebuild switch --flake "$package_path"
 }
 
-# Function to update all flakes
-update_all_flakes() {
-  echo -e "${CYAN}Updating all flake inputs...${NC}"
-  sudo nix flake update
-  echo -e "${GREEN}All flakes have been updated.${NC}"
-}
-
-# Function to update a specific flake
-update_specific_flake() {
-  echo -e "${CYAN}Available flake inputs:${NC}"
-  echo -e "${YELLOW}1.${NC} nixpkgs"
-  echo -e "${YELLOW}2.${NC} home-manager"
-  echo -e "${YELLOW}3.${NC} spicetify-nix"
-  echo -e "${YELLOW}4.${NC} Cancel"
-  read -p "Enter the number of the flake to update: " flake_choice
-
-  case $flake_choice in
-  1) flake_name="nixpkgs" ;;
-  2) flake_name="home-manager" ;;
-  3) flake_name="spicetify-nix" ;;
-  4) return ;;
-  *)
-    echo -e "${RED}Invalid choice. Please try again.${NC}"
-    update_specific_flake
-    return
-    ;;
-  esac
-
-  echo -e "${CYAN}Updating flake: $flake_name ...${NC}"
-  sudo nix flake lock --update-input "$flake_name"
-  echo -e "${GREEN}Flake '$flake_name' has been updated.${NC}"
-}
-
-# Function to display the Update submenu
+# Flake updates live in updateflake.sh; it respects the --lock; / --auto; tags
 update_flakes() {
   echo ""
   echo -e "${CYAN}Update Flakes:${NC}"
-  echo -e "${YELLOW}1.${NC} Update All Flakes"
-  echo -e "${YELLOW}2.${NC} Update Specific Flake"
+  echo -e "${YELLOW}1.${NC} Check for updates (no changes)"
+  echo -e "${YELLOW}2.${NC} Update flakes (preview + confirm)"
   echo -e "${YELLOW}0.${NC} Return to Main Menu"
   read -p "Enter your choice: " update_choice
 
   case $update_choice in
-  1) update_all_flakes ;;
-  2) update_specific_flake ;;
+  1) (cd "$script_dir" && sh updateflake.sh --check) ;;
+  2) (cd "$script_dir" && sh updateflake.sh) ;;
   0) return ;;
   *)
     echo -e "${RED}Invalid choice. Please select a valid option.${NC}"

@@ -13,7 +13,8 @@ A modular, flake-based NixOS configuration managing three machines (desktop, lap
 ├── flake.nix                        # Entry point: defines 3 nixosConfigurations
 ├── .sops.yaml                       # sops-nix age key for encrypted secrets
 ├── setup.sh                         # Interactive menu: rebuild, update, cleanup
-├── test.sh                          # Smart flake updater (respects --lock/--auto tags)
+├── updateflake.sh                   # Flake updater (respects --lock/--auto tags)
+├── updateflake_parser.py            # Lock file and GitHub lookups for updateflake.sh
 ├── secrets/secrets.yaml             # Encrypted secrets (sops-nix, age)
 ├── hosts/
 │   ├── common/                      # Shared NixOS modules
@@ -72,11 +73,11 @@ A modular, flake-based NixOS configuration managing three machines (desktop, lap
 | `spicetify-nix`     | Spotify theming                  | `--auto`      |
 | `nix-minecraft`     | Minecraft server management      | `--auto`      |
 | `playit-nixos-module` | Play.it tunnel agent           | `--auto`      |
-| `oldNixpkgs`        | Pinned for Factorio headless     | `--lock`      |
-| `gotth`             | GOTTH reverse proxy              | Unpinned      |
-| `curtisDashboard`   | Curtis Dashboard                 | Unpinned      |
+| `oldNixpkgs`        | Pinned for older Factorio headless     | `--lock`      |
+| `gotth`             | GOTTH reverse proxy                   | `--auto`      |
+| `curtisDashboard`   | Curtis Dashboard                      | `--auto`      |
 
-Inputs tagged `# --lock;` in `flake.nix` are skipped by `test.sh`. Inputs tagged `# --auto;` are updated automatically.
+Each input in `flake.nix` carries exactly one tag. `# --lock;` pins the input and `updateflake.sh` skips it. `# --auto;` means `updateflake.sh` updates it on each run. The script refuses to run if an input has no tag or both tags, so the convention can't drift.
 
 ---
 
@@ -96,16 +97,20 @@ sh setup.sh
 
 ### Update flake inputs
 
+`updateflake.sh` checks the newest commit of every `--auto;` input, skips `--lock;` inputs, and shows a before/after table.
+
 ```bash
-# Smart updater (respects --lock/--auto tags)
-sh test.sh
+# Check what could update (no changes)
+sh updateflake.sh --check
 
-# Update all inputs
-sudo nix flake update
+# Preview the diff, then confirm
+sh updateflake.sh
 
-# Update a specific input
-sudo nix flake lock --update-input home-manager
+# Skip the confirmation prompt
+sh updateflake.sh --apply
 ```
+
+Plain `nix flake update` ignores the tags and unpins everything, including `oldNixpkgs`. Use `updateflake.sh` instead.
 
 ### setup.sh menu options
 
@@ -114,7 +119,7 @@ sudo nix flake lock --update-input home-manager
 | 1      | Rebuild as server (`obezglaven`)               |
 | 2      | Rebuild as laptop                              |
 | 3      | Rebuild as desktop (`pc`)                      |
-| 4      | Update flake inputs (all or specific)          |
+| 4      | Update flakes (submenu: updateflake.sh check or update)    |
 | 5      | Diff current vs previous system generation     |
 | 6      | Diff all system generations                    |
 | 7      | Garbage collection (all / by age / custom)     |
@@ -178,9 +183,10 @@ nix-shell -p sops age --run "sops -d secrets/secrets.yaml"
 
 ## Gotchas
 
-- `hardware-config.nix` files are machine-specific. They started as auto-generated but have been manually modified over time — treat them as regular config, not sacred.
+- `hardware-config.nix` files are machine-specific. They started as auto-generated but have been manually modified over time, so treat them as regular config, not sacred.
 - `modules/testConfig.nix` files (in `pc` and `obezglaven`) are scratch files for testing changes before committing.
-- `oldNixpkgs` is pinned specifically for Factorio headless, which requires an older Nixpkgs version.
+- `oldNixpkgs` is pinned for the older Factorio headless package. It is not currently used, so it stays a year-old snapshot in the lock file.
+- `updateflake.sh` reads the `# --lock;` / `# --auto;` tags from comment text in `flake.nix`. If you reformat the input lines, the tags move with them.
 - `obezglaven` uses `sops-nix` while the other hosts do not. Secrets are only available on the server.
 - The `qubits` user is defined in `users.nix` but has no Home Manager configuration wired in the flake.
 - Git permission errors after sudo operations: `sudo chmod -R ugo+rwX .`

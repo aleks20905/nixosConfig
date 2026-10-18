@@ -45,6 +45,11 @@ in
             level = 4;
             bypassesPlayerLimit = true;
           };
+          "aleks20905online" = {
+            uuid = "8c575883-7665-4c3c-ab9c-bf382add344e";
+            level = 4;
+            bypassesPlayerLimit = true;
+          };
         };
         serverProperties = {
           # gamemode = "creative";

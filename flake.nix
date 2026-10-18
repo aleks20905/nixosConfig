@@ -17,6 +17,7 @@
 
     # Pinned for the older factorio-headless; not currently used.
     oldNixpkgs.url = "github:nixos/nixpkgs/nixos-unstable"; # --lock;
+    oldNixpkgs.inputs.nixpkgs.follows = "nixpkgs";
 
     # nix-minecraft.url = "github:Infinidoge/nix-minecraft"; # --auto;
     nix-minecraft.url = "github:aleks20905/nix-minecraft/add-fetchFTBModpack";

@@ -26,7 +26,7 @@
         proxyCommand = "cloudflared access ssh --hostname %h";
       };
       obezglaven = {
-        hostname = "192.168.100.13";
+        hostname = "192.168.100.08";
         user = "aleks";
       };
 

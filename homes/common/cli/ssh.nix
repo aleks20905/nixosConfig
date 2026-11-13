@@ -19,11 +19,11 @@
         Compression = false;
         ServerAliveInterval = 0;
         ServerAliveCountMax = 3;
-        HashKnownHost = false;
-        UserKnownHostFile = "~/.ssh/known_hosts";
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
         ControlMaster = "no";
         ControlPath = "~/.ssh/master-%r@%n:%p";
-        ControlPrsist = "no";
+        ControlPersist = "no";
 
       };
       # "*" = { };

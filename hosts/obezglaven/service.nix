@@ -9,7 +9,7 @@
 
     ../../services/cloudeflared
 
-    ../../services/gotth
+    # ../../services/gotth
 
     ../../services/homepage
     # ../../services/curtisDashboard

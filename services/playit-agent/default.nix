@@ -14,8 +14,8 @@
   sops.age.keyFile = "/home/aleks/.config/sops/age/keys.txt";
 
   sops.secrets.secret_key = {
-    owner = "playit";
-    group = "playit";
+    # owner = "playit";
+    # group = "playit";
   };
 
   services.playit = {

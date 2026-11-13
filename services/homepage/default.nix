@@ -13,7 +13,7 @@
   services.homepage-dashboard = {
     enable = true;
     openFirewall = true;
-    allowedHosts = "localhost:8082,127.0.0.1:8082,192.168.100.08:8082";
+    allowedHosts = "localhost:8082,127.0.0.1:8082,192.168.100.8:8082";
 
     settings = {
       title = "obezglaven";
@@ -73,9 +73,21 @@
                 url = "http://localhost:9090/status";
                 refreshInterval = 10000;
                 mappings = [
-                  { field = "0.players.online"; label = "Players"; format = "text"; }
-                  { field = "0.players.max"; label = "Max"; format = "text"; }
-                  { field = "0.version"; label = "Version"; format = "text"; }
+                  {
+                    field = "0.players.online";
+                    label = "Players";
+                    format = "text";
+                  }
+                  {
+                    field = "0.players.max";
+                    label = "Max";
+                    format = "text";
+                  }
+                  {
+                    field = "0.version";
+                    label = "Version";
+                    format = "text";
+                  }
                 ];
               };
             };
@@ -98,7 +110,7 @@
             GOTTH = {
               icon = "mdi-web";
               description = "Lightweight web app on port 4000";
-              href = "http://192.168.100.08:4000";
+              href = "http://192.168.100.8:4000";
               url = "http://localhost:4000";
             };
           }

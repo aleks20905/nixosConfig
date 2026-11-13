@@ -5,7 +5,7 @@
 
     ../../services/ssh
 
-    ../../services/factorio-headless
+    # ../../services/factorio-headless
 
     ../../services/cloudeflared
 
@@ -14,10 +14,10 @@
     ../../services/homepage
     # ../../services/curtisDashboard
 
-    # ../../services/playit-agent
+    ../../services/playit-agent
 
-    ../../services/minecraft
-    # ../../services/minecraft/testsb4.nix
+    # ../../services/minecraft
+    ../../services/minecraft/testsb4.nix
 
   ];
 

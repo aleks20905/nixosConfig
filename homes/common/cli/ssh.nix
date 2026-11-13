@@ -11,8 +11,22 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
-      "*" = { };
+    settings = {
+      "*" = {
+
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHost = false;
+        UserKnownHostFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPrsist = "no";
+
+      };
+      # "*" = { };
 
       aleks-ssh-quantized = {
         hostname = "ssh_obezglaven.quantized.space";
